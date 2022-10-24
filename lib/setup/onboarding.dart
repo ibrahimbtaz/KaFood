@@ -6,6 +6,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:mycatering/asset/asset.dart';
 import 'package:mycatering/home.dart';
 import 'package:mycatering/setup/content_model.dart';
+import 'package:mycatering/login/input_login.dart';
 
 class onboarding extends StatefulWidget {
   const onboarding({super.key});
@@ -73,9 +74,10 @@ class _onboardingState extends State<onboarding> {
                           contents[i].discription,
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              fontSize: 18,
-                              color: maincolor,
-                              fontWeight: FontWeight.w500),
+                            fontSize: 18,
+                            color: maincolor,
+                            fontWeight: FontWeight.w500
+                          ),
                         ),
                       ],
                     ),
@@ -99,21 +101,22 @@ class _onboardingState extends State<onboarding> {
               style: ElevatedButton.styleFrom(
                 backgroundColor: maincolor,
                 textStyle: TextStyle(
-                    color: white, fontSize: 16, fontWeight: FontWeight.bold),
+                  color: white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold
+                ),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
               ),
-              child:
-                  Text(currentIndex == contents.length - 1 ? "Start" : "Next"),
+              child: Text(
+                  currentIndex == contents.length - 1 ? "Start" : "Next"),
               onPressed: () {
                 if (currentIndex == contents.length - 1) {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (_) {
-                        return onboarding();
-                      },
+                      builder: (_) => const Inputlogin(),
                     ),
                   );
                 }
