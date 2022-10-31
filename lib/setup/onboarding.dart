@@ -3,10 +3,9 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:mycatering/Pages/navbotbar.dart';
+import 'package:mycatering/Pages/activitymain.dart';
 import 'package:mycatering/asset/asset.dart';
 import 'package:mycatering/home.dart';
-import 'package:mycatering/login/home_page.dart';
 import 'package:mycatering/setup/content_model.dart';
 import 'package:mycatering/login/input_login.dart';
 
@@ -118,7 +117,7 @@ class _onboardingState extends State<onboarding> {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (_) =>  activitymain(),
+                      builder: (_) =>  Inputlogin(),
                     ),
                   );
                 }

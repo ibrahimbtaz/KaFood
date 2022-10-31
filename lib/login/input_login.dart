@@ -1,8 +1,8 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:mycatering/Pages/ActivityMain.dart';
 import 'package:mycatering/login/auth.dart';
-import 'package:mycatering/login/home_page.dart';
 import 'package:mycatering/login/login_register_page.dart';
 
 class Inputlogin extends StatefulWidget {
@@ -19,7 +19,7 @@ class _InputloginState extends State<Inputlogin> {
       stream: Auth().authStateChanges,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          return HomePage();
+          return activitymain();
         } else {
           return const LoginPage();
         }
