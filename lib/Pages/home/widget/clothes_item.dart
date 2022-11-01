@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mycatering/asset/asset.dart';
 import 'package:mycatering/models/clothes.dart';
 
 class ClothesItem extends StatelessWidget{
@@ -56,7 +57,7 @@ class ClothesItem extends StatelessWidget{
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 height: 1.5,
-                color: Theme.of(context).primaryColor,
+                color: maincolor,
               ),),
           ],
         ),

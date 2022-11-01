@@ -37,7 +37,13 @@ class _LoginPageState extends State<LoginPage> {
       );
     } on FirebaseAuthException catch (e) {
       setState(() {
-        errorMessage = e.message;
+        final snackBar = SnackBar(
+        duration: const Duration(seconds: 2),
+        content: Text("Please Fill in Your Email and Password"),
+        backgroundColor: Colors.red,
+      );
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+      return;
       });
     }
   }
@@ -50,18 +56,27 @@ class _LoginPageState extends State<LoginPage> {
       );
     } on FirebaseAuthException catch (e) {
       setState(() {
-        errorMessage = e.message;
+        final snackBar = SnackBar(
+        duration: const Duration(seconds: 2),
+        content: Text("Please Fill in Your Email and Password"),
+        backgroundColor: Colors.red,
+      );
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+      return;
       });
     }
   }
 
   Widget _logo() {
-    return Center(
-      child: Image(
-        width: 260,
-        height: 260,
-        image: AssetImage("lib/asset/logo.png"),
-        // repeat: ImageRepeat.repeat,
+    return Container(
+      margin : EdgeInsets.only(bottom: 10),
+      child: Center(
+        child: Image(
+          width: 260,
+          height: 260,
+          image: AssetImage("lib/asset/logo.png"),
+          // repeat: ImageRepeat.repeat,
+        ),
       ),
     );
   }
@@ -104,7 +119,7 @@ class _LoginPageState extends State<LoginPage> {
   ) {
     return Container(
       alignment: Alignment.center,
-      margin: EdgeInsets.only(top: 20),
+      margin: EdgeInsets.only(top: 10),
       padding: EdgeInsets.only(left: 20, right: 20),
       height: 56,
       decoration: BoxDecoration(
@@ -137,7 +152,7 @@ class _LoginPageState extends State<LoginPage> {
   ) {
     return Container(
       alignment: Alignment.center,
-      margin: EdgeInsets.only(top: 20, bottom: 4),
+      margin: EdgeInsets.only(top: 10),
       padding: EdgeInsets.only(left: 20, right: 20),
       height: 56,
       decoration: BoxDecoration(
@@ -177,14 +192,10 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Widget _errorMessage() {
-    return Text(errorMessage == '' ? '' : 'Humm ? please fill it correctly');
-  }
-
   Widget _submitButton() {
     return Container(
       height: 56,
-      margin: EdgeInsets.only(top: 4),
+      margin: EdgeInsets.only(top: 20),
       width: double.infinity,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
@@ -205,6 +216,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _loginOrRegisterButton() {
     return Container(
+      margin: EdgeInsets.only(top: 10),
       child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
         Text(
             isLogin ? "Don't Have Any Account? " : "Already Have an Account? "),
@@ -214,7 +226,7 @@ class _LoginPageState extends State<LoginPage> {
               isLogin = !isLogin;
             });
           },
-          child: Text(isLogin ? 'Sign Up' : 'Login'),
+          child: Text(isLogin ? 'Sign Up' : 'Login', style: TextStyle(color: maincolor),),
         ),
       ]),
     );
@@ -222,7 +234,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _google() {
     return Container(
-      margin: EdgeInsets.only(top: 10),
+      margin: EdgeInsets.only(top: 20),
       height: 56,
       width: double.infinity,
       decoration: BoxDecoration(
@@ -263,7 +275,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _facebook() {
     return Container(
-      margin: EdgeInsets.only(top: 10),
+      margin: EdgeInsets.only(top: 6),
       height: 56,
       width: double.infinity,
       decoration: BoxDecoration(
@@ -310,32 +322,36 @@ class _LoginPageState extends State<LoginPage> {
           width: double.infinity,
           padding: const EdgeInsets.all(20),
           child: isLogin
-              ? Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    _logo(),
-                    _entryFieldEmail('email', _controllerEmail),
-                    _entryFieldPassword('password', _controllerPassword),
-                    _errorMessage(),
-                    _submitButton(),
-                    _loginOrRegisterButton(),
-                    _google(),
-                    _facebook()
-                  ],
+              ? Padding(
+                  padding: EdgeInsets.only(top: 20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      _logo(),
+                      _entryFieldEmail('email', _controllerEmail),
+                      _entryFieldPassword('password', _controllerPassword),
+                      _submitButton(),
+                      _google(),
+                      _facebook(),
+                      _loginOrRegisterButton(),
+                    ],
+                  ),
                 )
-              : Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    _logo(),
-                    _entryFieldUsername('username', _controllerUsername),
-                    _entryFieldEmail('email', _controllerEmail),
-                    _entryFieldPassword('password', _controllerPassword),
-                    _errorMessage(),
-                    _submitButton(),
-                    _loginOrRegisterButton(),
-                  ],
+              : Padding(
+                  padding: EdgeInsets.only(top: 20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      _logo(),
+                      _entryFieldUsername('username', _controllerUsername),
+                      _entryFieldEmail('email', _controllerEmail),
+                      _entryFieldPassword('password', _controllerPassword),
+                      _submitButton(),
+                      _loginOrRegisterButton(),
+                    ],
+                  ),
                 ),
         ),
       ),

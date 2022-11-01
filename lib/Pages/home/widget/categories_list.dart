@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mycatering/asset/asset.dart';
+
+import '../../../asset/asset.dart';
 
 class CategoriesList extends StatelessWidget{
   final String title;
@@ -13,33 +16,31 @@ class CategoriesList extends StatelessWidget{
           Text(title,
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 22
+            fontSize: 20
           ),),
               Row(
                 children: [
                   Text('View All',
                   style: TextStyle(
-                    color: Theme.of(context).primaryColor,
+                    color: maincolor,
                     fontWeight: FontWeight.bold,
-                    fontSize: 18
+                    fontSize: 14
                   ),),
                   SizedBox(width: 10,),
                   Container(
                     padding: EdgeInsets.all(6),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Theme.of(context).primaryColor,
+                      color: maincolor,
                     ),
                     child: Icon(
                         Icons.arrow_forward_ios,
                     color: Colors.white,
-                    size: 15,),
+                    size: 12
+                  ,),
                   )
                 ],
               )
-            
-
-
         ],
       ),
     );

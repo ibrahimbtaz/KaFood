@@ -1,48 +1,50 @@
 import 'package:flutter/material.dart';
 import 'package:mycatering/Pages/home/widget/best_sell.dart';
+import 'package:mycatering/Pages/home/widget/new_arivval.dart';
 import 'package:mycatering/Pages/home/widget/search_input.dart';
+import 'package:mycatering/asset/asset.dart';
 
-class HomePage extends StatelessWidget{
-
+class HomePage extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xffffffff),
+        backgroundColor: white,
         title: const Text(
           "MyCatering",
-          style: TextStyle(color: Color(0xff425f57)),
+          style: TextStyle(color: maincolor, fontWeight: FontWeight.bold),
         ),
         actions: [
           Container(
-            child: Row(
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      // method to show the search bar
-                      showSearch(
-                          context: context,
-                          // delegate to customize the search bar
-                          delegate: CustomSearchDelegate()
-                      );
-                    },
-                    icon: const Icon(Icons.notifications, color: Color((0xff425f57))),
-                  ),]
-
-
-            ),
+            child: Row(children: [
+              IconButton(
+                onPressed: () {
+                  // method to show the search bar
+                  showSearch(
+                      context: context,
+                      // delegate to customize the search bar
+                      delegate: CustomSearchDelegate());
+                },
+                icon:
+                    const Icon(Icons.notifications_rounded, color: maincolor, size: 26,),
+              ),
+            ]),
           ),
-
         ],
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SearchInput(),
-            SearchInput(),
-            BestSell(),
-          ],
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.only(bottom: 20),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SearchInput(),
+                NewArivval(),
+                BestSell(),
+              ],
+            ),
+          ),
         ),
       ),
     );
