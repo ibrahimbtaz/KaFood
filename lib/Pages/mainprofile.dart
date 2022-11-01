@@ -20,53 +20,33 @@ class MainProfile extends StatelessWidget {
   }
 
   Widget _userUid() {
-    return Scaffold(
-      body: Container(
-        color: Colors.white,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            CircleAvatar(
-              backgroundImage: Image.network(
-                      FirebaseAuth.instance.currentUser!.photoURL ?? "")
-                  .image,
-              radius: 60,
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Text(
-              FirebaseAuth.instance.currentUser!.displayName ?? "",
-              style: const TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black),
-            ),
-            SizedBox(
-              height: 5,
-            ),
-            Text(
-              FirebaseAuth.instance.currentUser!.email ?? "",
-              style: const TextStyle(fontSize: 20, color: Colors.black),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _menu() {
     return Container(
+      color: Colors.white,
       child: Column(
-        children: [InkWell(
-          child:  Row(
-            children: [
-              Icon(Icons.logout),
-              SizedBox(width: 20,),
-              Text("Log Out")
-            ],
-          )
-        )],
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          CircleAvatar(
+            backgroundImage:
+                Image.network(FirebaseAuth.instance.currentUser!.photoURL ?? "")
+                    .image,
+            radius: 60,
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Text(
+            FirebaseAuth.instance.currentUser!.displayName ?? "",
+            style: const TextStyle(
+                fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black),
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Text(
+            FirebaseAuth.instance.currentUser!.email ?? "",
+            style: const TextStyle(fontSize: 20, color: Colors.black),
+          ),
+        ],
       ),
     );
   }

@@ -4,8 +4,8 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:mycatering/Pages/MainMenu.dart';
 import 'package:mycatering/Pages/MainProfile.dart';
+import 'package:mycatering/Pages/home/home.dart';
 import 'package:mycatering/asset/asset.dart';
-import 'package:mycatering/home.dart';
 
 class activitymain extends StatefulWidget {
   const activitymain({Key? key}) : super(key: key);

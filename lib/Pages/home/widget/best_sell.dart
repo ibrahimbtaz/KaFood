@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mycatering/Pages/home/widget/categories_list.dart';
 import 'package:mycatering/Pages/home/widget/detailpage.dart';
+import 'package:mycatering/asset/asset.dart';
 
 class BestSell extends StatelessWidget {
   @override
@@ -11,7 +12,7 @@ class BestSell extends StatelessWidget {
         children: [
           CategoriesList('Paket Terbaik'),
           Card(
-            margin: EdgeInsets.symmetric(horizontal: 25),
+            margin: EdgeInsets.only(left: 20, top:10, right: 20, bottom:0),
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
             child: GestureDetector(
@@ -55,7 +56,7 @@ class BestSell extends StatelessWidget {
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       height: 1.5,
-                                      color: Theme.of(context).primaryColor),
+                                      color: maincolor),
                                 ),
                               ],
                             )
@@ -74,7 +75,7 @@ class BestSell extends StatelessWidget {
                           child: Icon(
                             Icons.favorite,
                             color: Colors.red,
-                            size: 15,
+                            size: 20,
                           ),
                         ),
                       )
@@ -130,7 +131,7 @@ class BestSell extends StatelessWidget {
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       height: 1.5,
-                                      color: Theme.of(context).primaryColor),
+                                      color: maincolor),
                                 ),
                               ],
                             )
@@ -149,7 +150,7 @@ class BestSell extends StatelessWidget {
                           child: Icon(
                             Icons.favorite,
                             color: Colors.red,
-                            size: 15,
+                            size: 20,
                           ),
                         ),
                       )
@@ -205,7 +206,7 @@ class BestSell extends StatelessWidget {
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       height: 1.5,
-                                      color: Theme.of(context).primaryColor),
+                                      color: maincolor),
                                 ),
                               ],
                             )
@@ -224,7 +225,7 @@ class BestSell extends StatelessWidget {
                           child: Icon(
                             Icons.favorite,
                             color: Colors.red,
-                            size: 15,
+                            size: 20,
                           ),
                         ),
                       )
@@ -280,7 +281,7 @@ class BestSell extends StatelessWidget {
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       height: 1.5,
-                                      color: Theme.of(context).primaryColor),
+                                      color: maincolor),
                                 ),
                               ],
                             )
@@ -299,7 +300,7 @@ class BestSell extends StatelessWidget {
                           child: Icon(
                             Icons.favorite,
                             color: Colors.red,
-                            size: 15,
+                            size: 20,
                           ),
                         ),
                       )
@@ -355,7 +356,7 @@ class BestSell extends StatelessWidget {
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       height: 1.5,
-                                      color: Theme.of(context).primaryColor),
+                                      color: maincolor),
                                 ),
                               ],
                             )
@@ -374,7 +375,7 @@ class BestSell extends StatelessWidget {
                           child: Icon(
                             Icons.favorite,
                             color: Colors.red,
-                            size: 15,
+                            size: 20,
                           ),
                         ),
                       )

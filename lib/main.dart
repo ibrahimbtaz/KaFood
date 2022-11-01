@@ -1,7 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:mycatering/asset/asset.dart';
-import 'package:mycatering/home.dart';
 import 'package:mycatering/setup/splash.dart';
 
 
@@ -22,6 +21,7 @@ class MyApp extends StatelessWidget {
       title: 'MyCatering',
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
+          elevation: 0,
           backgroundColor: maincolor,  
         ),
         scaffoldBackgroundColor: white,
