@@ -53,6 +53,7 @@ dependencies:
   firebase_storage:
   flutter_rating_bar:
   carousel_slider: ^4.1.1
+  fluttertoast: ^8.1.1
   
 
 dev_dependencies:

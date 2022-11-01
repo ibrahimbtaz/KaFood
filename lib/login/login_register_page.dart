@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:mycatering/Pages/activitymain.dart';
 import 'package:mycatering/asset/asset.dart';
@@ -35,15 +36,20 @@ class _LoginPageState extends State<LoginPage> {
         email: _controllerEmail.text,
         password: _controllerPassword.text,
       );
+      Fluttertoast.showToast(
+          msg: "Login Succes",
+          textColor: white,
+          backgroundColor: Colors.grey,
+          fontSize: 14);
     } on FirebaseAuthException catch (e) {
       setState(() {
         final snackBar = SnackBar(
-        duration: const Duration(seconds: 2),
-        content: Text("Please Fill in Your Email and Password"),
-        backgroundColor: Colors.red,
-      );
-      ScaffoldMessenger.of(context).showSnackBar(snackBar);
-      return;
+          duration: const Duration(seconds: 2),
+          content: Text("Please Fill in Your Email and Password"),
+          backgroundColor: Colors.red,
+        );
+        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+        return;
       });
     }
   }
@@ -54,22 +60,27 @@ class _LoginPageState extends State<LoginPage> {
         email: _controllerEmail.text,
         password: _controllerPassword.text,
       );
+      Fluttertoast.showToast(
+          msg: "Login Succes",
+          textColor: white,
+          backgroundColor: Colors.grey,
+          fontSize: 14);
     } on FirebaseAuthException catch (e) {
       setState(() {
         final snackBar = SnackBar(
-        duration: const Duration(seconds: 2),
-        content: Text("Please Fill in Your Email and Password"),
-        backgroundColor: Colors.red,
-      );
-      ScaffoldMessenger.of(context).showSnackBar(snackBar);
-      return;
+          duration: const Duration(seconds: 2),
+          content: Text("Please Fill in Your Email and Password"),
+          backgroundColor: Colors.red,
+        );
+        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+        return;
       });
     }
   }
 
   Widget _logo() {
     return Container(
-      margin : EdgeInsets.only(bottom: 10),
+      margin: EdgeInsets.only(bottom: 10),
       child: Center(
         child: Image(
           width: 260,
@@ -226,10 +237,57 @@ class _LoginPageState extends State<LoginPage> {
               isLogin = !isLogin;
             });
           },
-          child: Text(isLogin ? 'Sign Up' : 'Login', style: TextStyle(color: maincolor),),
+          child: Text(
+            isLogin ? 'Sign Up' : 'Login',
+            style: TextStyle(color: maincolor),
+          ),
         ),
       ]),
     );
+  }
+
+  Future<void> google() async {
+    try {
+      await Future.delayed(Duration(seconds: 1));
+      await Auth().signInWithGoogle();
+      Fluttertoast.showToast(
+          msg: "Login Succes",
+          textColor: white,
+          backgroundColor: Colors.grey,
+          fontSize: 14);
+    } on FirebaseAuthException catch (e) {
+      setState(() {
+        final snackBar = SnackBar(
+          duration: const Duration(seconds: 2),
+          content: Text("Please Fill in Your Email and Password"),
+          backgroundColor: Colors.red,
+        );
+        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+        return;
+      });
+    }
+  }
+
+  Future<void> facebook() async {
+    try {
+      await Future.delayed(Duration(seconds: 1));
+      await Auth().signInWithFacebook();
+      Fluttertoast.showToast(
+          msg: "Login Succes",
+          textColor: white,
+          backgroundColor: Colors.grey,
+          fontSize: 14);
+    } on FirebaseAuthException catch (e) {
+      setState(() {
+        final snackBar = SnackBar(
+          duration: const Duration(seconds: 2),
+          content: Text("Please Fill in Your Email and Password"),
+          backgroundColor: Colors.red,
+        );
+        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+        return;
+      });
+    }
   }
 
   Widget _google() {
@@ -248,9 +306,7 @@ class _LoginPageState extends State<LoginPage> {
             borderRadius: BorderRadius.circular(20),
           ),
         ),
-        onPressed: () {
-          Auth().signInWithGoogle();
-        },
+        onPressed: google,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -289,9 +345,7 @@ class _LoginPageState extends State<LoginPage> {
             borderRadius: BorderRadius.circular(20),
           ),
         ),
-        onPressed: () {
-          Auth().signInWithFacebook();
-        },
+        onPressed: facebook,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,

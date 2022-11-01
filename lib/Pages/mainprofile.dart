@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:mycatering/asset/asset.dart';
 import 'package:mycatering/login/auth.dart';
@@ -12,6 +13,12 @@ class MainProfile extends StatelessWidget {
   final User? user = Auth().currentUser;
 
   Future<void> signOut() async {
+    await Future.delayed(Duration(seconds: 1));
+    Fluttertoast.showToast(
+        msg: "Log Out Succes",
+        textColor: white,
+        backgroundColor: Colors.grey,
+        fontSize: 14);
     await Auth().signOut();
   }
 
