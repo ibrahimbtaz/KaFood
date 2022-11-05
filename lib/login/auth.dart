@@ -25,6 +25,7 @@ class Auth {
       email: email,
       password: password,
     );
+    await Future.delayed(Duration(seconds: 1));
   }
 
   Future<void> createUserWithEmailAndPassword({
@@ -35,6 +36,7 @@ class Auth {
       email: email,
       password: password,
     );
+    await Future.delayed(Duration(seconds: 1));
   }
 
   signInWithGoogle() async {
