@@ -1,4 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
@@ -9,7 +11,12 @@ class Auth {
 
   User? get currentUser => _firebaseAuth.currentUser;
 
+  FirebaseFirestore _firestore = FirebaseFirestore.instance;
+
+  CollectionReference users = FirebaseFirestore.instance.collection('users');
+
   Stream<User?> get authStateChanges => _firebaseAuth.authStateChanges();
+
 
   Future<void> sendPasswordResetEmail({
     required String email,
@@ -37,6 +44,15 @@ class Auth {
       password: password,
     );
     await Future.delayed(Duration(seconds: 1));
+  }
+
+  Future<void> addUserData({Map<String, dynamic>? data}) async{
+    // Call the user's CollectionReference to add a new user
+    return users
+        .doc(currentUser?.uid)
+        .set(data)
+        .then((value) => print("User Added"))
+        .catchError((error) => print("Failed to add user: $error"));
   }
 
   signInWithGoogle() async {

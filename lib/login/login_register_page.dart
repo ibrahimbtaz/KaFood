@@ -1,5 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -19,6 +21,10 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final _formkey = GlobalKey<FormState>();
+
+  Auth _auth = Auth();
+
   String? errorMessage = '';
   bool isLogin = true;
   bool obscureText = true;
@@ -36,11 +42,6 @@ class _LoginPageState extends State<LoginPage> {
         email: _controllerEmail.text,
         password: _controllerPassword.text,
       );
-      Fluttertoast.showToast(
-          msg: "Login Succes",
-          textColor: white,
-          backgroundColor: Colors.grey,
-          fontSize: 14);
     } on FirebaseAuthException catch (e) {
       setState(() {
         final snackBar = SnackBar(
@@ -60,11 +61,13 @@ class _LoginPageState extends State<LoginPage> {
         email: _controllerEmail.text,
         password: _controllerPassword.text,
       );
-      Fluttertoast.showToast(
-          msg: "Login Succes",
-          textColor: white,
-          backgroundColor: Colors.grey,
-          fontSize: 14);
+      if (UserCredential == null) {
+        _auth.addUserData(data: {
+          "email": _controllerEmail.text,
+          "password": _controllerPassword.text,
+          "username": _controllerUsername.text,
+        });
+      }
     } on FirebaseAuthException catch (e) {
       setState(() {
         final snackBar = SnackBar(
@@ -250,11 +253,6 @@ class _LoginPageState extends State<LoginPage> {
     try {
       await Future.delayed(Duration(seconds: 1));
       await Auth().signInWithGoogle();
-      Fluttertoast.showToast(
-          msg: "Login Succes",
-          textColor: white,
-          backgroundColor: Colors.grey,
-          fontSize: 14);
     } on FirebaseAuthException catch (e) {
       setState(() {
         final snackBar = SnackBar(
@@ -272,11 +270,6 @@ class _LoginPageState extends State<LoginPage> {
     try {
       await Future.delayed(Duration(seconds: 1));
       await Auth().signInWithFacebook();
-      Fluttertoast.showToast(
-          msg: "Login Succes",
-          textColor: white,
-          backgroundColor: Colors.grey,
-          fontSize: 14);
     } on FirebaseAuthException catch (e) {
       setState(() {
         final snackBar = SnackBar(
