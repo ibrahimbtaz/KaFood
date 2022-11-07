@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:mycatering/Pages/home/widget/categories_list.dart';
-import 'package:mycatering/Pages/home/widget/clothes_item.dart';
-import 'package:mycatering/models/clothes.dart';
+import 'package:mycatering/Pages/home/widget/catering_item.dart';
+import 'package:mycatering/models/catering.dart';
 
 class NewArivval extends StatelessWidget{
-  final clothesList = Clothes.generateClothes();
+  final clothesList = Catering.generateCatering();
   @override
   Widget build(BuildContext context){
     return Container(
