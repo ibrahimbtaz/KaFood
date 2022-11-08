@@ -2,8 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mycatering/login/auth.dart';
+import 'package:mycatering/login/provider/provider_user.dart';
 import 'package:mycatering/models/asset.dart';
-import 'package:mycatering/provider/provider_user.dart';
 import 'package:provider/provider.dart';
 
 class MainProfile extends StatelessWidget {
