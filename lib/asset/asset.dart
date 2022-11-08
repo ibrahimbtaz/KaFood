@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
 const maincolor = Color.fromRGBO(66, 95, 87, 1);
-
 
 const white = Colors.white;
 
@@ -12,11 +10,10 @@ const double defaultpadding = 20.0;
 
 const kSpacingUnit = 10;
 
-const facebook ="lib/img/Facebook.svg";
-const instagram ="lib/img/instagram.svg";
-const twitter ="lib/img/twitter.svg";
-const web="lib/img/Internet.svg";
-
+const facebook = "lib/img/Facebook.svg";
+const instagram = "lib/img/instagram.svg";
+const twitter = "lib/img/twitter.svg";
+const web = "lib/img/Internet.svg";
 
 //colors
 const Color kPrimaryColor = Color(0xFF345FB4);
@@ -53,16 +50,14 @@ final kTopBorderRadius = BorderRadius.only(
 );
 
 final kBottomBorderRadius = BorderRadius.only(
-  bottomRight: Radius.circular(SizerUtil.deviceType == DeviceType.tablet ? 40 : 20),
+  bottomRight:
+      Radius.circular(SizerUtil.deviceType == DeviceType.tablet ? 40 : 20),
   bottomLeft:
-  Radius.circular(SizerUtil.deviceType == DeviceType.tablet ? 40 : 20),
+      Radius.circular(SizerUtil.deviceType == DeviceType.tablet ? 40 : 20),
 );
 
 final kInputTextStyle = GoogleFonts.poppins(
-  color: kTextBlackColor,
-  fontSize: 11.sp,
-  fontWeight: FontWeight.w500
-);
+    color: kTextBlackColor, fontSize: 11.sp, fontWeight: FontWeight.w500);
 
 //validation for mobile
 const String mobilePattern = r'(^(?:[+0]9)?[0-9]{10,12}$)';

@@ -44,7 +44,7 @@ class _LoginPageState extends State<LoginPage> {
       );
     } on FirebaseAuthException {
       setState(() {
-        final snackBar = const SnackBar(
+        const snackBar = SnackBar(
           duration: Duration(seconds: 2),
           content: Text("Please Fill in Your Email and Password"),
           backgroundColor: Colors.red,
@@ -70,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
       }
     } on FirebaseAuthException {
       setState(() {
-        final snackBar = const SnackBar(
+        const snackBar = SnackBar(
           duration: Duration(seconds: 2),
           content: Text("Please Fill in Your Email and Password"),
           backgroundColor: Colors.red,
@@ -255,7 +255,7 @@ class _LoginPageState extends State<LoginPage> {
       await Auth().signInWithGoogle();
     } on FirebaseAuthException {
       setState(() {
-        final snackBar = const SnackBar(
+        const snackBar = SnackBar(
           duration: Duration(seconds: 2),
           content: Text("Please Fill in Your Email and Password"),
           backgroundColor: Colors.red,
@@ -272,7 +272,7 @@ class _LoginPageState extends State<LoginPage> {
       await Auth().signInWithFacebook();
     } on FirebaseAuthException {
       setState(() {
-        final snackBar = const SnackBar(
+        const snackBar = SnackBar(
           duration: Duration(seconds: 2),
           content: Text("Please Fill in Your Email and Password"),
           backgroundColor: Colors.red,
