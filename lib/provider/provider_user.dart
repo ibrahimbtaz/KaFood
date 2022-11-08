@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:mycatering/login/auth.dart';
 
 class UserProvider with ChangeNotifier {
-  Auth _auth = Auth();
+  final Auth _auth = Auth();
   DocumentSnapshot? ds;
 
   getUserData() {

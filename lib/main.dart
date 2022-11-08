@@ -29,9 +29,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'MyCatering',
       theme: ThemeData(
-        backgroundColor: Color.fromARGB(255, 255, 250, 240),
-        primaryColor: Color(0xff425f57),
-        accentColor: Color(0xFFFFFFFF),
+        backgroundColor: white,
+        primaryColor: maincolor,
         appBarTheme: const AppBarTheme(
           elevation: 0,
           backgroundColor: maincolor,

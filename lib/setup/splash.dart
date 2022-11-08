@@ -16,7 +16,7 @@ class _splashscreenState extends State<splashscreen> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 2), () {
+    Timer(const Duration(seconds: 2), () {
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
@@ -24,7 +24,7 @@ class _splashscreenState extends State<splashscreen> {
               stream: Auth().authStateChanges,
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
-                  return activitymain();
+                  return const activitymain();
                 } else {
                   return const onboarding();
                 }
@@ -41,7 +41,7 @@ class _splashscreenState extends State<splashscreen> {
       home: Scaffold(
         body: Container(
           color: Colors.white,
-          child: Center(
+          child: const Center(
             child: Image(
               width: 260,
               height: 260,

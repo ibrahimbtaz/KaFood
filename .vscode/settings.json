@@ -3,5 +3,9 @@
     "cSpell.words": [
         "firbase"
     ],
-    "java.configuration.updateBuildConfiguration": "interactive"
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true,
+    },
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "cmake.configureOnOpen": false
 }

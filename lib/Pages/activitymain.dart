@@ -1,7 +1,5 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:mycatering/Pages/MainMenu.dart';
 import 'package:mycatering/Pages/MainProfile.dart';
 import 'package:mycatering/Pages/home/home.dart';
@@ -18,7 +16,7 @@ class _activitymainState extends State<activitymain> {
   int tab = 0;
   final screen = [
     HomePage(),
-    MainMenu(),
+    const MainMenu(),
     MainProfile(),
   ];
 
@@ -30,12 +28,24 @@ class _activitymainState extends State<activitymain> {
         index: tab,
         color: maincolor,
         backgroundColor: Colors.transparent,
-        animationDuration: Duration(milliseconds: 300),
+        animationDuration: const Duration(milliseconds: 300),
         animationCurve: Curves.easeIn,
-        items: [
-          Icon(Icons.home, size: 30, color: white,),
-          Icon(Icons.menu, size: 30, color: white,),
-          Icon(Icons.person, size: 30, color: white,),
+        items: const [
+          Icon(
+            Icons.home,
+            size: 30,
+            color: white,
+          ),
+          Icon(
+            Icons.menu,
+            size: 30,
+            color: white,
+          ),
+          Icon(
+            Icons.person,
+            size: 30,
+            color: white,
+          ),
         ],
         onTap: (index) {
           setState(() {
@@ -45,5 +55,4 @@ class _activitymainState extends State<activitymain> {
       ),
     );
   }
-
 }

@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class Catering {
   String title;
   String subtitle;
@@ -7,7 +5,8 @@ class Catering {
   String imageURL;
   List<String> detailUrl;
 
-  Catering(this.title, this.subtitle, this.price, this.imageURL, this.detailUrl);
+  Catering(
+      this.title, this.subtitle, this.price, this.imageURL, this.detailUrl);
   static List<Catering> generateCatering() {
     return [
       Catering(
@@ -34,7 +33,6 @@ class Catering {
           'Rp. 9.000.00/pcs',
           'assets/images/img_4.png',
           ['assets/images/img_4.png', 'assets/images/img_4.png']),
-
     ];
   }
 }
