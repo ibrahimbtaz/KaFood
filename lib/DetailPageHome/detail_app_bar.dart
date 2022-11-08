@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/material.dart';
 import 'package:mycatering/models/catering.dart';
 
 class DetailAppBarHome extends StatefulWidget {
   final Catering catering;
-  DetailAppBarHome(this.catering);
+  const DetailAppBarHome(this.catering);
 
   @override
   State<DetailAppBarHome> createState() => _DetailAppBarHomeState();
@@ -22,48 +22,50 @@ class _DetailAppBarHomeState extends State<DetailAppBarHome> {
             child: CarouselSlider(
               carouselController: _controller,
               options: CarouselOptions(
-                height: 400,
-                viewportFraction: 1,
-                onPageChanged: (index,reason) {
-                  setState(() {
-                    _curentPage = index;
-                  });
-                }
-              ),
-              items: widget.catering.detailUrl.map((e) => Builder(
-                  builder: (context) => Container(
-                    margin: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      image: DecorationImage(image: AssetImage('$e'),
-                      fit: BoxFit.fitHeight),
-                      borderRadius: BorderRadius.circular(25)
-                    ),
-                  )),
-            ).toList(),
-          ),
+                  height: 400,
+                  viewportFraction: 1,
+                  onPageChanged: (index, reason) {
+                    setState(() {
+                      _curentPage = index;
+                    });
+                  }),
+              items: widget.catering.detailUrl
+                  .map(
+                    (e) => Builder(
+                        builder: (context) => Container(
+                              margin: const EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: AssetImage(e),
+                                      fit: BoxFit.fitHeight),
+                                  borderRadius: BorderRadius.circular(25)),
+                            )),
+                  )
+                  .toList(),
+            ),
           ),
           Positioned(
-            bottom: 30,
+              bottom: 30,
               left: 180,
               child: Row(
-            children: widget.catering.detailUrl.asMap().entries.map((entry) =>
-                GestureDetector(
-                  onTap: () => _controller.animateToPage(entry.key),
-                  child: Container(
-                    margin: EdgeInsets.symmetric(horizontal: 4),
-                    width: 12,
-                    height: 12,
-                    decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Color.fromARGB(255, 255, 255, 255).withOpacity(
-                    _curentPage == entry.key ? 0.9 : 0.4
-                  )
-              ),
-            ),
-                )
-            ).toList(),
-          )
-          ),
+                children: widget.catering.detailUrl
+                    .asMap()
+                    .entries
+                    .map((entry) => GestureDetector(
+                          onTap: () => _controller.animateToPage(entry.key),
+                          child: Container(
+                            margin: const EdgeInsets.symmetric(horizontal: 4),
+                            width: 12,
+                            height: 12,
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: const Color.fromARGB(255, 255, 255, 255)
+                                    .withOpacity(
+                                        _curentPage == entry.key ? 0.9 : 0.4)),
+                          ),
+                        ))
+                    .toList(),
+              )),
           Container(
             padding: EdgeInsets.only(
               top: MediaQuery.of(context).padding.top,
@@ -74,17 +76,16 @@ class _DetailAppBarHomeState extends State<DetailAppBarHome> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     Navigator.of(context).pop();
                   },
                   child: Container(
-                    padding: EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.9),
-                      shape: BoxShape.circle
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 10),
+                        color: Colors.white.withOpacity(0.9),
+                        shape: BoxShape.circle),
+                    child: const Padding(
+                      padding: EdgeInsets.only(left: 10),
                       child: Icon(
                         Icons.arrow_back_ios,
                         color: Color.fromARGB(255, 66, 95, 87),
@@ -94,12 +95,11 @@ class _DetailAppBarHomeState extends State<DetailAppBarHome> {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.9),
-                    shape: BoxShape.circle
-                  ),
-                  child: Icon(
+                      color: Colors.white.withOpacity(0.9),
+                      shape: BoxShape.circle),
+                  child: const Icon(
                     Icons.more_horiz,
                     color: Color.fromARGB(255, 66, 95, 87),
                     size: 20,
@@ -113,4 +113,3 @@ class _DetailAppBarHomeState extends State<DetailAppBarHome> {
     );
   }
 }
-

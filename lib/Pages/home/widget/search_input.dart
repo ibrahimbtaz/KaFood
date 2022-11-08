@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:mycatering/asset/asset.dart';
+import 'package:mycatering/models/asset.dart';
 
 class SearchInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 25, right: 25),
+      margin: const EdgeInsets.only(left: 25, right: 25),
       child: Column(
         children: [
           Row(
@@ -21,14 +21,14 @@ class SearchInput extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10),
                         borderSide: BorderSide.none),
                     hintText: 'Cari Catering',
-                    hintStyle: TextStyle(
+                    hintStyle: const TextStyle(
                       color: maincolor,
                       fontSize: 15,
                     ),
                     prefixIcon: Container(
-                      padding: EdgeInsets.all(15),
-                      child: Image.asset('assets/icons/search.png'),
+                      padding: const EdgeInsets.all(15),
                       width: 50,
+                      child: Image.asset('assets/icons/search.png'),
                     ),
                   ),
                 ),

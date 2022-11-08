@@ -3,9 +3,11 @@
     "cSpell.words": [
         "firbase"
     ],
+    "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
+        "source.organizeImports": true,
         "source.fixAll": true,
-    },
+    },  
     "java.configuration.updateBuildConfiguration": "interactive",
     "cmake.configureOnOpen": false
 }

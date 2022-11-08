@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-
 
 class DetailPageHome extends StatefulWidget {
   const DetailPageHome({Key? key}) : super(key: key);
@@ -15,4 +13,3 @@ class _DetailPageHomeState extends State<DetailPageHome> {
     return Container();
   }
 }
-

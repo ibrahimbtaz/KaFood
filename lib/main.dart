@@ -1,8 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:mycatering/asset/asset.dart';
-import 'package:mycatering/provider/provider_user.dart';
+import 'package:mycatering/models/asset.dart';
+import 'package:mycatering/login/provider/provider_user.dart';
 import 'package:mycatering/setup/splash.dart';
 import 'package:provider/provider.dart';
 
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: white,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: splashscreen(),
+      home: const splashscreen(),
       builder: EasyLoading.init(),
     );
   }

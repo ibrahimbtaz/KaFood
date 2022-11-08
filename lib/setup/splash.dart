@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:mycatering/Login/auth.dart';
 import 'package:mycatering/Pages/ActivityMain.dart';
-import 'package:mycatering/login/auth.dart';
 import 'package:mycatering/setup/onboarding.dart';
 
 class splashscreen extends StatefulWidget {
@@ -45,7 +45,7 @@ class _splashscreenState extends State<splashscreen> {
             child: Image(
               width: 260,
               height: 260,
-              image: AssetImage("lib/asset/logo.png"),
+              image: AssetImage("assets/images/logo.png"),
               // repeat: ImageRepeat.repeat,
             ),
           ),
