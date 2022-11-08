@@ -16,9 +16,9 @@ class MainProfile extends StatelessWidget {
   final User? user = Auth().currentUser;
 
   Future<void> signOut() async {
-    await Future.delayed(Duration(seconds: 1));
-    final snackBar = SnackBar(
-      duration: const Duration(seconds: 2),
+    await Future.delayed(const Duration(seconds: 1));
+    const snackBar = SnackBar(
+      duration: Duration(seconds: 2),
       content: Text("Log Out"),
       backgroundColor: Colors.red,
     );
@@ -41,7 +41,7 @@ class MainProfile extends StatelessWidget {
                     .image,
             radius: 60,
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Text(
@@ -49,7 +49,7 @@ class MainProfile extends StatelessWidget {
             style: const TextStyle(
                 fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black),
           ),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           Text(
@@ -65,34 +65,34 @@ class MainProfile extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         backgroundColor: maincolor,
-        textStyle:
-            TextStyle(color: white, fontSize: 16, fontWeight: FontWeight.bold),
+        textStyle: const TextStyle(
+            color: white, fontSize: 16, fontWeight: FontWeight.bold),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(14),
         ),
       ),
       onPressed: signOut,
-      child: Text('Sign Out'),
+      child: const Text('Sign Out'),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    final _userData = Provider.of<UserProvider>(context);
-    if (_userData.ds == null) {
-      _userData.getUserData();
+    final userData = Provider.of<UserProvider>(context);
+    if (userData.ds == null) {
+      userData.getUserData();
     }
-    final Auth _auth = Auth();
+    final Auth auth = Auth();
     return Scaffold(
         appBar: AppBar(
           title: _title(),
         ),
         body: StreamBuilder<DocumentSnapshot>(
-          stream: _auth.users.doc(_auth.currentUser?.uid).snapshots(),
+          stream: auth.users.doc(auth.currentUser?.uid).snapshots(),
           builder:
               (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
             if (snapshot.hasError) {
-              return Text('Something went wrong');
+              return const Text('Something went wrong');
             }
 
             // if (snapshot.connectionState == ConnectionState.waiting) {
@@ -104,7 +104,7 @@ class MainProfile extends StatelessWidget {
             // }
 
             return Padding(
-              padding: EdgeInsets.symmetric(vertical: 20),
+              padding: const EdgeInsets.symmetric(vertical: 20),
               child: Container(
                 height: double.infinity,
                 width: double.infinity,
@@ -119,24 +119,25 @@ class MainProfile extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           CircleAvatar(
-                            backgroundImage: Image.network(
-                                    FirebaseAuth.instance.currentUser!.photoURL ??
-                                        "")
+                            backgroundImage: Image.network(FirebaseAuth
+                                        .instance.currentUser!.photoURL ??
+                                    "")
                                 .image,
                             radius: 60,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                           Text(
-                            FirebaseAuth.instance.currentUser!.displayName ?? "",
+                            FirebaseAuth.instance.currentUser!.displayName ??
+                                "",
                             // _userData.ds!['username'],
                             style: const TextStyle(
                                 fontSize: 30,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 5,
                           ),
                           Text(
@@ -147,35 +148,43 @@ class MainProfile extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(height: 40,),
+                    const SizedBox(
+                      height: 40,
+                    ),
                     Container(
-                      padding: EdgeInsets.symmetric(vertical: 20),
+                      padding: const EdgeInsets.symmetric(vertical: 20),
                       child: Column(
                         children: [
                           Container(
                             height: 48,
-                            padding: EdgeInsets.only(left: 50, right: 50),
-                            margin: EdgeInsets.only(top: 20),
+                            padding: const EdgeInsets.only(left: 50, right: 50),
+                            margin: const EdgeInsets.only(top: 20),
                             width: double.infinity,
                             child: OutlinedButton(
                               style: OutlinedButton.styleFrom(
-                                textStyle: TextStyle(
+                                textStyle: const TextStyle(
                                     color: white,
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold),
-                                    side: BorderSide(color: maincolor, width: 2),
+                                side: const BorderSide(
+                                    color: maincolor, width: 2),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20),
                                 ),
                               ),
-                              onPressed: (){},
+                              onPressed: () {},
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Icon(Icons.edit, color: Colors.black,),
-                                  SizedBox(width: 30,),
-                                  const Text("Edit Profile",
+                                children: const [
+                                  Icon(
+                                    Icons.edit,
+                                    color: Colors.black,
+                                  ),
+                                  SizedBox(
+                                    width: 30,
+                                  ),
+                                  Text("Edit Profile",
                                       style: TextStyle(
                                           color: Colors.black,
                                           fontSize: 16,
@@ -186,28 +195,34 @@ class MainProfile extends StatelessWidget {
                           ),
                           Container(
                             height: 48,
-                            padding: EdgeInsets.only(left: 50, right: 50),
-                            margin: EdgeInsets.only(top: 20),
+                            padding: const EdgeInsets.only(left: 50, right: 50),
+                            margin: const EdgeInsets.only(top: 20),
                             width: double.infinity,
                             child: OutlinedButton(
                               style: OutlinedButton.styleFrom(
-                                textStyle: TextStyle(
+                                textStyle: const TextStyle(
                                     color: white,
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold),
-                                    side: BorderSide(color: maincolor, width: 2),
+                                side: const BorderSide(
+                                    color: maincolor, width: 2),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20),
                                 ),
                               ),
-                              onPressed: (){},
+                              onPressed: () {},
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Icon(Icons.settings, color: Colors.black,),
-                                  SizedBox(width: 30,),
-                                  const Text("Settings",
+                                children: const [
+                                  Icon(
+                                    Icons.settings,
+                                    color: Colors.black,
+                                  ),
+                                  SizedBox(
+                                    width: 30,
+                                  ),
+                                  Text("Settings",
                                       style: TextStyle(
                                           color: Colors.black,
                                           fontSize: 16,
@@ -218,16 +233,17 @@ class MainProfile extends StatelessWidget {
                           ),
                           Container(
                             height: 48,
-                            padding: EdgeInsets.only(left: 50, right: 50),
-                            margin: EdgeInsets.only(top: 20),
+                            padding: const EdgeInsets.only(left: 50, right: 50),
+                            margin: const EdgeInsets.only(top: 20),
                             width: double.infinity,
                             child: OutlinedButton(
                               style: OutlinedButton.styleFrom(
-                                textStyle: TextStyle(
+                                textStyle: const TextStyle(
                                     color: white,
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold),
-                                    side: BorderSide(color: maincolor, width: 2),
+                                side: const BorderSide(
+                                    color: maincolor, width: 2),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20),
                                 ),
@@ -236,10 +252,15 @@ class MainProfile extends StatelessWidget {
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Icon(Icons.logout, color: Colors.black,),
-                                  SizedBox(width: 30,),
-                                  const Text("Log out",
+                                children: const [
+                                  Icon(
+                                    Icons.logout,
+                                    color: Colors.black,
+                                  ),
+                                  SizedBox(
+                                    width: 30,
+                                  ),
+                                  Text("Log out",
                                       style: TextStyle(
                                           color: Colors.black,
                                           fontSize: 16,

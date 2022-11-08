@@ -1,9 +1,4 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:mycatering/Pages/activitymain.dart';
 import 'package:mycatering/asset/asset.dart';
 import 'package:mycatering/setup/content_model.dart';
 import 'package:mycatering/login/input_login.dart';
@@ -64,20 +59,19 @@ class _onboardingState extends State<onboarding> {
                         ),
                         Text(
                           contents[i].title,
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontSize: 28, fontWeight: FontWeight.bold),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         Text(
                           contents[i].discription,
                           textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: maincolor,
-                            fontWeight: FontWeight.w500
-                          ),
+                          style: const TextStyle(
+                              fontSize: 18,
+                              color: maincolor,
+                              fontWeight: FontWeight.w500),
                         ),
                       ],
                     ),
@@ -95,33 +89,30 @@ class _onboardingState extends State<onboarding> {
           ),
           Container(
             height: 60,
-            margin: EdgeInsets.all(40),
+            margin: const EdgeInsets.all(40),
             width: double.infinity,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: maincolor,
-                textStyle: TextStyle(
-                  color: white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold
-                ),
+                textStyle: const TextStyle(
+                    color: white, fontSize: 16, fontWeight: FontWeight.bold),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
               ),
-              child: Text(
-                  currentIndex == contents.length - 1 ? "Start" : "Next"),
+              child:
+                  Text(currentIndex == contents.length - 1 ? "Start" : "Next"),
               onPressed: () {
                 if (currentIndex == contents.length - 1) {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (_) =>  Inputlogin(),
+                      builder: (_) => const Inputlogin(),
                     ),
                   );
                 }
                 _controller?.nextPage(
-                  duration: Duration(milliseconds: 100),
+                  duration: const Duration(milliseconds: 100),
                   curve: Curves.bounceIn,
                 );
               },
@@ -136,7 +127,7 @@ class _onboardingState extends State<onboarding> {
     return Container(
       height: 10,
       width: currentIndex == index ? 25 : 10,
-      margin: EdgeInsets.only(right: 5),
+      margin: const EdgeInsets.only(right: 5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: maincolor,

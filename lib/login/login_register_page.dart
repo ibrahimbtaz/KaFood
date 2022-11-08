@@ -23,7 +23,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final _formkey = GlobalKey<FormState>();
 
-  Auth _auth = Auth();
+  final Auth _auth = Auth();
 
   String? errorMessage = '';
   bool isLogin = true;
@@ -42,10 +42,10 @@ class _LoginPageState extends State<LoginPage> {
         email: _controllerEmail.text,
         password: _controllerPassword.text,
       );
-    } on FirebaseAuthException catch (e) {
+    } on FirebaseAuthException {
       setState(() {
-        final snackBar = SnackBar(
-          duration: const Duration(seconds: 2),
+        final snackBar = const SnackBar(
+          duration: Duration(seconds: 2),
           content: Text("Please Fill in Your Email and Password"),
           backgroundColor: Colors.red,
         );
@@ -68,10 +68,10 @@ class _LoginPageState extends State<LoginPage> {
           "username": _controllerUsername.text,
         });
       }
-    } on FirebaseAuthException catch (e) {
+    } on FirebaseAuthException {
       setState(() {
-        final snackBar = SnackBar(
-          duration: const Duration(seconds: 2),
+        final snackBar = const SnackBar(
+          duration: Duration(seconds: 2),
           content: Text("Please Fill in Your Email and Password"),
           backgroundColor: Colors.red,
         );
@@ -83,8 +83,8 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _logo() {
     return Container(
-      margin: EdgeInsets.only(bottom: 10),
-      child: Center(
+      margin: const EdgeInsets.only(bottom: 10),
+      child: const Center(
         child: Image(
           width: 260,
           height: 260,
@@ -101,19 +101,19 @@ class _LoginPageState extends State<LoginPage> {
   ) {
     return Container(
       alignment: Alignment.center,
-      padding: EdgeInsets.only(left: 20, right: 20),
+      padding: const EdgeInsets.only(left: 20, right: 20),
       height: 56,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(50),
         color: Colors.grey[200],
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
               offset: Offset(0, 10), blurRadius: 50, color: Color(0xffEEEEEE)),
         ],
       ),
       child: TextField(
         cursorColor: maincolor,
-        decoration: InputDecoration(
+        decoration: const InputDecoration(
           icon: Icon(
             Icons.person,
             color: maincolor,
@@ -133,20 +133,20 @@ class _LoginPageState extends State<LoginPage> {
   ) {
     return Container(
       alignment: Alignment.center,
-      margin: EdgeInsets.only(top: 10),
-      padding: EdgeInsets.only(left: 20, right: 20),
+      margin: const EdgeInsets.only(top: 10),
+      padding: const EdgeInsets.only(left: 20, right: 20),
       height: 56,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(50),
         color: Colors.grey[200],
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
               offset: Offset(0, 10), blurRadius: 50, color: Color(0xffEEEEEE)),
         ],
       ),
       child: TextField(
         cursorColor: maincolor,
-        decoration: InputDecoration(
+        decoration: const InputDecoration(
           icon: Icon(
             Icons.email,
             color: maincolor,
@@ -166,13 +166,13 @@ class _LoginPageState extends State<LoginPage> {
   ) {
     return Container(
       alignment: Alignment.center,
-      margin: EdgeInsets.only(top: 10),
-      padding: EdgeInsets.only(left: 20, right: 20),
+      margin: const EdgeInsets.only(top: 10),
+      padding: const EdgeInsets.only(left: 20, right: 20),
       height: 56,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
           color: Colors.grey[200],
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
                 offset: Offset(0, 10),
                 blurRadius: 50,
@@ -193,7 +193,7 @@ class _LoginPageState extends State<LoginPage> {
               color: maincolor,
             ),
           ),
-          icon: Icon(
+          icon: const Icon(
             Icons.lock,
             color: maincolor,
           ),
@@ -209,12 +209,12 @@ class _LoginPageState extends State<LoginPage> {
   Widget _submitButton() {
     return Container(
       height: 56,
-      margin: EdgeInsets.only(top: 20),
+      margin: const EdgeInsets.only(top: 20),
       width: double.infinity,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: maincolor,
-          textStyle: TextStyle(
+          textStyle: const TextStyle(
               color: white, fontSize: 16, fontWeight: FontWeight.bold),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
@@ -230,7 +230,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _loginOrRegisterButton() {
     return Container(
-      margin: EdgeInsets.only(top: 10),
+      margin: const EdgeInsets.only(top: 10),
       child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
         Text(
             isLogin ? "Don't Have Any Account? " : "Already Have an Account? "),
@@ -242,7 +242,7 @@ class _LoginPageState extends State<LoginPage> {
           },
           child: Text(
             isLogin ? 'Sign Up' : 'Login',
-            style: TextStyle(color: maincolor),
+            style: const TextStyle(color: maincolor),
           ),
         ),
       ]),
@@ -251,12 +251,12 @@ class _LoginPageState extends State<LoginPage> {
 
   Future<void> google() async {
     try {
-      await Future.delayed(Duration(seconds: 1));
+      await Future.delayed(const Duration(seconds: 1));
       await Auth().signInWithGoogle();
-    } on FirebaseAuthException catch (e) {
+    } on FirebaseAuthException {
       setState(() {
-        final snackBar = SnackBar(
-          duration: const Duration(seconds: 2),
+        final snackBar = const SnackBar(
+          duration: Duration(seconds: 2),
           content: Text("Please Fill in Your Email and Password"),
           backgroundColor: Colors.red,
         );
@@ -268,12 +268,12 @@ class _LoginPageState extends State<LoginPage> {
 
   Future<void> facebook() async {
     try {
-      await Future.delayed(Duration(seconds: 1));
+      await Future.delayed(const Duration(seconds: 1));
       await Auth().signInWithFacebook();
-    } on FirebaseAuthException catch (e) {
+    } on FirebaseAuthException {
       setState(() {
-        final snackBar = SnackBar(
-          duration: const Duration(seconds: 2),
+        final snackBar = const SnackBar(
+          duration: Duration(seconds: 2),
           content: Text("Please Fill in Your Email and Password"),
           backgroundColor: Colors.red,
         );
@@ -285,7 +285,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _google() {
     return Container(
-      margin: EdgeInsets.only(top: 20),
+      margin: const EdgeInsets.only(top: 20),
       height: 56,
       width: double.infinity,
       decoration: BoxDecoration(
@@ -294,7 +294,7 @@ class _LoginPageState extends State<LoginPage> {
       ),
       child: OutlinedButton(
         style: OutlinedButton.styleFrom(
-          side: BorderSide(color: maincolor, width: 2),
+          side: const BorderSide(color: maincolor, width: 2),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
           ),
@@ -303,15 +303,15 @@ class _LoginPageState extends State<LoginPage> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
+          children: const [
             Image(
               image: AssetImage("lib/asset/google.png"),
               width: 28,
             ),
-            const SizedBox(
+            SizedBox(
               width: 15,
             ),
-            const Text("Sign in with Google",
+            Text("Sign in with Google",
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 16,
@@ -324,7 +324,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _facebook() {
     return Container(
-      margin: EdgeInsets.only(top: 6),
+      margin: const EdgeInsets.only(top: 6),
       height: 56,
       width: double.infinity,
       decoration: BoxDecoration(
@@ -333,7 +333,7 @@ class _LoginPageState extends State<LoginPage> {
       ),
       child: OutlinedButton(
         style: OutlinedButton.styleFrom(
-          side: BorderSide(color: maincolor, width: 2),
+          side: const BorderSide(color: maincolor, width: 2),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
           ),
@@ -342,15 +342,15 @@ class _LoginPageState extends State<LoginPage> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
+          children: const [
             Image(
               image: AssetImage("lib/asset/fb.png"),
               width: 28,
             ),
-            const SizedBox(
+            SizedBox(
               width: 15,
             ),
-            const Text("Sign in with Facebook",
+            Text("Sign in with Facebook",
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 16,
@@ -370,7 +370,7 @@ class _LoginPageState extends State<LoginPage> {
           padding: const EdgeInsets.all(20),
           child: isLogin
               ? Padding(
-                  padding: EdgeInsets.only(top: 20),
+                  padding: const EdgeInsets.only(top: 20),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -386,7 +386,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 )
               : Padding(
-                  padding: EdgeInsets.only(top: 20),
+                  padding: const EdgeInsets.only(top: 20),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,

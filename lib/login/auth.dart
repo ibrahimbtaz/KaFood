@@ -11,12 +11,11 @@ class Auth {
 
   User? get currentUser => _firebaseAuth.currentUser;
 
-  FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   CollectionReference users = FirebaseFirestore.instance.collection('users');
 
   Stream<User?> get authStateChanges => _firebaseAuth.authStateChanges();
-
 
   Future<void> sendPasswordResetEmail({
     required String email,
@@ -32,7 +31,7 @@ class Auth {
       email: email,
       password: password,
     );
-    await Future.delayed(Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 1));
   }
 
   Future<void> createUserWithEmailAndPassword({
@@ -43,10 +42,10 @@ class Auth {
       email: email,
       password: password,
     );
-    await Future.delayed(Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 1));
   }
 
-  Future<void> addUserData({Map<String, dynamic>? data}) async{
+  Future<void> addUserData({Map<String, dynamic>? data}) async {
     // Call the user's CollectionReference to add a new user
     return users
         .doc(currentUser?.uid)
