@@ -25,8 +25,11 @@ class HomePage extends StatelessWidget {
                       // delegate to customize the search bar
                       delegate: CustomSearchDelegate());
                 },
-                icon:
-                    const Icon(Icons.notifications_rounded, color: maincolor, size: 26,),
+                icon: const Icon(
+                  Icons.notifications_rounded,
+                  color: maincolor,
+                  size: 26,
+                ),
               ),
             ]),
           ),
@@ -34,7 +37,7 @@ class HomePage extends StatelessWidget {
       ),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.only(bottom: 20),
+          padding: const EdgeInsets.only(bottom: 20),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -73,7 +76,7 @@ class CustomSearchDelegate extends SearchDelegate {
         onPressed: () {
           query = '';
         },
-        icon: Icon(Icons.clear),
+        icon: const Icon(Icons.clear),
       ),
     ];
   }
@@ -85,7 +88,7 @@ class CustomSearchDelegate extends SearchDelegate {
       onPressed: () {
         close(context, null);
       },
-      icon: Icon(Icons.arrow_back),
+      icon: const Icon(Icons.arrow_back),
     );
   }
 

@@ -3,32 +3,28 @@ import 'package:mycatering/DetailPageHome/Detail1.dart';
 import 'package:mycatering/asset/asset.dart';
 import 'package:mycatering/models/catering.dart';
 
-class ClothesItem extends StatelessWidget{
+class ClothesItem extends StatelessWidget {
   final Catering catering;
-  ClothesItem(this.catering);
+  const ClothesItem(this.catering);
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Container(
-      child:GestureDetector(
-        onTap: (){
+      child: GestureDetector(
+        onTap: () {
           Navigator.of(context).push(
-              MaterialPageRoute(
-                  builder: (context) => DetailPage1(catering)
-              )
-          );
+              MaterialPageRoute(builder: (context) => DetailPage1(catering)));
         },
         child: Card(
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15)
-          ),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Stack(
                 children: [
                   Container(
-                    margin: EdgeInsets.all(8),
+                    margin: const EdgeInsets.all(8),
                     height: 170,
                     width: 200,
                     decoration: BoxDecoration(
@@ -52,22 +48,24 @@ class ClothesItem extends StatelessWidget{
                   //         size:  15,),))
                 ],
               ),
-              Text(catering.title,
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    height: 1.5
-                ),),
-              Text(catering.subtitle,
-                style: TextStyle(
-                    fontWeight: FontWeight.normal,
-                    height: 1.5
-                ),),
-              Text(catering.price,
-                style: TextStyle(
+              Text(
+                catering.title,
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, height: 1.5),
+              ),
+              Text(
+                catering.subtitle,
+                style:
+                    const TextStyle(fontWeight: FontWeight.normal, height: 1.5),
+              ),
+              Text(
+                catering.price,
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   height: 1.5,
                   color: maincolor,
-                ),),
+                ),
+              ),
             ],
           ),
         ),

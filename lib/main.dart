@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: white,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: splashscreen(),
+      home: const splashscreen(),
       builder: EasyLoading.init(),
     );
   }

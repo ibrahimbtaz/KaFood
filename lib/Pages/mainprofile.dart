@@ -1,12 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:mycatering/asset/asset.dart';
 import 'package:mycatering/login/auth.dart';
-import 'package:mycatering/login/login_register_page.dart';
 import 'package:mycatering/provider/provider_user.dart';
 import 'package:provider/provider.dart';
 
