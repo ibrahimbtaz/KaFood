@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:mycatering/login/auth.dart';
+import 'package:mycatering/Login/auth.dart';
 
 class UserProvider with ChangeNotifier {
   final Auth _auth = Auth();

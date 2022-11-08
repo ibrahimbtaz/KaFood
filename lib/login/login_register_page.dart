@@ -1,17 +1,8 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:mycatering/Pages/activitymain.dart';
-import 'package:mycatering/asset/asset.dart';
-import 'package:mycatering/main.dart';
-import 'package:mycatering/setup/onboarding.dart';
-import 'package:provider/provider.dart';
-import 'package:rounded_loading_button/rounded_loading_button.dart';
-import 'auth.dart';
+import 'package:mycatering/Login/auth.dart';
+import 'package:mycatering/models/asset.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -88,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
         child: Image(
           width: 260,
           height: 260,
-          image: AssetImage("lib/asset/logo.png"),
+          image: AssetImage("assets/images/logo.png"),
           // repeat: ImageRepeat.repeat,
         ),
       ),
@@ -305,7 +296,7 @@ class _LoginPageState extends State<LoginPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: const [
             Image(
-              image: AssetImage("lib/asset/google.png"),
+              image: AssetImage("assets/images/google.png"),
               width: 28,
             ),
             SizedBox(
@@ -344,7 +335,7 @@ class _LoginPageState extends State<LoginPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: const [
             Image(
-              image: AssetImage("lib/asset/fb.png"),
+              image: AssetImage("assets/images/fb.png"),
               width: 28,
             ),
             SizedBox(

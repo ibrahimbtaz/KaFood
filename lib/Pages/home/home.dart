@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mycatering/Pages/home/widget/best_sell.dart';
 import 'package:mycatering/Pages/home/widget/new_arivval.dart';
 import 'package:mycatering/Pages/home/widget/search_input.dart';
-import 'package:mycatering/asset/asset.dart';
+import 'package:mycatering/models/asset.dart';
 
 class HomePage extends StatelessWidget {
   @override

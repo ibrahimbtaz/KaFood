@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mycatering/DetailPageHome/Detail1.dart';
-import 'package:mycatering/asset/asset.dart';
+import 'package:mycatering/models/asset.dart';
 import 'package:mycatering/models/catering.dart';
 
 class ClothesItem extends StatelessWidget {

@@ -10,7 +10,7 @@ class NewArivval extends StatelessWidget {
     return Container(
       child: Column(
         children: [
-          CategoriesList('Paling Populer'),
+          const CategoriesList('Paling Populer'),
           SizedBox(
             height: 270,
             child: ListView.separated(

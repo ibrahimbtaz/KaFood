@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:mycatering/Pages/MainMenu.dart';
 import 'package:mycatering/Pages/MainProfile.dart';
 import 'package:mycatering/Pages/home/home.dart';
-import 'package:mycatering/asset/asset.dart';
+import 'package:mycatering/models/asset.dart';
 
 class activitymain extends StatefulWidget {
   const activitymain({Key? key}) : super(key: key);

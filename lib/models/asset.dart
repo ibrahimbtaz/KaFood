@@ -10,11 +10,6 @@ const double defaultpadding = 20.0;
 
 const kSpacingUnit = 10;
 
-const facebook = "lib/img/Facebook.svg";
-const instagram = "lib/img/instagram.svg";
-const twitter = "lib/img/twitter.svg";
-const web = "lib/img/Internet.svg";
-
 //colors
 const Color kPrimaryColor = Color(0xFF345FB4);
 const Color kSecondaryColor = Color(0xFF6789CA);

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mycatering/Pages/home/widget/categories_list.dart';
 import 'package:mycatering/Pages/home/widget/detailpage.dart';
-import 'package:mycatering/asset/asset.dart';
+import 'package:mycatering/models/asset.dart';
 
 class BestSell extends StatelessWidget {
   @override
