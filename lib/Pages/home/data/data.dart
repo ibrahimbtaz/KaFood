@@ -1,4 +1,3 @@
-
 import '../models/food_model.dart';
 
 List<FoodModel> foodList = [
@@ -8,9 +7,9 @@ List<FoodModel> foodList = [
     name: "Tumpeng",
     image: "assets/images/img_2.png",
     description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in posuere dui. In hac habitasse platea dictumst. Morbi vitae tincidunt leo. Etiam id libero at turpis mollis posuere consectetur.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in posuere dui. In hac habitasse platea dictumst. Morbi vitae tincidunt leo. Etiam id libero at turpis mollis posuere consectetur.",
     rating: "4.2",
-    weight: "min order 7 pack",
+    weight: "Min Order 7 Pack",
   ),
   FoodModel(
     id: 2,
@@ -18,9 +17,9 @@ List<FoodModel> foodList = [
     name: "Nasi Padang",
     image: "assets/images/nasipadang.png",
     description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in posuere dui. In hac habitasse platea dictumst. Morbi vitae tincidunt leo. Etiam id libero at turpis mollis posuere consectetur.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in posuere dui. In hac habitasse platea dictumst. Morbi vitae tincidunt leo. Etiam id libero at turpis mollis posuere consectetur.",
     rating: "3.0",
-    weight: "min order 10 pack",
+    weight: "Min Order 10 Pack",
   ),
   FoodModel(
     id: 3,
@@ -28,9 +27,9 @@ List<FoodModel> foodList = [
     name: "Dessert Red Velvet",
     image: "assets/images/cake1.png",
     description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in posuere dui. In hac habitasse platea dictumst. Morbi vitae tincidunt leo. Etiam id libero at turpis mollis posuere consectetur.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in posuere dui. In hac habitasse platea dictumst. Morbi vitae tincidunt leo. Etiam id libero at turpis mollis posuere consectetur.",
     rating: '2.0',
-    weight: "min order 10 pack",
+    weight: "Min Order 10 Pack",
   ),
   FoodModel(
     id: 4,
@@ -38,9 +37,9 @@ List<FoodModel> foodList = [
     name: "Snack Box",
     image: "assets/images/snack1.png",
     description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in posuere dui. In hac habitasse platea dictumst. Morbi vitae tincidunt leo. Etiam id libero at turpis mollis posuere consectetur.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in posuere dui. In hac habitasse platea dictumst. Morbi vitae tincidunt leo. Etiam id libero at turpis mollis posuere consectetur.",
     rating: '2.0',
-    weight: "min order 25 pack",
+    weight: "Min Order 25 Pack",
   ),
   FoodModel(
     id: 5,
@@ -48,9 +47,9 @@ List<FoodModel> foodList = [
     name: "Chocolate Cake",
     image: "assets/images/cake2.png",
     description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in posuere dui. In hac habitasse platea dictumst. Morbi vitae tincidunt leo. Etiam id libero at turpis mollis posuere consectetur.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in posuere dui. In hac habitasse platea dictumst. Morbi vitae tincidunt leo. Etiam id libero at turpis mollis posuere consectetur.",
     rating: '5.0',
-    weight: "min order 3 pack",
+    weight: "Min Order 3 Pack",
   ),
   FoodModel(
     id: 6,
@@ -58,8 +57,8 @@ List<FoodModel> foodList = [
     name: "Salad Buah",
     image: "assets/images/salad1.png",
     description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in posuere dui. In hac habitasse platea dictumst. Morbi vitae tincidunt leo. Etiam id libero at turpis mollis posuere consectetur.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in posuere dui. In hac habitasse platea dictumst. Morbi vitae tincidunt leo. Etiam id libero at turpis mollis posuere consectetur.",
     rating: '2.0',
-    weight: "min order 10 pack",
+    weight: "Min Order 10 Pack",
   ),
 ];

@@ -18,7 +18,7 @@ List<UnbordingContent> contents = [
       image: 'assets/images/food.png',
       discription: "Many Kinds of Healthy, Delicious and Halal Food"),
   UnbordingContent(
-      title: 'Fast Delevery',
+      title: 'Fast Delivery',
       image: 'assets/images/delivery.png',
       discription:
           "My Catering is a Delivery Application That Has Super Fast Delivery"),
