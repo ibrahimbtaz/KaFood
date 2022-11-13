@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mycatering/models/asset.dart';
+import 'package:mycatering/models/constants.dart';
 
 class ProfileMenu extends StatelessWidget {
   const ProfileMenu({
@@ -17,14 +17,14 @@ class ProfileMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 6),
       child: TextButton(
         style: TextButton.styleFrom(
             foregroundColor: Colors.black,
             padding: const EdgeInsets.all(20),
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-            backgroundColor: white),
+            backgroundColor: kBorderColor),
         onPressed: press,
         child: Row(
           children: [
