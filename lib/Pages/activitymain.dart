@@ -15,7 +15,7 @@ class activitymain extends StatefulWidget {
 class _activitymainState extends State<activitymain> {
   int tab = 0;
   final screen = [
-    Home_Page(),
+    const HomePage(),
     const MainMenu(),
     MainProfile(),
   ];
@@ -24,34 +24,37 @@ class _activitymainState extends State<activitymain> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: screen[tab], //screen yang ada di navbar
-      bottomNavigationBar: CurvedNavigationBar(
-        index: tab,
-        color: maincolor,
-        backgroundColor: Colors.transparent,
-        animationDuration: const Duration(milliseconds: 300),
-        animationCurve: Curves.easeIn,
-        items: const [
-          Icon(
-            Icons.home,
-            size: 30,
-            color: white,
-          ),
-          Icon(
-            Icons.menu,
-            size: 30,
-            color: white,
-          ),
-          Icon(
-            Icons.person,
-            size: 30,
-            color: white,
-          ),
-        ],
-        onTap: (index) {
-          setState(() {
-            tab = index;
-          });
-        },
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.only(top: 20),
+        child: CurvedNavigationBar(
+          index: tab,
+          color: maincolor,
+          backgroundColor: Colors.transparent,
+          animationDuration: const Duration(milliseconds: 300),
+          animationCurve: Curves.easeIn,
+          items: const [
+            Icon(
+              Icons.home,
+              size: 30,
+              color: white,
+            ),
+            Icon(
+              Icons.menu,
+              size: 30,
+              color: white,
+            ),
+            Icon(
+              Icons.person,
+              size: 30,
+              color: white,
+            ),
+          ],
+          onTap: (index) {
+            setState(() {
+              tab = index;
+            });
+          },
+        ),
       ),
     );
   }

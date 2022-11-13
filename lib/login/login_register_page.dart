@@ -12,16 +12,12 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final _formkey = GlobalKey<FormState>();
-
+  
   final Auth _auth = Auth();
 
   String? errorMessage = '';
   bool isLogin = true;
   bool obscureText = true;
-  Map userdata = {};
-
-  GoogleSignInAccount? _currentAccount;
 
   final TextEditingController _controllerUsername = TextEditingController();
   final TextEditingController _controllerEmail = TextEditingController();
@@ -52,13 +48,6 @@ class _LoginPageState extends State<LoginPage> {
         email: _controllerEmail.text,
         password: _controllerPassword.text,
       );
-      if (UserCredential == null) {
-        _auth.addUserData(data: {
-          "email": _controllerEmail.text,
-          "password": _controllerPassword.text,
-          "username": _controllerUsername.text,
-        });
-      }
     } on FirebaseAuthException {
       setState(() {
         const snackBar = SnackBar(

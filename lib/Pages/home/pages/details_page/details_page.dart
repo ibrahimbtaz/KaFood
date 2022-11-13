@@ -4,6 +4,7 @@ import 'package:mycatering/Pages/home/models/food_model.dart';
 import 'package:mycatering/Pages/home/pages/details_page/components/counter.dart';
 import 'package:mycatering/Pages/home/pages/details_page/components/producklainnya.dart';
 import 'package:mycatering/Pages/home/pages/home_page/home_page.dart';
+import 'package:mycatering/models/asset.dart';
 import 'package:mycatering/models/constants.dart';
 
 import '../components/color_picker.dart';
@@ -37,22 +38,33 @@ class _Detail_PageState extends State<Detail_Page> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: Text(  
+          widget.foodModel.name,
+          style: Theme.of(context).textTheme.bodyText2!.copyWith(
+              fontSize: 20, color: white, fontWeight: FontWeight.bold),
+        ),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios_new_outlined), color: Color(0xfff3f3f3),
+          icon: const Icon(Icons.arrow_back_ios_new_outlined),
+          color: white,
           onPressed: () {
             Navigator.pop(context);
           },
         ),
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.add_shopping_cart), color: Color(
-            0xfff3f3f3))],
+        actions: [
+          IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.add_shopping_cart),
+              color: white)
+        ],
       ),
       body: ListView(
         physics: const BouncingScrollPhysics(),
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: size!.height * .030),
+            padding: EdgeInsets.symmetric(horizontal: size!.height * .040),
             child: Column(
               children: [
+                const SizedBox(height: 20),
                 Stack(
                   alignment: Alignment.bottomCenter,
                   children: [
@@ -61,13 +73,13 @@ class _Detail_PageState extends State<Detail_Page> {
                       child: color == null
                           ? Container()
                           : CircleAvatar(
-                        backgroundColor: color!.withOpacity(0.4),
-                        radius: size!.height * 0.140,
-                        child: CircleAvatar(
-                          radius: size!.height * 0.120,
-                          backgroundColor: color,
-                        ),
-                      ),
+                              backgroundColor: color!.withOpacity(0.4),
+                              radius: size!.height * 0.140,
+                              child: CircleAvatar(
+                                radius: size!.height * 0.120,
+                                backgroundColor: color,
+                              ),
+                            ),
                     ),
                     Hero(
                       tag: widget.foodModel.image,
@@ -88,12 +100,13 @@ class _Detail_PageState extends State<Detail_Page> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          widget.foodModel.name,
-                          style: Theme.of(context).textTheme.bodyText1!.
-                          copyWith(
-                            fontSize: 30
-                          )
+                        Text(widget.foodModel.name,
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyText1!
+                                .copyWith(fontSize: 30)),
+                        const SizedBox(
+                          height: 4,
                         ),
                         Text(
                           widget.foodModel.weight,
@@ -133,7 +146,7 @@ class _Detail_PageState extends State<Detail_Page> {
                   ],
                 ),
                 SizedBox(
-                  height: size!.height * .028,
+                  height: size!.height * .030,
                 ),
                 Text(
                   widget.foodModel.description,
@@ -176,7 +189,7 @@ class _Detail_PageState extends State<Detail_Page> {
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
                           elevation: 0,
-                          backgroundColor: kPrimaryColor,
+                          backgroundColor: maincolor,
                           shape: const StadiumBorder(),
                         ),
                         child: Text(
@@ -197,14 +210,14 @@ class _Detail_PageState extends State<Detail_Page> {
           const Divider(),
           Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: size!.height * .030,
-              vertical: size!.height * .012,
+              horizontal: size!.height * .040,
+              vertical: size!.height * .020,
             ),
             child: Text(
               "Product Lainnya",
               style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                fontSize: 20,
-              ),
+                    fontSize: 20,
+                  ),
             ),
           ),
           const SimilarFoods(),

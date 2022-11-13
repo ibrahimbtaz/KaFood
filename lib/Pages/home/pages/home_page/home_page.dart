@@ -4,69 +4,76 @@ import 'package:mycatering/Pages/home/models/food_model.dart';
 import 'package:mycatering/Pages/home/pages/details_page/details_page.dart';
 import 'package:mycatering/Pages/home/pages/home_page/components/food_item.dart';
 import 'package:mycatering/Pages/home/pages/home_page/components/home_deliver_ads.dart';
+import 'package:mycatering/models/asset.dart';
 
 Size? size;
 
-class Home_Page extends StatelessWidget {
-  const Home_Page({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   static final GlobalKey<ScaffoldState> _scaffoldkey =
-  GlobalKey<ScaffoldState>();
+      GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xffffffff),
-        title: const Text(
-          "MyCatering",
-          style: TextStyle(color: Color(0xff425f57)),
+        backgroundColor: white,
+        title: Row(
+          children: const [
+            Image(
+              height: 30,
+              image: AssetImage("assets/images/logo.png"),
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Text(
+              "MyCatering",
+              style: TextStyle(color: maincolor, fontWeight: FontWeight.bold),
+            ),
+          ],
         ),
         actions: [
           Container(
-            child: Row(
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      showSearch(
-                          context: context,
-                          delegate: CustomSearchDelegate());
-                    },
-                    icon: const Icon(Icons.search, color: Color((0xff425f57))),
-                  ),
-                  // IconButton(
-                  //   onPressed: () {
-                  //     // method to show the search bar
-                  //
-                  //   },
-                  //   icon: const Icon(Icons.notifications, color: Color((0xff425f57))),
-                  // ),
-                ]
-
-
-            ),
+            child: Row(children: [
+              IconButton(
+                onPressed: () {
+                  showSearch(
+                      context: context, delegate: CustomSearchDelegate());
+                },
+                icon: const Icon(Icons.search, color: maincolor),
+              ),
+            ]),
           ),
-
         ],
       ),
-
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: size!.width * .068),
+          padding: EdgeInsets.symmetric(horizontal: size!.width * .070),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "Promo Hari Ini",
-                style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                    fontSize: 30
-                )
+              const SizedBox(
+                height: 10,
               ),
-              SizedBox(
-                height: size!.height * .03,
+              Text("Promo Hari Ini",
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyText1!
+                      .copyWith(fontSize: 20)),
+              const SizedBox(
+                height: 20,
               ),
-
               const HomeDeliverAds(),
+              const SizedBox(height: 20),
+              Text("Menu Favorit",
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyText1!
+                      .copyWith(fontSize: 20)),
               const SizedBox(height: 20),
               GridView.builder(
                 itemCount: foodList.length,
@@ -111,7 +118,6 @@ class Home_Page extends StatelessWidget {
   }
 }
 
-
 class CustomSearchDelegate extends SearchDelegate {
 // Demo list to show querying
   List<String> searchTerms = [
@@ -133,7 +139,7 @@ class CustomSearchDelegate extends SearchDelegate {
         onPressed: () {
           query = '';
         },
-        icon: Icon(Icons.clear),
+        icon: const Icon(Icons.clear),
       ),
     ];
   }
@@ -145,7 +151,7 @@ class CustomSearchDelegate extends SearchDelegate {
       onPressed: () {
         close(context, null);
       },
-      icon: Icon(Icons.arrow_back),
+      icon: const Icon(Icons.arrow_back),
     );
   }
 
