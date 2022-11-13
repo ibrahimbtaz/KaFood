@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:mycatering/Login/auth.dart';
 import 'package:mycatering/models/asset.dart';
 
@@ -12,7 +11,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  
   final Auth _auth = Auth();
 
   String? errorMessage = '';
@@ -211,21 +209,25 @@ class _LoginPageState extends State<LoginPage> {
   Widget _loginOrRegisterButton() {
     return Container(
       margin: const EdgeInsets.only(top: 10),
-      child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-        Text(
-            isLogin ? "Don't Have Any Account? " : "Already Have an Account? "),
-        TextButton(
-          onPressed: () {
-            setState(() {
-              isLogin = !isLogin;
-            });
-          },
-          child: Text(
-            isLogin ? 'Sign Up' : 'Login',
-            style: const TextStyle(color: maincolor),
-          ),
-        ),
-      ]),
+      child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(isLogin
+                ? "Don't Have Any Account? "
+                : "Already Have an Account? "),
+            TextButton(
+              onPressed: () {
+                setState(() {
+                  isLogin = !isLogin;
+                });
+              },
+              child: Text(
+                isLogin ? 'Sign Up' : 'Login',
+                style: const TextStyle(color: maincolor),
+              ),
+            ),
+          ]),
     );
   }
 

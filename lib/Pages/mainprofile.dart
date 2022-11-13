@@ -38,7 +38,7 @@ class MainProfile extends StatelessWidget {
                 fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black),
           ),
           const SizedBox(
-            height: 5,
+            height: 4,
           ),
           Text(
             FirebaseAuth.instance.currentUser!.email ?? "",

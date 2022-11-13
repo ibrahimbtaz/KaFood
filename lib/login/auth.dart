@@ -9,7 +9,6 @@ class Auth {
   User? get currentUser => _firebaseAuth.currentUser;
 
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
-
   CollectionReference users = FirebaseFirestore.instance.collection('users');
 
   Stream<User?> get authStateChanges => _firebaseAuth.authStateChanges();
@@ -28,7 +27,6 @@ class Auth {
       email: email,
       password: password,
     );
-    await Future.delayed(const Duration(seconds: 1));
   }
 
   Future<void> createUserWithEmailAndPassword({
@@ -39,7 +37,6 @@ class Auth {
       email: email,
       password: password,
     );
-    await Future.delayed(const Duration(seconds: 1));
   }
 
   signInWithGoogle() async {
