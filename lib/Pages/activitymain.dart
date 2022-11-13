@@ -2,7 +2,7 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:mycatering/Pages/MainMenu.dart';
 import 'package:mycatering/Pages/MainProfile.dart';
-import 'package:mycatering/Pages/home/home.dart';
+import 'package:mycatering/Pages/home/pages/home_page/home_page.dart';
 import 'package:mycatering/models/asset.dart';
 
 class activitymain extends StatefulWidget {
@@ -15,7 +15,7 @@ class activitymain extends StatefulWidget {
 class _activitymainState extends State<activitymain> {
   int tab = 0;
   final screen = [
-    HomePage(),
+    Home_Page(),
     const MainMenu(),
     MainProfile(),
   ];

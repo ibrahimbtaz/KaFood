@@ -55,6 +55,8 @@ dependencies:
   carousel_slider: ^4.1.1
   fluttertoast: ^8.1.1
   flutter_easyloading: ^3.0.5
+  palette_generator: ^0.3.3+2
+  flutter_svg: ^1.1.5
 
 dev_dependencies:
   flutter_test:
