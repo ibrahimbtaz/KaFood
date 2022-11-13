@@ -49,13 +49,13 @@ class _FoodItemState extends State<FoodItem> {
                 child: color == null
                     ? Container()
                     : CircleAvatar(
-                  radius: 50,
-                  backgroundColor: color!.withOpacity(0.4),
-                  child: CircleAvatar(
-                    radius: 40,
-                    backgroundColor: color,
-                  ),
-                ),
+                        radius: 50,
+                        backgroundColor: color!.withOpacity(0.4),
+                        child: CircleAvatar(
+                          radius: 40,
+                          backgroundColor: color,
+                        ),
+                      ),
               ),
               Hero(
                 tag: widget.tag,
@@ -77,10 +77,13 @@ class _FoodItemState extends State<FoodItem> {
                     .bodyText1!
                     .copyWith(fontSize: 20),
               ),
-              const SizedBox(height: 7),
+              const SizedBox(height: 4),
               Text(
                 widget.foodModel.weight,
-                style: Theme.of(context).textTheme.bodyText2,
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyText2!
+                    .copyWith(fontSize: 14),
               ),
             ],
           ),
@@ -90,18 +93,11 @@ class _FoodItemState extends State<FoodItem> {
               Row(
                 children: [
                   Text(
-                    "",
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyText1!
-                        .copyWith(fontSize: 14),
-                  ),
-                  Text(
                     widget.foodModel.price.toString(),
                     style: Theme.of(context)
                         .textTheme
                         .bodyText1!
-                        .copyWith(fontSize: 19),
+                        .copyWith(fontSize: 18),
                   )
                 ],
               ),

@@ -38,7 +38,7 @@ class _Detail_PageState extends State<Detail_Page> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(  
+        title: Text(
           widget.foodModel.name,
           style: Theme.of(context).textTheme.bodyText2!.copyWith(
               fontSize: 20, color: white, fontWeight: FontWeight.bold),
@@ -57,171 +57,171 @@ class _Detail_PageState extends State<Detail_Page> {
               color: white)
         ],
       ),
-      body: ListView(
-        physics: const BouncingScrollPhysics(),
-        children: [
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: size!.height * .040),
-            child: Column(
-              children: [
-                const SizedBox(height: 20),
-                Stack(
-                  alignment: Alignment.bottomCenter,
-                  children: [
-                    Align(
-                      alignment: Alignment.center,
-                      child: color == null
-                          ? Container()
-                          : CircleAvatar(
-                              backgroundColor: color!.withOpacity(0.4),
-                              radius: size!.height * 0.140,
-                              child: CircleAvatar(
-                                radius: size!.height * 0.120,
-                                backgroundColor: color,
+      body: Padding(
+        padding: const EdgeInsets.only(bottom: 20),
+        child: ListView(
+          physics: const BouncingScrollPhysics(),
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: size!.height * .040),
+              child: Column(
+                children: [
+                  const SizedBox(height: 20),
+                  Stack(
+                    alignment: Alignment.bottomCenter,
+                    children: [
+                      Align(
+                        alignment: Alignment.center,
+                        child: color == null
+                            ? Container()
+                            : CircleAvatar(
+                                backgroundColor: color!.withOpacity(0.4),
+                                radius: size!.height * 0.140,
+                                child: CircleAvatar(
+                                  radius: size!.height * 0.120,
+                                  backgroundColor: color,
+                                ),
+                              ),
+                      ),
+                      Hero(
+                        tag: widget.foodModel.image,
+                        child: Image.asset(
+                          widget.foodModel.image,
+                          height: size!.height * .220,
+                          width: size!.height * .220,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: size!.height * .020,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(widget.foodModel.name,
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyText1!
+                              .copyWith(fontSize: 30)),
+                      Container(
+                        height: 40,
+                        width: 80,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(color: kBorderColor),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Icon(
+                              Icons.star,
+                              color: Color(0xfff2c94c),
+                            ),
+                            const SizedBox(
+                              width: 4,
+                            ),
+                            Text(
+                              widget.foodModel.rating.toString(),
+                              style: GoogleFonts.roboto(
+                                color: kTextColor,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 16.0,
                               ),
                             ),
-                    ),
-                    Hero(
-                      tag: widget.foodModel.image,
-                      child: Image.asset(
-                        widget.foodModel.image,
-                        height: size!.height * .220,
-                        width: size!.height * .220,
+                          ],
+                        ),
                       ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: size!.height * .020,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        widget.foodModel.weight,
+                        style: Theme.of(context).textTheme.bodyText2,
+                      ),
+                    ],
+                  ),
+                  Text(
+                    widget.foodModel.description,
+                    style: GoogleFonts.roboto(
+                      color: const Color(0xff4f4f4f),
+                      fontWeight: FontWeight.w400,
+                      fontSize: 13.0,
+                      height: 2.0,
                     ),
-                  ],
-                ),
-                SizedBox(
-                  height: size!.height * .020,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(widget.foodModel.name,
+                  ),
+                  SizedBox(
+                    height: size!.height * .040,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Text(
+                            "1 Pax :",
                             style: Theme.of(context)
                                 .textTheme
                                 .bodyText1!
-                                .copyWith(fontSize: 30)),
-                        const SizedBox(
-                          height: 4,
-                        ),
-                        Text(
-                          widget.foodModel.weight,
-                          style: Theme.of(context).textTheme.bodyText2,
-                        ),
-                      ],
-                    ),
-                    Container(
-                      height: 40,
-                      width: 80,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        border: Border.all(color: kBorderColor),
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Icon(
-                            Icons.star,
-                            color: Color(0xfff2c94c),
-                          ),
-                          const SizedBox(
-                            width: 4,
+                                .copyWith(fontSize: 15),
                           ),
                           Text(
-                            widget.foodModel.rating.toString(),
-                            style: GoogleFonts.roboto(
-                              color: kTextColor,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 16.0,
-                            ),
+                            widget.foodModel.price.toString(),
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyText1!
+                                .copyWith(fontSize: 15),
                           ),
                         ],
                       ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: size!.height * .030,
-                ),
-                Text(
-                  widget.foodModel.description,
-                  style: GoogleFonts.roboto(
-                    color: const Color(0xff4f4f4f),
-                    fontWeight: FontWeight.w400,
-                    fontSize: 13.0,
-                    height: 2.0,
-                  ),
-                ),
-                SizedBox(
-                  height: size!.height * .040,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        Text(
-                          "1 Pax :",
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyText1!
-                              .copyWith(fontSize: 13),
-                        ),
-                        Text(
-                          widget.foodModel.price.toString(),
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyText1!
-                              .copyWith(fontSize: 15),
-                        ),
-                      ],
-                    ),
-                    const Counter(),
-                    SizedBox(
-                      height: 40,
-                      width: 90,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          elevation: 0,
-                          backgroundColor: maincolor,
-                          shape: const StadiumBorder(),
-                        ),
-                        child: Text(
-                          "Buy now",
-                          style: GoogleFonts.roboto(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w500,
+                      const Counter(),
+                      SizedBox(
+                        height: 40,
+                        width: 90,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            elevation: 0,
+                            backgroundColor: maincolor,
+                            shape: const StadiumBorder(),
+                          ),
+                          child: Text(
+                            "Buy now",
+                            style: GoogleFonts.roboto(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                         ),
                       ),
+                    ],
+                  )
+                ],
+              ),
+            ),
+            SizedBox(height: size!.height * .040),
+            const Divider(),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: size!.height * .040,
+                vertical: size!.height * .020,
+              ),
+              child: Text(
+                "Product Lainnya",
+                style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                      fontSize: 20,
                     ),
-                  ],
-                )
-              ],
+              ),
             ),
-          ),
-          SizedBox(height: size!.height * .041),
-          const Divider(),
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: size!.height * .040,
-              vertical: size!.height * .020,
-            ),
-            child: Text(
-              "Product Lainnya",
-              style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                    fontSize: 20,
-                  ),
-            ),
-          ),
-          const SimilarFoods(),
-        ],
+            const SimilarFoods(),
+          ],
+        ),
       ),
     );
   }

@@ -23,11 +23,11 @@ class HomePage extends StatelessWidget {
         title: Row(
           children: const [
             Image(
-              height: 30,
+              height: 48,
               image: AssetImage("assets/images/logo.png"),
             ),
             SizedBox(
-              width: 10,
+              width: 4,
             ),
             Text(
               "MyCatering",
@@ -59,7 +59,7 @@ class HomePage extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              Text("Promo Hari Ini",
+              Text("Promo Today",
                   style: Theme.of(context)
                       .textTheme
                       .bodyText1!
@@ -69,7 +69,7 @@ class HomePage extends StatelessWidget {
               ),
               const HomeDeliverAds(),
               const SizedBox(height: 20),
-              Text("Menu Favorit",
+              Text("Favorites Menu",
                   style: Theme.of(context)
                       .textTheme
                       .bodyText1!
@@ -83,7 +83,7 @@ class HomePage extends StatelessWidget {
                   crossAxisCount: 2,
                   childAspectRatio: 0.7,
                   crossAxisSpacing: 30,
-                  mainAxisSpacing: 31,
+                  mainAxisSpacing: 25,
                 ),
                 itemBuilder: (context, index) {
                   FoodModel foodModel = foodList[index];
