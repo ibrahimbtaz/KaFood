@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
-const maincolor = Color.fromRGBO(66, 95, 87, 1);
+const maincolor = Color.fromRGBO(72, 36, 22, 1);
 
 const white = Colors.white;
 

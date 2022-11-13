@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 
 // list of colors that we use in our app
 const kBorderColor = Color(0xffE5E5E5);
-const kPrimaryColor = Color.fromRGBO(66, 95, 87, 1);
+const kPrimaryColor = Color.fromRGBO(72, 36, 22, 1);
 const kTextColor = Colors.black;
 const kTextLightColor = Color(0xffBDBDBD);
 
