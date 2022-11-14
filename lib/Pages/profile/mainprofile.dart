@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:mycatering/Pages/profile/body.dart';
+import 'package:mycatering/Pages/profile/components/body.dart';
 import 'package:mycatering/login/auth.dart';
 import 'package:mycatering/models/asset.dart';
 

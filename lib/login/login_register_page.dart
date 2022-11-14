@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:mycatering/Login/auth.dart';
 import 'package:mycatering/models/asset.dart';
 
+import 'dart:io';
+
+import 'package:provider/provider.dart';
+
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -231,7 +235,8 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Future<void> google() async {
+  Future google() async {
+    final Auth _auth = Auth();
     try {
       await Future.delayed(const Duration(seconds: 1));
       await Auth().signInWithGoogle();

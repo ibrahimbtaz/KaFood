@@ -13,7 +13,7 @@ List<FoodModel> foodList = [
   ),
   FoodModel(
     id: 2,
-    price: "RP. 11.500",
+    price: "Rp. 11.500",
     name: "Nasi Padang",
     image: "assets/images/nasipadang.png",
     description:
@@ -33,7 +33,7 @@ List<FoodModel> foodList = [
   ),
   FoodModel(
     id: 4,
-    price: 'RP. 21.000',
+    price: 'Rp. 21.000',
     name: "Snack Box",
     image: "assets/images/snack1.png",
     description:
@@ -43,7 +43,7 @@ List<FoodModel> foodList = [
   ),
   FoodModel(
     id: 5,
-    price: 'RP. 90.000',
+    price: 'Rp. 90.000',
     name: "Chocolate Cake",
     image: "assets/images/cake2.png",
     description:

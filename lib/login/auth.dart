@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_login_facebook/flutter_login_facebook.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Auth {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
@@ -12,6 +13,18 @@ class Auth {
   CollectionReference users = FirebaseFirestore.instance.collection('users');
 
   Stream<User?> get authStateChanges => _firebaseAuth.authStateChanges();
+
+  String? _uid;
+  String? get uid => _uid;
+
+  String? _imageUrl;
+  String? get imageUrl => _imageUrl;
+
+  String? _name;
+  String? get name => _name;
+
+  String? _email;
+  String? get email => _email;
 
   Future<void> sendPasswordResetEmail({
     required String email,
@@ -53,7 +66,12 @@ class Auth {
       idToken: googleAuth.idToken,
     );
     // Once signed in, return the UserCredential
-    return await FirebaseAuth.instance.signInWithCredential(credential);
+    final User userDetails =
+        (await FirebaseAuth.instance.signInWithCredential(credential)).user!;
+    // now save all values
+    _name = userDetails.displayName;
+    _email = userDetails.email;
+    _imageUrl = userDetails.photoURL;
   }
 
   signInWithFacebook() async {
@@ -84,6 +102,58 @@ class Auth {
       case FacebookLoginStatus.error:
         // Login procedure failed
         break;
+    }
+  }
+
+  Future getUserDataFromFirestore(uid) async {
+    await FirebaseFirestore.instance
+        .collection("users")
+        .doc(uid)
+        .get()
+        .then((DocumentSnapshot snapshot) => {
+              _uid = snapshot['uid'], 
+              _name = snapshot['name'],
+              _email = snapshot['email'],
+              _imageUrl = snapshot['image_url'],
+            });
+  }
+
+  Future saveDataToFirestore() async {
+    final DocumentReference r =
+        FirebaseFirestore.instance.collection("users").doc(uid);
+    await r.set({
+      "name": _name,
+      "email": _email,
+      "uid": _uid,
+      "image_url": _imageUrl,
+    });
+  }
+
+  Future saveDataToSharedPreferences() async {
+    final SharedPreferences s = await SharedPreferences.getInstance();
+    await s.setString('name', _name!);
+    await s.setString('email', _email!);
+    await s.setString('uid', _uid!);
+    await s.setString('image_url', _imageUrl!);
+  }
+
+  Future getDataFromSharedPreferences() async {
+    final SharedPreferences s = await SharedPreferences.getInstance();
+    _name = s.getString('name');
+    _email = s.getString('email');
+    _uid = s.getString('uid');
+    _imageUrl = s.getString('image_url');
+  }
+
+  Future<bool> checkUserExists() async {
+    DocumentSnapshot snap =
+        await FirebaseFirestore.instance.collection('users').doc(_uid).get();
+    if (snap.exists) {
+      print("EXISTING USER");
+      return true;
+    } else {
+      print("NEW USER");
+      return false;
     }
   }
 

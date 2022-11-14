@@ -1,8 +1,8 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:mycatering/Pages/MainMenu.dart';
-import 'package:mycatering/Pages/MainProfile.dart';
 import 'package:mycatering/Pages/home/pages/home_page/home_page.dart';
+import 'package:mycatering/Pages/profile/mainprofile.dart';
 import 'package:mycatering/models/asset.dart';
 
 class activitymain extends StatefulWidget {
@@ -27,6 +27,7 @@ class _activitymainState extends State<activitymain> {
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.only(top: 20),
         child: CurvedNavigationBar(
+          height: 60,
           index: tab,
           color: maincolor,
           backgroundColor: Colors.transparent,
