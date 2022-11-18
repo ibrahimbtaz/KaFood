@@ -1,9 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:mycatering/Pages/profile/components/profile_menu.dart';
-import 'package:mycatering/Pages/profile/components/userid.dart';
+import 'package:mycatering/screen/profile/components/profile_menu.dart';
+import 'package:mycatering/screen/profile/components/userid.dart';
 
-import 'package:mycatering/login/auth.dart';
+import 'package:mycatering/screen/inputlogin/auth/auth.dart';
 
 class Body extends StatelessWidget {
   final User? user = Auth().currentUser;

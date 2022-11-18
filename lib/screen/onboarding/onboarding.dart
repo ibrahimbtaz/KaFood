@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mycatering/login/input_login.dart';
+import 'package:mycatering/screen/inputlogin/input_login.dart';
 import 'package:mycatering/models/asset.dart';
-import 'package:mycatering/setup/content_model.dart';
+import 'package:mycatering/screen/onboarding/models/OnboardingModel.dart';
 
 class onboarding extends StatefulWidget {
   const onboarding({super.key});

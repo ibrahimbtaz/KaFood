@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mycatering/Pages/home/models/food_model.dart';
-import 'package:mycatering/Pages/home/pages/details_page/components/counter.dart';
-import 'package:mycatering/Pages/home/pages/details_page/components/producklainnya.dart';
+import 'package:mycatering/screen/home/models/food_model.dart';
+import 'package:mycatering/screen/details/components/counter.dart';
+import 'package:mycatering/screen/details/components/producklainnya.dart';
 import 'package:mycatering/Pages/home/pages/home_page/home_page.dart';
 import 'package:mycatering/models/asset.dart';
 import 'package:mycatering/models/constants.dart';
 
-import '../components/color_picker.dart';
+import '../home/components/color_picker.dart';
 
 class Detail_Page extends StatefulWidget {
   final FoodModel foodModel;
