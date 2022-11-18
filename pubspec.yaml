@@ -44,7 +44,7 @@ dependencies:
   shared_preferences: ^2.0.15
   connectivity_plus: ^3.0.2
   cloud_firestore: ^4.0.2
-  # flutter_launcher_icons: ^0.10.0
+  flutter_launcher_icons: ^0.10.0
   flutter_facebook_auth: ^4.4.1+1
   cached_network_image: ^3.2.2
   flutter_login_facebook: ^1.6.1
@@ -70,10 +70,10 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
 
-# flutter_icons:
-#   android: true
-#   ios: true
-#   image_path: "assets/images/logo.jpg"
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/icon.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

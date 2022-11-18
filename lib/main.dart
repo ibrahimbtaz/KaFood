@@ -1,8 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:mycatering/screen/splashscreen/splash.dart';
-import 'package:mycatering/utils/constant.dart';
+import 'package:mycatering/screen/splashscreen/Splash.dart';
+import 'package:mycatering/utils/Constant.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,6 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'MyCatering',
       theme: ThemeData(
+        fontFamily: 'Montserrat',
         backgroundColor: whiteColor,
         primaryColor: primary,
         appBarTheme: const AppBarTheme(

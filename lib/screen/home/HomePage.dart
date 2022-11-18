@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mycatering/screen/details/details_page.dart';
+import 'package:mycatering/screen/details/DetailPage.dart';
 import 'package:mycatering/screen/home/components/food_item.dart';
 import 'package:mycatering/screen/home/components/home_deliver_ads.dart';
 import 'package:mycatering/screen/home/models/food_model.dart';
-import 'package:mycatering/utils/constant.dart';
+import 'package:mycatering/utils/Constant.dart';
 
 Size? size;
 
@@ -94,7 +94,7 @@ class HomePage extends StatelessWidget {
                               (context, animation, secondaryAnimation) {
                             return FadeTransition(
                               opacity: animation,
-                              child: Detail_Page(
+                              child: DetailPage(
                                 foodModel: foodModel,
                               ),
                             );

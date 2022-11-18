@@ -2,21 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mycatering/screen/details/components/counter.dart';
 import 'package:mycatering/screen/details/components/producklainnya.dart';
-import 'package:mycatering/screen/home/home_page.dart';
+import 'package:mycatering/screen/home/HomePage.dart';
 import 'package:mycatering/screen/home/models/food_model.dart';
-import 'package:mycatering/utils/constant.dart';
+import 'package:mycatering/utils/Constant.dart';
 
 import '../home/components/color_picker.dart';
 
-class Detail_Page extends StatefulWidget {
+class DetailPage extends StatefulWidget {
   final FoodModel foodModel;
-  const Detail_Page({super.key, required this.foodModel});
+  const DetailPage({super.key, required this.foodModel});
 
   @override
-  State<Detail_Page> createState() => _Detail_PageState();
+  State<DetailPage> createState() => _DetailPageState();
 }
 
-class _Detail_PageState extends State<Detail_Page> {
+class _DetailPageState extends State<DetailPage> {
   Color? color;
   @override
   Widget build(BuildContext context) {

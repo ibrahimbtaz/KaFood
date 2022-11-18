@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mycatering/utils/constant.dart';
+import 'package:mycatering/utils/Constant.dart';
 
 class Counter extends StatefulWidget {
   const Counter({super.key});
@@ -38,7 +38,7 @@ class _CounterState extends State<Counter> {
               backgroundColor: Colors.white,
               child: const Icon(
                 Icons.remove,
-                color: Color(0xff2e3a59),
+                color: blackColor,
               ),
             ),
             Padding(

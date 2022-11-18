@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'package:mycatering/screen/home/home_page.dart';
-import 'package:mycatering/utils/constant.dart';
+import 'package:mycatering/screen/home/HomePage.dart';
+import 'package:mycatering/utils/Constant.dart';
 
 class HomeDeliverAds extends StatelessWidget {
   const HomeDeliverAds({super.key});
@@ -15,7 +14,7 @@ class HomeDeliverAds extends StatelessWidget {
           height: size!.height * .167,
           width: double.infinity,
           decoration: BoxDecoration(
-            color: const Color(0xff425f57),
+            color: primary,
             borderRadius: BorderRadius.circular(18),
             image: DecorationImage(
               fit: BoxFit.fitWidth,

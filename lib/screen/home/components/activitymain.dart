@@ -1,10 +1,9 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:mycatering/screen/home/home_page.dart';
+import 'package:mycatering/screen/home/HomePage.dart';
 import 'package:mycatering/screen/menu/components/mainmenu.dart';
 import 'package:mycatering/screen/profile/mainprofile.dart';
-import 'package:mycatering/utils/constant.dart';
-
+import 'package:mycatering/utils/Constant.dart';
 
 class activitymain extends StatefulWidget {
   const activitymain({Key? key}) : super(key: key);

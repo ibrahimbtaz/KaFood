@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mycatering/screen/inputlogin/auth/auth.dart';
-import 'package:mycatering/utils/constant.dart';
+import 'package:mycatering/utils/Constant.dart';
 
 import 'dart:io';
 

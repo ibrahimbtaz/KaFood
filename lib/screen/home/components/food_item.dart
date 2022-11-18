@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mycatering/screen/home/models/food_model.dart';
 import 'package:mycatering/screen/home/components/color_picker.dart';
-import 'package:mycatering/utils/constant.dart';
+import 'package:mycatering/screen/home/models/food_model.dart';
+import 'package:mycatering/utils/Constant.dart';
 
 class FoodItem extends StatefulWidget {
   final FoodModel foodModel;
