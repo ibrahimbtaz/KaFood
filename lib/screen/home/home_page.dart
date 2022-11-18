@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mycatering/screen/home/models/food_model.dart';
 import 'package:mycatering/screen/details/details_page.dart';
 import 'package:mycatering/screen/home/components/food_item.dart';
 import 'package:mycatering/screen/home/components/home_deliver_ads.dart';
-import 'package:mycatering/models/asset.dart';
+import 'package:mycatering/screen/home/models/food_model.dart';
+import 'package:mycatering/utils/constant.dart';
 
 Size? size;
 
@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
     size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: white,
+        backgroundColor: whiteColor,
         title: Row(
           children: const [
             Image(
@@ -30,7 +30,7 @@ class HomePage extends StatelessWidget {
             ),
             Text(
               "MyCatering",
-              style: TextStyle(color: maincolor, fontWeight: FontWeight.bold),
+              style: TextStyle(color: primary, fontWeight: FontWeight.bold),
             ),
           ],
         ),
@@ -42,7 +42,7 @@ class HomePage extends StatelessWidget {
                   showSearch(
                       context: context, delegate: CustomSearchDelegate());
                 },
-                icon: const Icon(Icons.search, color: maincolor),
+                icon: const Icon(Icons.search, color: primary),
               ),
             ]),
           ),

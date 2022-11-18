@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mycatering/screen/home/models/food_model.dart';
 import 'package:mycatering/screen/home/components/color_picker.dart';
-import 'package:mycatering/models/constants.dart';
+import 'package:mycatering/utils/constant.dart';
 
 class FoodItem extends StatefulWidget {
   final FoodModel foodModel;
@@ -105,13 +105,13 @@ class _FoodItemState extends State<FoodItem> {
                 height: 30,
                 width: 30,
                 decoration: BoxDecoration(
-                  color: kPrimaryColor,
+                  color: primary,
                   borderRadius: BorderRadius.circular(4),
                 ),
                 child: const Center(
                   child: Icon(
                     Icons.add,
-                    color: Colors.white,
+                    color: whiteColor,
                   ),
                 ),
               ),

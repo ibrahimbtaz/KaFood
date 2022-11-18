@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mycatering/Pages/home/pages/home_page/home_page.dart';
-import 'package:mycatering/models/constants.dart';
+
+import 'package:mycatering/screen/home/home_page.dart';
+import 'package:mycatering/utils/constant.dart';
 
 class HomeDeliverAds extends StatelessWidget {
   const HomeDeliverAds({super.key});

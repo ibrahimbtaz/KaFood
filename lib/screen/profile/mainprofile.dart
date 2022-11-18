@@ -1,16 +1,49 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:mycatering/screen/profile/components/body.dart';
 import 'package:mycatering/screen/inputlogin/auth/auth.dart';
-import 'package:mycatering/models/asset.dart';
+import 'package:mycatering/screen/profile/components/body.dart';
+import 'package:mycatering/utils/constant.dart';
 
 class MainProfile extends StatelessWidget {
+  final User? user = Auth().currentUser;
+
   MainProfile({Key? key}) : super(key: key);
 
-  final User? user = Auth().currentUser;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: _title(),
+      ),
+      body: Container(
+        width: double.infinity,
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[Body()],
+        ),
+      ),
+    );
+  }
 
   Future<void> signOut() async {
     await Auth().signOut();
+  }
+
+  Widget _signOutButton() {
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: primary,
+        textStyle: const TextStyle(
+            color: whiteColor, fontSize: 16, fontWeight: FontWeight.bold),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(14),
+        ),
+      ),
+      onPressed: signOut,
+      child: const Text('Sign Out'),
+    );
   }
 
   Widget _title() {
@@ -45,39 +78,6 @@ class MainProfile extends StatelessWidget {
             style: const TextStyle(fontSize: 20, color: Colors.black),
           ),
         ],
-      ),
-    );
-  }
-
-  Widget _signOutButton() {
-    return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: maincolor,
-        textStyle: const TextStyle(
-            color: white, fontSize: 16, fontWeight: FontWeight.bold),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(14),
-        ),
-      ),
-      onPressed: signOut,
-      child: const Text('Sign Out'),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: _title(),
-      ),
-      body: Container(
-        width: double.infinity,
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[Body()],
-        ),
       ),
     );
   }

@@ -1,8 +1,10 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:mycatering/Pages/MainMenu.dart';
-import 'package:mycatering/Pages/home/pages/home_page/home_page.dart';
-import 'package:mycatering/Pages/profile/mainprofile.dart';
+import 'package:mycatering/screen/home/home_page.dart';
+import 'package:mycatering/screen/menu/components/mainmenu.dart';
+import 'package:mycatering/screen/profile/mainprofile.dart';
+import 'package:mycatering/utils/constant.dart';
+
 
 class activitymain extends StatefulWidget {
   const activitymain({Key? key}) : super(key: key);
@@ -28,7 +30,7 @@ class _activitymainState extends State<activitymain> {
         child: CurvedNavigationBar(
           height: 60,
           index: tab,
-          color: maincolor,
+          color: primary,
           backgroundColor: Colors.transparent,
           animationDuration: const Duration(milliseconds: 300),
           animationCurve: Curves.easeIn,
@@ -36,17 +38,17 @@ class _activitymainState extends State<activitymain> {
             Icon(
               Icons.home,
               size: 30,
-              color: white,
+              color: whiteColor,
             ),
             Icon(
               Icons.menu,
               size: 30,
-              color: white,
+              color: whiteColor,
             ),
             Icon(
               Icons.person,
               size: 30,
-              color: white,
+              color: whiteColor,
             ),
           ],
           onTap: (index) {

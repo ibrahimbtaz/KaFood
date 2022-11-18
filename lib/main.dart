@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:mycatering/screen/splashscreen/splash.dart';
+import 'package:mycatering/utils/constant.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,17 +20,16 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'MyCatering',
       theme: ThemeData(
-        backgroundColor: white,
-        primaryColor: maincolor,
+        backgroundColor: whiteColor,
+        primaryColor: primary,
         appBarTheme: const AppBarTheme(
           elevation: 0,
-          backgroundColor: maincolor,
+          backgroundColor: primary,
         ),
-        scaffoldBackgroundColor: white,
+        scaffoldBackgroundColor: whiteColor,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: const splashscreen(),
-      builder: EasyLoading.init(),
     );
   }
 }

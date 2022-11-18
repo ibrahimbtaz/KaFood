@@ -75,4 +75,3 @@ List<FoodModel> foodList = [
     weight: "Min Order 10 Pack",
   ),
 ];
-

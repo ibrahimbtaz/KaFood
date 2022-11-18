@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mycatering/screen/inputlogin/input_login.dart';
-import 'package:mycatering/models/asset.dart';
 import 'package:mycatering/screen/onboarding/models/OnboardingModel.dart';
+import 'package:mycatering/utils/constant.dart';
 
 class onboarding extends StatefulWidget {
   const onboarding({super.key});
@@ -47,7 +47,7 @@ class _onboardingState extends State<onboarding> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
-                          color: Colors.white,
+                          color: whiteColor,
                           child: Center(
                             child: Image(
                               width: 240,
@@ -70,7 +70,7 @@ class _onboardingState extends State<onboarding> {
                           textAlign: TextAlign.center,
                           style: const TextStyle(
                               fontSize: 18,
-                              color: maincolor,
+                              color: primary,
                               fontWeight: FontWeight.w500),
                         ),
                       ],
@@ -93,9 +93,9 @@ class _onboardingState extends State<onboarding> {
             width: double.infinity,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: maincolor,
+                backgroundColor: primary,
                 textStyle: const TextStyle(
-                    color: white, fontSize: 16, fontWeight: FontWeight.bold),
+                    color: whiteColor, fontSize: 16, fontWeight: FontWeight.bold),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
@@ -130,7 +130,7 @@ class _onboardingState extends State<onboarding> {
       margin: const EdgeInsets.only(right: 5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: maincolor,
+        color: primary,
       ),
     );
   }

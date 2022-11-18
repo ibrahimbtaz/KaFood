@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:mycatering/models/asset.dart';
+import 'package:mycatering/utils/constant.dart';
 
 class Userid extends StatelessWidget {
   const Userid({
@@ -10,12 +10,12 @@ class Userid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      color: whiteColor,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           CircleAvatar(
-            backgroundColor: white,
+            backgroundColor: whiteColor,
             backgroundImage:
                 Image.network(FirebaseAuth.instance.currentUser!.photoURL ?? "")
                     .image,

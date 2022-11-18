@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mycatering/screen/home/models/food_model.dart';
 import 'package:mycatering/screen/details/components/counter.dart';
 import 'package:mycatering/screen/details/components/producklainnya.dart';
-import 'package:mycatering/Pages/home/pages/home_page/home_page.dart';
-import 'package:mycatering/models/asset.dart';
-import 'package:mycatering/models/constants.dart';
+import 'package:mycatering/screen/home/home_page.dart';
+import 'package:mycatering/screen/home/models/food_model.dart';
+import 'package:mycatering/utils/constant.dart';
 
 import '../home/components/color_picker.dart';
 
@@ -19,21 +18,6 @@ class Detail_Page extends StatefulWidget {
 
 class _Detail_PageState extends State<Detail_Page> {
   Color? color;
-  Future getColor() async {
-    Color? color = await getImagePalette(
-      AssetImage(widget.foodModel.image),
-    );
-    setState(() {
-      this.color = color;
-    });
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    getColor();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,11 +25,11 @@ class _Detail_PageState extends State<Detail_Page> {
         title: Text(
           widget.foodModel.name,
           style: Theme.of(context).textTheme.bodyText2!.copyWith(
-              fontSize: 20, color: white, fontWeight: FontWeight.bold),
+              fontSize: 20, color: whiteColor, fontWeight: FontWeight.bold),
         ),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios_new_outlined),
-          color: white,
+          color: whiteColor,
           onPressed: () {
             Navigator.pop(context);
           },
@@ -54,7 +38,7 @@ class _Detail_PageState extends State<Detail_Page> {
           IconButton(
               onPressed: () {},
               icon: const Icon(Icons.add_shopping_cart),
-              color: white)
+              color: whiteColor)
         ],
       ),
       body: Padding(
@@ -108,7 +92,7 @@ class _Detail_PageState extends State<Detail_Page> {
                         height: 40,
                         width: 80,
                         decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: whiteColor,
                           border: Border.all(color: kBorderColor),
                           borderRadius: BorderRadius.circular(30),
                         ),
@@ -188,7 +172,7 @@ class _Detail_PageState extends State<Detail_Page> {
                           onPressed: () {},
                           style: ElevatedButton.styleFrom(
                             elevation: 0,
-                            backgroundColor: maincolor,
+                            backgroundColor: primary,
                             shape: const StadiumBorder(),
                           ),
                           child: Text(
@@ -224,5 +208,20 @@ class _Detail_PageState extends State<Detail_Page> {
         ),
       ),
     );
+  }
+
+  Future getColor() async {
+    Color? color = await getImagePalette(
+      AssetImage(widget.foodModel.image),
+    );
+    setState(() {
+      this.color = color;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getColor();
   }
 }

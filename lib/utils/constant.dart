@@ -1,24 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sizer/sizer.dart';
 
-const maincolor = Color.fromRGBO(72, 36, 22, 1);
+const Color primary = Color.fromRGBO(152, 168, 248, 1);
+const Color secondary = Color.fromRGBO(188, 206, 248, 1);
+const Color whiteColor = Colors.white;
+const Color blackColor = Colors.black;
 
-const white = Colors.white;
 
 const double defaultpadding = 20.0;
-
 const kSpacingUnit = 10;
-
 //colors
-const Color kPrimaryColor = Color(0xFF345FB4);
 const Color kSecondaryColor = Color(0xFF6789CA);
-const Color kTextBlackColor = Color(0xFF313131);
-const Color kTextWhiteColor = Color(0xFFFFFFFF);
 const Color kContainerColor = Color(0xFF777777);
 const Color kOtherColor = Color(0xFFF4F6F7);
 const Color kTextLightColor = Color(0xFFA5A5A5);
 const Color kErrorBorderColor = Color(0xFFE74C3C);
+const kBorderColor = Color(0xffE5E5E5);
+const kTextColor = Colors.black;
 
 //default value
 const kDefaultPadding = 20.0;
@@ -51,10 +50,14 @@ final kBottomBorderRadius = BorderRadius.only(
       Radius.circular(SizerUtil.deviceType == DeviceType.tablet ? 40 : 20),
 );
 
-final kInputTextStyle = GoogleFonts.poppins(
-    color: kTextBlackColor, fontSize: 11.sp, fontWeight: FontWeight.w500);
+// final kInputTextStyle = GoogleFonts.poppins(
+//     color: kTextBlackColor, fontSize: 11.sp, fontWeight: FontWeight.w500);
 
 //validation for mobile
 const String mobilePattern = r'(^(?:[+0]9)?[0-9]{10,12}$)';
 
+SvgPicture menuIcon = SvgPicture.asset("assets/icons/menu_duo_icon.svg");
+AssetImage ads1 = const AssetImage("assets/images/mycatering1ads.png");
+AssetImage ads2 = const AssetImage("assets/images/mycatering2ads.png");
+SvgPicture backicon = SvgPicture.asset("assets/icons/circle_left_icon.svg");
 

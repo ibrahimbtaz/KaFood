@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mycatering/models/constants.dart';
+import 'package:mycatering/utils/constant.dart';
 
 class Counter extends StatefulWidget {
   const Counter({super.key});
@@ -49,7 +49,7 @@ class _CounterState extends State<Counter> {
                 count.toString(),
                 style: GoogleFonts.roboto(
                   fontSize: 16,
-                  color: kTextColor,
+                  color: blackColor,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -64,7 +64,7 @@ class _CounterState extends State<Counter> {
               backgroundColor: Colors.white,
               child: const Icon(
                 Icons.add,
-                color: Color(0xff2e3a59),
+                color: blackColor,
               ),
             ),
           ],

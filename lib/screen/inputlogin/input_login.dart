@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mycatering/Login/auth.dart';
-import 'package:mycatering/Login/login_register_page.dart';
-import 'package:mycatering/Pages/ActivityMain.dart';
+import 'package:mycatering/screen/home/components/activitymain.dart';
+import 'package:mycatering/screen/inputlogin/auth/auth.dart';
+import 'package:mycatering/screen/inputlogin/login/login_register_page.dart';
+
 
 class Inputlogin extends StatefulWidget {
   const Inputlogin({Key? key}) : super(key: key);

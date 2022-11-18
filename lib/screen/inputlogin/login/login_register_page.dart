@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:mycatering/Login/auth.dart';
-import 'package:mycatering/models/asset.dart';
+import 'package:mycatering/screen/inputlogin/auth/auth.dart';
+import 'package:mycatering/utils/constant.dart';
 
 import 'dart:io';
 
@@ -94,11 +94,11 @@ class _LoginPageState extends State<LoginPage> {
         ],
       ),
       child: TextField(
-        cursorColor: maincolor,
+        cursorColor: primary,
         decoration: const InputDecoration(
           icon: Icon(
             Icons.person,
-            color: maincolor,
+            color: primary,
           ),
           hintText: "Enter Username",
           enabledBorder: InputBorder.none,
@@ -127,11 +127,11 @@ class _LoginPageState extends State<LoginPage> {
         ],
       ),
       child: TextField(
-        cursorColor: maincolor,
+        cursorColor: primary,
         decoration: const InputDecoration(
           icon: Icon(
             Icons.email,
-            color: maincolor,
+            color: primary,
           ),
           hintText: "Enter Email",
           enabledBorder: InputBorder.none,
@@ -162,7 +162,7 @@ class _LoginPageState extends State<LoginPage> {
           ]),
       child: TextField(
         obscureText: obscureText,
-        cursorColor: maincolor,
+        cursorColor: primary,
         decoration: InputDecoration(
           suffixIcon: GestureDetector(
             onTap: () {
@@ -172,12 +172,12 @@ class _LoginPageState extends State<LoginPage> {
             },
             child: Icon(
               obscureText ? Icons.visibility_off : Icons.visibility,
-              color: maincolor,
+              color: primary,
             ),
           ),
           icon: const Icon(
             Icons.lock,
-            color: maincolor,
+            color: primary,
           ),
           hintText: "Enter Password",
           enabledBorder: InputBorder.none,
@@ -195,9 +195,9 @@ class _LoginPageState extends State<LoginPage> {
       width: double.infinity,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: maincolor,
+          backgroundColor: primary,
           textStyle: const TextStyle(
-              color: white, fontSize: 16, fontWeight: FontWeight.bold),
+              color: whiteColor, fontSize: 16, fontWeight: FontWeight.bold),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
           ),
@@ -228,7 +228,7 @@ class _LoginPageState extends State<LoginPage> {
               },
               child: Text(
                 isLogin ? 'Sign Up' : 'Login',
-                style: const TextStyle(color: maincolor),
+                style: const TextStyle(color: primary),
               ),
             ),
           ]),
@@ -276,12 +276,12 @@ class _LoginPageState extends State<LoginPage> {
       height: 56,
       width: double.infinity,
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.white, width: 2),
+        border: Border.all(color: whiteColor, width: 2),
         borderRadius: const BorderRadius.all(Radius.circular(10)),
       ),
       child: OutlinedButton(
         style: OutlinedButton.styleFrom(
-          side: const BorderSide(color: maincolor, width: 2),
+          side: const BorderSide(color: primary, width: 2),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
           ),
@@ -315,12 +315,12 @@ class _LoginPageState extends State<LoginPage> {
       height: 56,
       width: double.infinity,
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.white, width: 2),
+        border: Border.all(color: whiteColor, width: 2),
         borderRadius: const BorderRadius.all(Radius.circular(10)),
       ),
       child: OutlinedButton(
         style: OutlinedButton.styleFrom(
-          side: const BorderSide(color: maincolor, width: 2),
+          side: const BorderSide(color: primary, width: 2),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
           ),
