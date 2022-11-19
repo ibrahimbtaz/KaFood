@@ -10,6 +10,8 @@ class MainMenu extends StatefulWidget {
 class _MainMenuState extends State<MainMenu> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      child: const Center(child: Text("Menu")),
+    );
   }
 }

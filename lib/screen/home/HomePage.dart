@@ -5,6 +5,7 @@ import 'package:mycatering/screen/home/components/home_deliver_ads.dart';
 import 'package:mycatering/screen/home/models/food_model.dart';
 import 'package:mycatering/utils/Constant.dart';
 
+
 Size? size;
 
 class HomePage extends StatelessWidget {
@@ -29,7 +30,7 @@ class HomePage extends StatelessWidget {
               width: 10,
             ),
             Text(
-              "MyCatering",
+              "KaFood",
               style: TextStyle(color: primary, fontWeight: FontWeight.bold),
             ),
           ],

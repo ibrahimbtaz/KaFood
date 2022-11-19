@@ -78,44 +78,55 @@ class _onboardingState extends State<onboarding> {
                   );
                 }),
           ),
-          Container(
+          Padding(
+            padding: const EdgeInsets.all(20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: List.generate(
-                contents.length,
-                (index) => buildDot(index, context),
-              ),
-            ),
-          ),
-          Container(
-            height: 60,
-            margin: const EdgeInsets.all(40),
-            width: double.infinity,
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: primary,
-                textStyle: const TextStyle(
-                    color: whiteColor, fontSize: 16, fontWeight: FontWeight.bold),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-              ),
-              child:
-                  Text(currentIndex == contents.length - 1 ? "Start" : "Next"),
-              onPressed: () {
-                if (currentIndex == contents.length - 1) {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const Inputlogin(),
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: List.generate(
+                      contents.length,
+                      (index) => buildDot(index, context),
                     ),
-                  );
-                }
-                _controller?.nextPage(
-                  duration: const Duration(milliseconds: 100),
-                  curve: Curves.bounceIn,
-                );
-              },
+                  ),
+                ),
+                const Spacer(),
+                SizedBox(
+                  height: 60,
+                  width: 100,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: primary,
+                      textStyle: const TextStyle(
+                          color: whiteColor,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(40),
+                      ),
+                    ),
+                    child: Text(
+                        currentIndex == contents.length - 1 ? "Start" : "Next"),
+                    onPressed: () {
+                      if (currentIndex == contents.length - 1) {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => const Inputlogin(),
+                          ),
+                        );
+                      }
+                      _controller?.nextPage(
+                        duration: const Duration(milliseconds: 100),
+                        curve: Curves.bounceIn,
+                      );
+                    },
+                  ),
+                ),
+              ],
             ),
           )
         ],

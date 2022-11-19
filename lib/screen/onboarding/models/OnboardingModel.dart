@@ -9,17 +9,17 @@ class UnbordingContent {
 
 List<UnbordingContent> contents = [
   UnbordingContent(
-      title: 'My Catering',
-      image: 'assets/images/logo.png',
-      discription:
-          "My Catering is the Best Food Delivery Application in Indonesia"),
+      image: 'assets/images/deliciousfood.jpg',
+      title: 'More Delicious Food',
+      discription: "There Are a Variety of Delicious Food That You Can Taste"),
   UnbordingContent(
-      title: 'Healthy Food',
-      image: 'assets/images/food.png',
-      discription: "Many Kinds of Healthy, Delicious and Halal Food"),
-  UnbordingContent(
-      title: 'Fast Delivery',
-      image: 'assets/images/delivery.png',
+      image: 'assets/images/healtyfood.jpg',
+      title: 'Taste the Delicacy of Healthy Food',
       discription:
-          "My Catering is a Delivery Application That Has Super Fast Delivery"),
+          "A Variety of Healthy and Nutritious Food That You Can Taste is Also Halal Certified!"),
+  UnbordingContent(
+      image: 'assets/images/deliveryfood.jpg',
+      title: 'Super Fast Food Delivery',
+      discription:
+          "Super-fast Food Delivery That Exceeds the Speed of Light and Can Blow Your Mind"),
 ];

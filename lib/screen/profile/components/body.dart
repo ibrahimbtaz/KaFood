@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mycatering/screen/inputlogin/auth/auth.dart';
-import 'package:mycatering/screen/profile/components/profile_menu.dart';
+import 'package:mycatering/screen/profile/components/ProfileMenu.dart';
 import 'package:mycatering/screen/profile/components/userid.dart';
 
 class Body extends StatelessWidget {
