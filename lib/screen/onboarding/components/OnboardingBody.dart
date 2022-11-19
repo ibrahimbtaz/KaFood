@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:mycatering/screen/onboarding/components/OnboardingContent.dart';
 
-class onboarding extends StatefulWidget {
-  const onboarding({super.key});
+class OnboardingBody extends StatefulWidget {
+  const OnboardingBody({super.key});
 
   @override
-  State<onboarding> createState() => _onboardingState();
+  State<OnboardingBody> createState() => _OnboardingBodyState();
 }
 
-class _onboardingState extends State<onboarding> {
+class _OnboardingBodyState extends State<OnboardingBody> {
   int currentIndex = 0;
   PageController? _controller;
 
@@ -27,8 +27,7 @@ class _onboardingState extends State<onboarding> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-        body: Center(
-      child: OnboardingContent(),
-    ));
+      body: Center(child: OnboardingContent()),
+    );
   }
 }

@@ -3,14 +3,14 @@ import 'package:mycatering/screen/inputlogin/InputLogin.dart';
 import 'package:mycatering/screen/onboarding/models/OnboardingModel.dart';
 import 'package:mycatering/utils/Constant.dart';
 
-class OnboardingContent extends StatefulWidget {
-  const OnboardingContent({super.key});
+class onboarding extends StatefulWidget {
+  const onboarding({super.key});
 
   @override
-  State<OnboardingContent> createState() => _OnboardingContentState();
+  State<onboarding> createState() => _onboardingState();
 }
 
-class _OnboardingContentState extends State<OnboardingContent> {
+class _onboardingState extends State<onboarding> {
   int currentIndex = 0;
   PageController? _controller;
 
@@ -28,80 +28,65 @@ class _OnboardingContentState extends State<OnboardingContent> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Stack(children: [
-        OnboardingContent(),
-        OnboardingBottom(currentIndex: currentIndex, controller: _controller)
-      ]),
+    return Scaffold(
+      body: Stack(
+        children: [
+          Expanded(
+            child: PageView.builder(
+                controller: _controller,
+                itemCount: contents.length,
+                onPageChanged: (int index) {
+                  setState(() {
+                    currentIndex = index;
+                  });
+                },
+                itemBuilder: (_, i) {
+                  return Container(
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage(contents[i].image),
+                            opacity: 0.7,
+                            fit: BoxFit.cover)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(40),
+                      child: Container(
+                        margin: const EdgeInsets.only(bottom: 190),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              contents[i].title,
+                              style: const TextStyle(
+                                  fontSize: 28,
+                                  fontWeight: FontWeight.bold,
+                                  color: whiteColor),
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            Text(
+                              contents[i].discription,
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(
+                                  fontSize: 18,
+                                  color: secondary,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  );
+                }),
+          ),
+          onboardingbottom(context),
+        ],
+      ),
     );
   }
 
-  Expanded OnboardingContent() {
-    return Expanded(
-      child: PageView.builder(
-          controller: _controller,
-          itemCount: contents.length,
-          onPageChanged: (int index) {
-            setState(() {
-              currentIndex = index;
-            });
-          },
-          itemBuilder: (_, i) {
-            return Container(
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage(contents[i].image),
-                      opacity: 0.7,
-                      fit: BoxFit.cover)),
-              child: Padding(
-                padding: const EdgeInsets.all(40),
-                child: Container(
-                  margin: const EdgeInsets.only(bottom: 190),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        contents[i].title,
-                        style: const TextStyle(
-                            fontSize: 28,
-                            fontWeight: FontWeight.bold,
-                            color: whiteColor),
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      Text(
-                        contents[i].discription,
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                            fontSize: 18,
-                            color: secondary,
-                            fontWeight: FontWeight.w500),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            );
-          }),
-    );
-  }
-}
-
-class OnboardingBottom extends StatelessWidget {
-  const OnboardingBottom({
-    Key? key,
-    required this.currentIndex,
-    required PageController? controller,
-  })  : _controller = controller,
-        super(key: key);
-
-  final int currentIndex;
-  final PageController? _controller;
-
-  @override
-  Widget build(BuildContext context) {
+  Widget onboardingbottom(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
@@ -116,7 +101,7 @@ class OnboardingBottom extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: List.generate(
                     contents.length,
-                    (index) => builtDot(index),
+                    (index) => buildDot(index, context),
                   ),
                 ),
               ),
@@ -160,7 +145,7 @@ class OnboardingBottom extends StatelessWidget {
     );
   }
 
-  Container builtDot(int index) {
+  Container buildDot(int index, BuildContext context) {
     return Container(
       height: 10,
       width: currentIndex == index ? 25 : 10,
