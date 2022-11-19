@@ -14,7 +14,7 @@ List<UnbordingContent> contents = [
       discription: "There Are a Variety of Delicious Food That You Can Taste"),
   UnbordingContent(
       image: 'assets/images/healtyfood.jpg',
-      title: 'Taste the Delicacy of Healthy Food',
+      title: 'Delicacy of Healthy Food',
       discription:
           "A Variety of Healthy and Nutritious Food That You Can Taste is Also Halal Certified!"),
   UnbordingContent(
