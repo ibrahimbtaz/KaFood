@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mycatering/screen/home/components/activitymain.dart';
+import 'package:mycatering/screen/inputlogin/login/LoginPage.dart';
 import 'package:mycatering/screen/inputlogin/auth/auth.dart';
-import 'package:mycatering/screen/inputlogin/login/login_register_page.dart';
+import 'package:mycatering/screen/inputlogin/login/components/LoginBody.dart';
 
 
 class Inputlogin extends StatefulWidget {

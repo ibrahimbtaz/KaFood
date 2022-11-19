@@ -1,20 +1,18 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter/src/widgets/framework.dart';
 import 'package:mycatering/screen/inputlogin/auth/auth.dart';
 import 'package:mycatering/utils/Constant.dart';
 
-import 'dart:io';
-
-import 'package:provider/provider.dart';
-
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class tempat extends StatefulWidget {
+  const tempat({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<tempat> createState() => _tempatState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _tempatState extends State<tempat> {
   final Auth _auth = Auth();
 
   String? errorMessage = '';
@@ -347,48 +345,8 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          width: double.infinity,
-          padding: const EdgeInsets.all(20),
-          child: isLogin
-              ? Padding(
-                  padding: const EdgeInsets.only(top: 20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      _logo(),
-                      _entryFieldEmail('email', _controllerEmail),
-                      _entryFieldPassword('password', _controllerPassword),
-                      _submitButton(),
-                      _google(),
-                      _facebook(),
-                      _loginOrRegisterButton(),
-                    ],
-                  ),
-                )
-              : Padding(
-                  padding: const EdgeInsets.only(top: 20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      _logo(),
-                      _entryFieldUsername('username', _controllerUsername),
-                      _entryFieldEmail('email', _controllerEmail),
-                      _entryFieldPassword('password', _controllerPassword),
-                      _submitButton(),
-                      _loginOrRegisterButton(),
-                    ],
-                  ),
-                ),
-        ),
-      ),
-    );
+    return Container();
   }
 }

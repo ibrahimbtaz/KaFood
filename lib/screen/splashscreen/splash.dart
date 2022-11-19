@@ -2,7 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:mycatering/screen/home/components/activitymain.dart';
+import 'package:mycatering/screen/inputlogin/InputLogin.dart';
 import 'package:mycatering/screen/inputlogin/auth/auth.dart';
+import 'package:mycatering/screen/inputlogin/login/components/LoginBody.dart';
 import 'package:mycatering/screen/onboarding/Onboarding.dart';
 
 class splashscreen extends StatefulWidget {
@@ -26,7 +28,7 @@ class _splashscreenState extends State<splashscreen> {
                 if (snapshot.hasData) {
                   return const activitymain();
                 } else {
-                  return const onboarding();
+                  return const Inputlogin();
                 }
               },
             ),

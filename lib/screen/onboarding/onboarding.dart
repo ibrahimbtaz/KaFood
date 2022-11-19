@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:mycatering/screen/onboarding/components/OnboardingContent.dart';
 
-class onboarding extends StatefulWidget {
-  const onboarding({super.key});
+class Onboarding extends StatefulWidget {
+  const Onboarding({super.key});
 
   @override
-  State<onboarding> createState() => _onboardingState();
+  State<Onboarding> createState() => _OnboardingState();
 }
 
-class _onboardingState extends State<onboarding> {
+class _OnboardingState extends State<Onboarding> {
   int currentIndex = 0;
   PageController? _controller;
 
