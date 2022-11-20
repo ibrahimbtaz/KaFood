@@ -65,7 +65,7 @@ class _MyBottomNavState extends State<MyBottomNav> {
                   'assets/icons/menu-fill-icon.svg',
                 ),
                 title: const Text(
-                  'Search',
+                  'Menu',
                   style: TextStyle(
                     color: blackColor,
                   ),
@@ -76,15 +76,15 @@ class _MyBottomNavState extends State<MyBottomNav> {
               /// Favorite
               SalomonBottomBarItem(
                 icon: SvgPicture.asset(
-                  'assets/icons/heart-outline-icon.svg',
+                  'assets/icons/cart-outline-icon.svg',
                   color: blackColor,
                 ),
                 activeIcon: SvgPicture.asset(
-                  'assets/icons/heart-fill-icon.svg',
+                  'assets/icons/cart-fill-icon.svg',
                   color: blackColor,
                 ),
                 title: const Text(
-                  'Favorit',
+                  'Cart',
                   style: TextStyle(
                     color: blackColor,
                   ),

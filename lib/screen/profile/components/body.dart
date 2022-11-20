@@ -4,7 +4,6 @@ import 'package:mycatering/screen/inputlogin/auth/auth.dart';
 import 'package:mycatering/screen/profile/components/ProfileMenu.dart';
 import 'package:mycatering/screen/profile/components/userid.dart';
 
-
 class Body extends StatelessWidget {
   final User? user = Auth().currentUser;
 
@@ -19,6 +18,11 @@ class Body extends StatelessWidget {
           ),
           const Userid(),
           const SizedBox(height: 20),
+          ProfileMenu(
+            text: "My Favorite",
+            icon: "assets/icons/User Icon.svg",
+            press: () => {},
+          ),
           ProfileMenu(
             text: "My Account",
             icon: "assets/icons/User Icon.svg",
