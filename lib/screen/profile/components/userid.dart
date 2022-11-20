@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mycatering/utils/Constant.dart';
@@ -14,18 +15,25 @@ class Userid extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          CircleAvatar(
-            backgroundColor: whiteColor,
-            backgroundImage:
-                Image.network(FirebaseAuth.instance.currentUser!.photoURL ?? "")
-                    .image,
-            radius: 80,
+          CachedNetworkImage(
+            imageUrl: FirebaseAuth.instance.currentUser!.photoURL ??
+                "https://cdn-icons-png.flaticon.com/512/1946/1946429.png",
+            imageBuilder: (context, imageProvider) => CircleAvatar(
+              backgroundColor: whiteColor,
+              backgroundImage: imageProvider,
+              radius: 80,
+            ),
+            placeholder: ((context, url) => const SizedBox(
+                  child: Center(
+                    child: CircularProgressIndicator(),
+                  ),
+                )),
           ),
           const SizedBox(
             height: 10,
           ),
           Text(
-            FirebaseAuth.instance.currentUser!.displayName ?? "",
+            FirebaseAuth.instance.currentUser!.displayName ?? "Surya Ibrahim",
             style: const TextStyle(
                 fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black),
           ),
@@ -33,7 +41,7 @@ class Userid extends StatelessWidget {
             height: 5,
           ),
           Text(
-            FirebaseAuth.instance.currentUser!.email ?? "",
+            FirebaseAuth.instance.currentUser!.email ?? "surya@gmail.com",
             style: const TextStyle(fontSize: 20, color: Colors.black),
           ),
         ],

@@ -78,7 +78,7 @@ class _FoodItemState extends State<FoodItem> {
                     widget.foodModel.name,
                     maxLines: 1,
                     style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                        fontSize: 18, overflow: TextOverflow.ellipsis),
+                        fontSize: 16, overflow: TextOverflow.ellipsis),
                   ),
                 ),
                 const SizedBox(
@@ -89,7 +89,7 @@ class _FoodItemState extends State<FoodItem> {
                   style: Theme.of(context)
                       .textTheme
                       .bodyText2!
-                      .copyWith(fontSize: 16),
+                      .copyWith(fontSize: 14),
                 ),
               ],
             ),

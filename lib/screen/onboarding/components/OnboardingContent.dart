@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mycatering/screen/inputlogin/InputLogin.dart';
-import 'package:mycatering/screen/inputlogin/components/MethodLogin.dart';
 import 'package:mycatering/screen/onboarding/models/OnboardingModel.dart';
 import 'package:mycatering/utils/Constant.dart';
 
@@ -65,10 +64,11 @@ class _OnboardingContentState extends State<OnboardingContent> {
                     children: [
                       Text(
                         contents[i].title,
-                        style: const TextStyle(
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context).textTheme.bodyText1!.copyWith(
                             fontSize: 28,
-                            fontWeight: FontWeight.bold,
-                            color: tertiary),
+                            color: tertiary,
+                            overflow: TextOverflow.fade),
                       ),
                       const SizedBox(
                         height: 20,

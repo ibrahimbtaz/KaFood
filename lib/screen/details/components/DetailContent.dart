@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mycatering/screen/cart/components/CartDB.dart';
+import 'package:mycatering/screen/cart/components/CartModel.dart';
 import 'package:mycatering/screen/details/components/Counter.dart';
 import 'package:mycatering/screen/details/components/DetailNewArrival.dart';
 import 'package:mycatering/screen/home/components/HomePage.dart';
@@ -18,6 +20,52 @@ class DetailContent extends StatefulWidget {
 
 class _DetailContentState extends State<DetailContent> {
   Color? color;
+  bool checkExist = false;
+  Color colorChecked = Colors.white;
+
+  Future getColor() async {
+    Color? color = await getImagePalette(
+      AssetImage(widget.foodModel.image),
+    );
+    setState(() {
+      this.color = color;
+    });
+  }
+
+  Future read() async {
+    checkExist = await CartDB.instance.read(widget.foodModel.name);
+    setState(() {});
+  }
+
+  Future addData() async {
+    CartModel fav;
+    fav = CartModel(
+        image: widget.foodModel.image.toString(),
+        name: widget.foodModel.name.toString(),
+        price: widget.foodModel.price.toString(),
+        rate: widget.foodModel.rate.toString());
+    await CartDB.instance.create(fav);
+    setState(() {
+      checkExist = true;
+    });
+    // Navigator.pop(context);
+  }
+
+  Future deleteData() async {
+    await CartDB.instance.delete(widget.foodModel.name);
+    setState(() {
+      checkExist = false;
+    });
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    read();
+    getColor();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -107,11 +155,12 @@ class _DetailContentState extends State<DetailContent> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(widget.foodModel.name,
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyText1!
-                      .copyWith(fontSize: 30)),
+              Flexible(
+                child: Text(widget.foodModel.name,
+                    maxLines: 1,
+                    style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                        fontSize: 24, overflow: TextOverflow.ellipsis)),
+              ),
               Container(
                 height: 40,
                 width: 80,
@@ -131,7 +180,7 @@ class _DetailContentState extends State<DetailContent> {
                       width: 4,
                     ),
                     Text(
-                      widget.foodModel.rating.toString(),
+                      widget.foodModel.rate.toString(),
                       style: GoogleFonts.roboto(
                         color: kTextColor,
                         fontWeight: FontWeight.w500,
@@ -187,56 +236,75 @@ class _DetailContentState extends State<DetailContent> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Counter(),
-                SizedBox(
-                  height: 50,
-                  width: 200,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      elevation: 0,
-                      backgroundColor: primary,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.0),
+                Transform.translate(
+                    offset: const Offset(-5, 0), child: const Counter()),
+                const Spacer(),
+                Transform.translate(
+                  offset: const Offset(-5, 0),
+                  child: SizedBox(
+                    height: 50,
+                    width: 140,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        elevation: 0,
+                        backgroundColor: primary,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20.0),
+                        ),
                       ),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          widget.foodModel.price.toString(),
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyText1!
-                              .copyWith(fontSize: 18, color: whiteColor),
-                        ),
-                        Text(
-                          "Order Now",
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyText1!
-                              .copyWith(fontSize: 16, color: whiteColor),
-                        ),
-                      ],
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            widget.foodModel.price.toString(),
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyText1!
+                                .copyWith(
+                                    fontSize: 16,
+                                    color: whiteColor,
+                                    overflow: TextOverflow.ellipsis),
+                          ),
+                          const Spacer(),
+                          Flexible(
+                            child: Text(
+                              "Buy",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyText1!
+                                  .copyWith(fontSize: 14, color: whiteColor),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
+                const Spacer(),
                 SizedBox(
                   height: 50,
                   width: 50,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      checkExist ? deleteData() : addData();
+                    },
                     style: ElevatedButton.styleFrom(
                       elevation: 0,
                       backgroundColor: whiteColor,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.0),
+                        borderRadius: BorderRadius.circular(20),
                       ),
                     ),
-                    child: SvgPicture.asset(
-                      'assets/icons/cart-outline-icon.svg',
-                      color: blackColor,
-                    ),
+                    child: checkExist
+                        ? SvgPicture.asset(
+                            'assets/icons/cart-outline-icon.svg',
+                            color: blackColor,
+                          )
+                        : SvgPicture.asset(
+                            'assets/icons/cart-fill-icon.svg',
+                            color: blackColor,
+                          ),
                   ),
                 ),
               ],
@@ -245,20 +313,5 @@ class _DetailContentState extends State<DetailContent> {
         ),
       ],
     );
-  }
-
-  Future getColor() async {
-    Color? color = await getImagePalette(
-      AssetImage(widget.foodModel.image),
-    );
-    setState(() {
-      this.color = color;
-    });
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    getColor();
   }
 }

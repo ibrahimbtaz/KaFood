@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mycatering/screen/details/Detail.dart';
-import 'package:mycatering/screen/details/components/DetailContent.dart';
 import 'package:mycatering/screen/home/components/HomeContent.dart';
 import 'package:mycatering/screen/home/components/HomePage.dart';
 import 'package:mycatering/screen/home/models/HomeModel.dart';
@@ -50,7 +49,7 @@ class _PopularMenuState extends State<PopularMenu> {
               primary: false,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                childAspectRatio: 1,
+                childAspectRatio: 0.7,
                 crossAxisSpacing: 25,
                 mainAxisSpacing: 20,
               ),

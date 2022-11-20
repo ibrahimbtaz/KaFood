@@ -9,7 +9,7 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return Container(
       padding: const EdgeInsets.symmetric(vertical: 20),
       child: Column(
         children: [
@@ -17,30 +17,25 @@ class Body extends StatelessWidget {
             height: 20,
           ),
           const Userid(),
-          const SizedBox(height: 20),
-          ProfileMenu(
-            text: "My Favorite",
-            icon: "assets/icons/User Icon.svg",
-            press: () => {},
-          ),
+          const SizedBox(height: 10),
           ProfileMenu(
             text: "My Account",
-            icon: "assets/icons/User Icon.svg",
+            icon: "assets/icons/user-solid.svg",
             press: () => {},
           ),
           ProfileMenu(
             text: "Edit Profile",
-            icon: "assets/icons/edit.svg",
+            icon: "assets/icons/edit-fill-icon.svg",
             press: () {},
           ),
           ProfileMenu(
             text: "Settings",
-            icon: "assets/icons/Settings.svg",
+            icon: "assets/icons/settings-fill-icon.svg",
             press: () {},
           ),
           ProfileMenu(
             text: "Log Out",
-            icon: "assets/icons/Log out.svg",
+            icon: "assets/icons/logout-fill-icon.svg",
             press: signOut,
           ),
         ],

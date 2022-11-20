@@ -44,7 +44,7 @@ class _DetailNewArrivalState extends State<DetailNewArrival> {
             ),
             padding: EdgeInsets.only(left: size!.width * .060),
             child: SizedBox(
-              height: size!.width * .50,
+              height: size!.width * .54,
               child: ListView.builder(
                 itemCount: foodList.length,
                 scrollDirection: Axis.horizontal,

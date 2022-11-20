@@ -16,25 +16,31 @@ class ProfileMenu extends StatelessWidget {
   //membuat Menu profile
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 6),
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 6),
       child: TextButton(
         style: TextButton.styleFrom(
-            foregroundColor: Colors.black,
-            padding: const EdgeInsets.all(20),
+            foregroundColor: quaternary,
+            padding: const EdgeInsets.all(18),
             shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-            backgroundColor: kBorderColor),
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+            backgroundColor: secondary),
         onPressed: press,
         child: Row(
           children: [
             SvgPicture.asset(
               icon,
-              color: Colors.black,
-              width: 22,
+              color: quaternary,
+              width: 20,
+              height: 20,
             ),
             const SizedBox(width: 20),
-            Expanded(child: Text(text)),
+            Expanded(
+                child: Text(
+              text,
+              style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                  fontSize: 14, fontWeight: FontWeight.bold, color: quaternary),
+            )),
             const Icon(Icons.arrow_forward_ios),
           ],
         ),

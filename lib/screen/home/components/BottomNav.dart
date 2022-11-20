@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mycatering/screen/favorite/MainFavorit.dart';
+import 'package:mycatering/screen/cart/MainCart.dart';
 import 'package:mycatering/screen/home/components/HomePage.dart';
 import 'package:mycatering/screen/menu/MainMenu.dart';
 import 'package:mycatering/screen/profile/mainprofile.dart';
@@ -19,7 +19,7 @@ class _MyBottomNavState extends State<MyBottomNav> {
   final screen = [
     const HomePage(),
     const MainMenu(),
-    const MainFavorit(),
+    const MainCart(),
     MainProfile(),
   ];
 

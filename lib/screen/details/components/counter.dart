@@ -3,7 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mycatering/utils/Constant.dart';
 
 class Counter extends StatefulWidget {
-  const Counter({super.key});
+  final productprice;
+  const Counter({super.key, this.productprice});
 
   @override
   State<Counter> createState() => _CounterState();
@@ -11,6 +12,7 @@ class Counter extends StatefulWidget {
 
 class _CounterState extends State<Counter> {
   int count = 1;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -41,17 +43,12 @@ class _CounterState extends State<Counter> {
                 color: blackColor,
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 8,
-              ),
-              child: Text(
-                count.toString(),
-                style: GoogleFonts.roboto(
-                  fontSize: 16,
-                  color: blackColor,
-                  fontWeight: FontWeight.w400,
-                ),
+            Text(
+              count.toString(),
+              style: GoogleFonts.roboto(
+                fontSize: 16,
+                color: blackColor,
+                fontWeight: FontWeight.w400,
               ),
             ),
             FloatingActionButton.small(
