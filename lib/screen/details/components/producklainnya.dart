@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mycatering/screen/home/components/food_item.dart';
-import 'package:mycatering/screen/home/HomePage.dart';
+import 'package:mycatering/screen/home/components/HomePage.dart';
+import 'package:mycatering/screen/home/components/HomeContent.dart';
 import 'package:mycatering/screen/home/models/food_model.dart';
 
 class SimilarFoods extends StatelessWidget {

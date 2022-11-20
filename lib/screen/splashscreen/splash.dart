@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:mycatering/screen/home/components/activitymain.dart';
+import 'package:mycatering/screen/home/Home.dart';
 import 'package:mycatering/screen/inputlogin/InputLogin.dart';
 import 'package:mycatering/screen/inputlogin/auth/auth.dart';
 import 'package:mycatering/screen/onboarding/Onboarding.dart';
@@ -25,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
               stream: Auth().authStateChanges,
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
-                  return const activitymain();
+                  return const MyHomePage();
                 } else {
                   return const Onboarding();
                 }

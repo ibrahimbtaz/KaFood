@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mycatering/screen/details/components/counter.dart';
 import 'package:mycatering/screen/details/components/producklainnya.dart';
-import 'package:mycatering/screen/home/HomePage.dart';
+import 'package:mycatering/screen/home/components/HomePage.dart';
 import 'package:mycatering/screen/home/models/food_model.dart';
 import 'package:mycatering/utils/Constant.dart';
-
-import '../home/components/color_picker.dart';
 
 class DetailPage extends StatefulWidget {
   final FoodModel foodModel;
@@ -67,14 +65,14 @@ class _DetailPageState extends State<DetailPage> {
                                 ),
                               ),
                       ),
-                      Hero(
-                        tag: widget.foodModel.image,
-                        child: Image.asset(
-                          widget.foodModel.image,
-                          height: size!.height * .220,
-                          width: size!.height * .220,
-                        ),
-                      ),
+                      // Hero(
+                      //   tag: widget.foodModel.image,
+                      //   child: Image.asset(
+                      //     widget.foodModel.image,
+                      //     height: size!.height * .220,
+                      //     width: size!.height * .220,
+                      //   ),
+                      // ),
                     ],
                   ),
                   SizedBox(

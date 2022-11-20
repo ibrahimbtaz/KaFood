@@ -16,7 +16,7 @@ class FoodModel {
 List<FoodModel> foodList = [
   FoodModel(
     id: 1,
-    price: "Rp. 275.000",
+    price: "275.000",
     name: "Tumpeng",
     image: "assets/images/img_2.png",
     description:
@@ -26,7 +26,7 @@ List<FoodModel> foodList = [
   ),
   FoodModel(
     id: 2,
-    price: "Rp. 11.500",
+    price: "11.500",
     name: "Juice",
     image: "assets/images/juice.png",
     description:
@@ -36,7 +36,7 @@ List<FoodModel> foodList = [
   ),
   FoodModel(
     id: 3,
-    price: 'Rp. 32.500',
+    price: '32.500',
     name: "Dessert Red Velvet",
     image: "assets/images/cake1.png",
     description:
@@ -46,7 +46,7 @@ List<FoodModel> foodList = [
   ),
   FoodModel(
     id: 4,
-    price: 'Rp. 21.000',
+    price: '21.000',
     name: "Snack Box",
     image: "assets/images/snack1.png",
     description:
@@ -56,7 +56,7 @@ List<FoodModel> foodList = [
   ),
   FoodModel(
     id: 5,
-    price: 'Rp. 90.000',
+    price: '90.000',
     name: "Chocolate Cake",
     image: "assets/images/cake2.png",
     description:
@@ -66,7 +66,7 @@ List<FoodModel> foodList = [
   ),
   FoodModel(
     id: 6,
-    price: 'Rp. 21.000',
+    price: '21.000',
     name: "Fruit Salad",
     image: "assets/images/salad1.png",
     description:

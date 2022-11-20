@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mycatering/screen/favorite/MainFavorit.dart';
-import 'package:mycatering/screen/home/HomePage.dart';
+import 'package:mycatering/screen/home/components/HomePage.dart';
 import 'package:mycatering/screen/menu/MainMenu.dart';
 import 'package:mycatering/screen/profile/mainprofile.dart';
 import 'package:mycatering/utils/Constant.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
-class activitymain extends StatefulWidget {
-  const activitymain({Key? key}) : super(key: key);
+class MyBottomNav extends StatefulWidget {
+  const MyBottomNav({Key? key}) : super(key: key);
 
   @override
-  State<activitymain> createState() => _activitymainState();
+  State<MyBottomNav> createState() => _MyBottomNavState();
 }
 
-class _activitymainState extends State<activitymain> {
+class _MyBottomNavState extends State<MyBottomNav> {
   int tab = 0;
   final screen = [
     const HomePage(),
@@ -56,7 +56,7 @@ class _activitymainState extends State<activitymain> {
                 selectedColor: Colors.grey,
               ),
 
-              /// Search
+              /// Menu
               SalomonBottomBarItem(
                 icon: SvgPicture.asset(
                   'assets/icons/menu-outline-icon.svg',
@@ -73,7 +73,7 @@ class _activitymainState extends State<activitymain> {
                 selectedColor: Colors.grey,
               ),
 
-              /// Wishlist
+              /// Favorite
               SalomonBottomBarItem(
                 icon: SvgPicture.asset(
                   'assets/icons/heart-outline-icon.svg',

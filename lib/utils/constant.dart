@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:palette_generator/palette_generator.dart';
 import 'package:sizer/sizer.dart';
 
 const Color primary = Color.fromRGBO(22, 132, 167, 1);
@@ -63,3 +64,9 @@ AssetImage ads1 = const AssetImage("assets/images/mycatering1ads.png");
 AssetImage ads2 = const AssetImage("assets/images/mycatering2ads.png");
 SvgPicture backicon = SvgPicture.asset("assets/icons/circle_left_icon.svg");
 
+
+Future<Color> getImagePalette(ImageProvider imageProvider) async {
+  final PaletteGenerator paletteGenerator =
+      await PaletteGenerator.fromImageProvider(imageProvider);
+  return paletteGenerator.vibrantColor!.color;
+}

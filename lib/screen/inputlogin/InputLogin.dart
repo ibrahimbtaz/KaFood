@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mycatering/screen/home/components/activitymain.dart';
+import 'package:mycatering/screen/home/Home.dart';
 import 'package:mycatering/screen/inputlogin/components/MethodLogin.dart';
 import 'package:mycatering/screen/inputlogin/auth/auth.dart';
 
@@ -18,7 +18,7 @@ class _InputloginState extends State<Inputlogin> {
       stream: Auth().authStateChanges,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          return const activitymain();
+          return const MyHomePage();
         } else {
           return const MethodLogin();
         }
