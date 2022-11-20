@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mycatering/screen/cart/components/CartDB.dart';
 import 'package:mycatering/screen/cart/components/CartModel.dart';
 import 'package:mycatering/screen/home/Home.dart';
+import 'package:mycatering/utils/Constant.dart';
 
 class MainCart extends StatefulWidget {
   const MainCart({super.key});
@@ -73,7 +74,13 @@ class _MainCartState extends State<MainCart> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Your Cart")),
+      appBar: AppBar(
+          centerTitle: true,
+          title: Text(
+            "Your Cart",
+            style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                fontSize: 26, fontWeight: FontWeight.bold, color: secondary),
+          )),
       body: Center(
         child: Container(
           child: isLoading

@@ -10,11 +10,11 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 20),
+      padding: const EdgeInsets.symmetric(vertical: 10),
       child: Column(
         children: [
           const SizedBox(
-            height: 20,
+            height: 10,
           ),
           const Userid(),
           const SizedBox(height: 10),
