@@ -70,6 +70,7 @@ class _DetailContentState extends State<DetailContent> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text(
           widget.foodModel.name,
           style: Theme.of(context).textTheme.bodyText1!.copyWith(
