@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: whiteColor,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const splashscreen(),
+      home: const SplashScreen(),
     );
   }
 }

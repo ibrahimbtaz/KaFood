@@ -4,17 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:mycatering/screen/home/components/activitymain.dart';
 import 'package:mycatering/screen/inputlogin/InputLogin.dart';
 import 'package:mycatering/screen/inputlogin/auth/auth.dart';
-import 'package:mycatering/screen/inputlogin/login/components/LoginBody.dart';
 import 'package:mycatering/screen/onboarding/Onboarding.dart';
 
-class splashscreen extends StatefulWidget {
-  const splashscreen({Key? key}) : super(key: key);
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({Key? key}) : super(key: key);
 
   @override
-  State<splashscreen> createState() => _splashscreenState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _splashscreenState extends State<splashscreen> {
+class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
@@ -28,7 +27,7 @@ class _splashscreenState extends State<splashscreen> {
                 if (snapshot.hasData) {
                   return const activitymain();
                 } else {
-                  return const Inputlogin();
+                  return const Onboarding();
                 }
               },
             ),

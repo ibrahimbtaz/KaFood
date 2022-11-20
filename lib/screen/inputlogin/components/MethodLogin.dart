@@ -1,18 +1,19 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:mycatering/screen/inputlogin/auth/auth.dart';
+import 'package:mycatering/screen/inputlogin/components/LoginFacebook.dart';
+import 'package:mycatering/screen/inputlogin/components/LoginGoogle.dart';
+import 'package:mycatering/screen/inputlogin/components/Logo.dart';
 import 'package:mycatering/utils/Constant.dart';
 
-class tempat extends StatefulWidget {
-  const tempat({super.key});
+class MethodLogin extends StatefulWidget {
+  const MethodLogin({Key? key}) : super(key: key);
 
   @override
-  State<tempat> createState() => _tempatState();
+  State<MethodLogin> createState() => _MethodLoginState();
 }
 
-class _tempatState extends State<tempat> {
+class _MethodLoginState extends State<MethodLogin> {
   final Auth _auth = Auth();
 
   String? errorMessage = '';
@@ -61,26 +62,13 @@ class _tempatState extends State<tempat> {
     }
   }
 
-  Widget _logo() {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 10),
-      child: const Center(
-        child: Image(
-          width: 260,
-          height: 260,
-          image: AssetImage("assets/images/logo.png"),
-          // repeat: ImageRepeat.repeat,
-        ),
-      ),
-    );
-  }
-
   Widget _entryFieldUsername(
     String title,
     TextEditingController controller,
   ) {
     return Container(
       alignment: Alignment.center,
+      margin: const EdgeInsets.only(top: 10),
       padding: const EdgeInsets.only(left: 20, right: 20),
       height: 56,
       decoration: BoxDecoration(
@@ -233,120 +221,53 @@ class _tempatState extends State<tempat> {
     );
   }
 
-  Future google() async {
-    final Auth _auth = Auth();
-    try {
-      await Future.delayed(const Duration(seconds: 1));
-      await Auth().signInWithGoogle();
-    } on FirebaseAuthException {
-      setState(() {
-        const snackBar = SnackBar(
-          duration: Duration(seconds: 2),
-          content: Text("Please Fill in Your Email and Password"),
-          backgroundColor: Colors.red,
-        );
-        ScaffoldMessenger.of(context).showSnackBar(snackBar);
-        return;
-      });
-    }
-  }
-
-  Future<void> facebook() async {
-    try {
-      await Future.delayed(const Duration(seconds: 1));
-      await Auth().signInWithFacebook();
-    } on FirebaseAuthException {
-      setState(() {
-        const snackBar = SnackBar(
-          duration: Duration(seconds: 2),
-          content: Text("Please Fill in Your Email and Password"),
-          backgroundColor: Colors.red,
-        );
-        ScaffoldMessenger.of(context).showSnackBar(snackBar);
-        return;
-      });
-    }
-  }
-
-  Widget _google() {
-    return Container(
-      margin: const EdgeInsets.only(top: 20),
-      height: 56,
-      width: double.infinity,
-      decoration: BoxDecoration(
-        border: Border.all(color: whiteColor, width: 2),
-        borderRadius: const BorderRadius.all(Radius.circular(10)),
-      ),
-      child: OutlinedButton(
-        style: OutlinedButton.styleFrom(
-          side: const BorderSide(color: primary, width: 2),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
-          ),
-        ),
-        onPressed: google,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: const [
-            Image(
-              image: AssetImage("assets/images/google.png"),
-              width: 28,
-            ),
-            SizedBox(
-              width: 15,
-            ),
-            Text("Sign in with Google",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500)),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _facebook() {
-    return Container(
-      margin: const EdgeInsets.only(top: 6),
-      height: 56,
-      width: double.infinity,
-      decoration: BoxDecoration(
-        border: Border.all(color: whiteColor, width: 2),
-        borderRadius: const BorderRadius.all(Radius.circular(10)),
-      ),
-      child: OutlinedButton(
-        style: OutlinedButton.styleFrom(
-          side: const BorderSide(color: primary, width: 2),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
-          ),
-        ),
-        onPressed: facebook,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: const [
-            Image(
-              image: AssetImage("assets/images/fb.png"),
-              width: 28,
-            ),
-            SizedBox(
-              width: 15,
-            ),
-            Text("Sign in with Facebook",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500)),
-          ],
-        ),
-      ),
-    );
-  }
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Container(
+          width: double.infinity,
+          padding: const EdgeInsets.all(20),
+          child: isLogin ? Login() : Register(),
+        ),
+      ),
+    );
+  }
+
+  Widget Login() {
+    return Padding(
+      padding: const EdgeInsets.only(top: 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Logo(),
+          _entryFieldEmail('email', _controllerEmail),
+          _entryFieldPassword('password', _controllerPassword),
+          _submitButton(),
+          const LoginGoogle(),
+          const LoginFacebook(),
+          _loginOrRegisterButton(),
+        ],
+      ),
+    );
+  }
+
+  Widget Register() {
+    return Padding(
+      padding: const EdgeInsets.only(top: 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Logo(),
+          _entryFieldUsername('username', _controllerUsername),
+          _entryFieldEmail('email', _controllerEmail),
+          _entryFieldPassword('password', _controllerPassword),
+          _submitButton(),
+          _loginOrRegisterButton(),
+        ],
+      ),
+    );
   }
 }

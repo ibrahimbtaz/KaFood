@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mycatering/screen/inputlogin/InputLogin.dart';
+import 'package:mycatering/screen/inputlogin/components/MethodLogin.dart';
 import 'package:mycatering/screen/onboarding/models/OnboardingModel.dart';
 import 'package:mycatering/utils/Constant.dart';
 
@@ -50,15 +51,16 @@ class _OnboardingContentState extends State<OnboardingContent> {
             return Container(
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage(contents[i].image),
-                      opacity: 0.7,
-                      fit: BoxFit.cover)),
+                    image: AssetImage(contents[i].image),
+                    opacity: 0.7,
+                    fit: BoxFit.cover,
+                  ),
+                  color: blackColor),
               child: Padding(
                 padding: const EdgeInsets.all(40),
                 child: Container(
-                  margin: const EdgeInsets.only(bottom: 190),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
@@ -66,7 +68,7 @@ class _OnboardingContentState extends State<OnboardingContent> {
                         style: const TextStyle(
                             fontSize: 28,
                             fontWeight: FontWeight.bold,
-                            color: whiteColor),
+                            color: tertiary),
                       ),
                       const SizedBox(
                         height: 20,
@@ -76,7 +78,7 @@ class _OnboardingContentState extends State<OnboardingContent> {
                         textAlign: TextAlign.center,
                         style: const TextStyle(
                             fontSize: 18,
-                            color: secondary,
+                            color: quaternary,
                             fontWeight: FontWeight.w500),
                       ),
                     ],
@@ -167,7 +169,7 @@ class OnboardingBottom extends StatelessWidget {
       margin: const EdgeInsets.only(right: 5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: primary,
+        color: currentIndex == index ? secondary : primary,
       ),
     );
   }
