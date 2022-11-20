@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mycatering/screen/details/DetailPage.dart';
+import 'package:mycatering/screen/details/Detail.dart';
+import 'package:mycatering/screen/details/components/DetailContent.dart';
 import 'package:mycatering/screen/home/components/HomeContent.dart';
 import 'package:mycatering/screen/home/components/HomePage.dart';
-import 'package:mycatering/screen/home/models/food_model.dart';
+import 'package:mycatering/screen/home/models/HomeModel.dart';
 
 class PopularMenu extends StatefulWidget {
   const PopularMenu({super.key});
@@ -62,7 +63,7 @@ class _PopularMenuState extends State<PopularMenu> {
                         pageBuilder: (context, animation, secondaryAnimation) {
                           return FadeTransition(
                             opacity: animation,
-                            child: DetailPage(
+                            child: MyDetailPage(
                               foodModel: foodModel,
                             ),
                           );

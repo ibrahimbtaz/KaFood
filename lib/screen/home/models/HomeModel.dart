@@ -1,7 +1,6 @@
 class FoodModel {
   final int id;
-  final String price, rating;
-  final String name, description, image, weight;
+  final String price, rating, name, description, image;
   FoodModel({
     required this.id,
     required this.price,
@@ -9,7 +8,6 @@ class FoodModel {
     required this.description,
     required this.image,
     required this.rating,
-    required this.weight,
   });
 }
 
@@ -22,7 +20,6 @@ List<FoodModel> foodList = [
     description:
         "Tumpeng is an Indonesian cone-shaped rice dish with side dishes of vegetables and meat originating from Javanese cuisine of Indonesia. Traditionally featured in the slamatan ceremony, the rice is made by using a cone-shaped woven bamboo container. The rice itself may be plain steamed rice, uduk rice, or yellow rice.",
     rating: "4.2",
-    weight: "Min Order 7 Pack",
   ),
   FoodModel(
     id: 2,
@@ -32,7 +29,6 @@ List<FoodModel> foodList = [
     description:
         "Juice is a drink made from the extraction or pressing of the natural liquid contained in fruit and vegetables. It can also refer to liquids that are flavored with concentrate or other biological food sources, such as meat or seafood, such as clam juice.",
     rating: "3.0",
-    weight: "Min Order 10 Pack",
   ),
   FoodModel(
     id: 3,
@@ -42,7 +38,6 @@ List<FoodModel> foodList = [
     description:
         "Soft Red Velvet cake layered with thick sweet cream and grated cheese. The sprinkling part uses the remaining grated or coarsely chopped cake so that no material is wasted. Come on, try the recipe for this weekend.",
     rating: '2.0',
-    weight: "Min Order 10 Pack",
   ),
   FoodModel(
     id: 4,
@@ -52,7 +47,6 @@ List<FoodModel> foodList = [
     description:
         "Snack Box is a complement to consumption that is usually present at an event, for meetings, gatherings, social gatherings, house celebrations, building inauguration up to recitation.",
     rating: '2.0',
-    weight: "Min Order 25 Pack",
   ),
   FoodModel(
     id: 5,
@@ -62,7 +56,6 @@ List<FoodModel> foodList = [
     description:
         "Chocolate cake is a cake flavored with melted chocolate, cocoa powder, or both. This cake is perfect for Birthday Events",
     rating: '5.0',
-    weight: "Min Order 3 Pack",
   ),
   FoodModel(
     id: 6,
@@ -72,6 +65,5 @@ List<FoodModel> foodList = [
     description:
         "Fruit salad is a dish consisting of various kinds of fruit, sometimes served in a liquid, either their juices or a syrup. In different forms, fruit salad can be served as an appetizer, a side salad. When served as an appetizer, a fruit salad is sometimes known as a fruit cocktail, or fruit cup.",
     rating: '2.0',
-    weight: "Min Order 10 Pack",
   ),
 ];

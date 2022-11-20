@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mycatering/screen/home/models/food_model.dart';
+import 'package:mycatering/screen/home/models/HomeModel.dart';
 import 'package:mycatering/utils/Constant.dart';
 
 class FoodItem extends StatefulWidget {

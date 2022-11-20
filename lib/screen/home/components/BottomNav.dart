@@ -73,7 +73,7 @@ class _MyBottomNavState extends State<MyBottomNav> {
                 selectedColor: Colors.grey,
               ),
 
-              /// Favorite
+              /// cart
               SalomonBottomBarItem(
                 icon: SvgPicture.asset(
                   'assets/icons/cart-outline-icon.svg',

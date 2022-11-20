@@ -20,15 +20,12 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const HomeAppbar(),
       ),
-      body: SingleChildScrollView(
-        // physics: const BouncingScrollPhysics(),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
-            HomeBanner(),
-            PopularMenu(),
-          ],
-        ),
+      body: ListView(
+        physics: const BouncingScrollPhysics(),
+        children: const [
+          HomeBanner(),
+          PopularMenu(),
+        ],
       ),
     );
   }

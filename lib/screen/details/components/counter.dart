@@ -14,14 +14,14 @@ class _CounterState extends State<Counter> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 50,
+      height: 60,
       child: Card(
         elevation: 0,
         shape: RoundedRectangleBorder(
           side: const BorderSide(
             color: kBorderColor,
           ),
-          borderRadius: BorderRadius.circular(30),
+          borderRadius: BorderRadius.circular(20),
         ),
         child: Row(
           children: [
