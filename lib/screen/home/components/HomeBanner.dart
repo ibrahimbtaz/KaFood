@@ -20,6 +20,7 @@ class _HomeBannerState extends State<HomeBanner> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: const EdgeInsets.only(top: 14),
       child: SizedBox(
         height: size!.height * .220,
         child: CarouselSlider(
