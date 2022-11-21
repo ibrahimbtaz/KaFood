@@ -202,7 +202,7 @@ class _DetailContentState extends State<DetailContent> {
             style: GoogleFonts.roboto(
               color: const Color(0xff4f4f4f),
               fontWeight: FontWeight.w400,
-              fontSize: 13.0,
+              fontSize: 28,
               height: 2.0,
             ),
           ),
