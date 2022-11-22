@@ -13,9 +13,8 @@ class LoginGoogle extends StatefulWidget {
 }
 
 class _LoginGoogleState extends State<LoginGoogle> {
-  
   Future google() async {
-    final Auth _auth = Auth();
+    final Auth auth = Auth();
     try {
       await Future.delayed(const Duration(seconds: 1));
       await Auth().signInWithGoogle();
@@ -55,7 +54,7 @@ class _LoginGoogleState extends State<LoginGoogle> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: const [
             Image(
-              image: AssetImage("assets/images/google.png"),
+              image: AssetImage("assets/images/icons - google.png"),
               width: 28,
             ),
             SizedBox(

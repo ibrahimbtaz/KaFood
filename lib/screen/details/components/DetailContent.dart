@@ -184,7 +184,7 @@ class _DetailContentState extends State<DetailContent> {
                     Text(
                       widget.foodModel.rate.toString(),
                       style: GoogleFonts.roboto(
-                        color: kTextColor,
+                        color: blackColor,
                         fontWeight: FontWeight.w500,
                         fontSize: 16.0,
                       ),

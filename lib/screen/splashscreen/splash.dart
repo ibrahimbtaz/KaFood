@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:mycatering/screen/home/Home.dart';
-import 'package:mycatering/screen/inputlogin/InputLogin.dart';
 import 'package:mycatering/screen/inputlogin/auth/auth.dart';
 import 'package:mycatering/screen/onboarding/Onboarding.dart';
 
@@ -46,7 +45,7 @@ class _SplashScreenState extends State<SplashScreen> {
             child: Image(
               width: 320,
               height: 320,
-              image: AssetImage("assets/images/logo.png"),
+              image: AssetImage("assets/images/project - logo.png"),
               // repeat: ImageRepeat.repeat,
             ),
           ),

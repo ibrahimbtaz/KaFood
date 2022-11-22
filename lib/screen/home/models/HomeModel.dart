@@ -34,7 +34,7 @@ List<FoodModel> foodList = [
     id: 3,
     price: 32500,
     name: "Dessert Red Velvet",
-    image: "assets/images/cake1.png",
+    image: "assets/images/cake-1.png",
     description:
         "Soft Red Velvet cake layered with thick sweet cream and grated cheese. The sprinkling part uses the remaining grated or coarsely chopped cake so that no material is wasted. Come on, try the recipe for this weekend.",
     rate: '2.0',
@@ -52,7 +52,7 @@ List<FoodModel> foodList = [
     id: 5,
     price: 90000,
     name: "Chocolate Cake",
-    image: "assets/images/cake-coklat.png",
+    image: "assets/images/cake-2.png",
     description:
         "Chocolate cake is a cake flavored with melted chocolate, cocoa powder, or both. This cake is perfect for Birthday Events",
     rate: '5.0',
