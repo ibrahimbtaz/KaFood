@@ -6,7 +6,6 @@ import 'package:mycatering/screen/cart/components/CartModel.dart';
 import 'package:mycatering/screen/details/components/Counter.dart';
 import 'package:mycatering/screen/details/components/DetailNewArrival.dart';
 import 'package:mycatering/screen/home/components/HomePage.dart';
-import 'package:mycatering/screen/home/components/PopularMenu.dart';
 import 'package:mycatering/screen/home/models/HomeModel.dart';
 import 'package:mycatering/utils/Constant.dart';
 
@@ -79,7 +78,6 @@ class _DetailContentState extends State<DetailContent> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios_new_outlined),
           color: blackColor,
-          
           onPressed: () {
             Navigator.pop(context);
           },
@@ -110,7 +108,7 @@ class _DetailContentState extends State<DetailContent> {
               DetailContent(context),
               const Divider(),
               const DetailNewArrival(),
-              const PopularMenu()
+              // const PopularMenu()
             ],
           ),
           DetailBottom(context),
@@ -125,32 +123,32 @@ class _DetailContentState extends State<DetailContent> {
       child: Column(
         children: [
           const SizedBox(height: 20),
-          // Stack(
-          //   alignment: Alignment.center,
-          //   children: [
-          //     Align(
-          //       alignment: Alignment.center,
-          //       child: color == null
-          //           ? Container()
-          //           : CircleAvatar(
-          //               backgroundColor: color!.withOpacity(0.4),
-          //               radius: size!.height * 0.140,
-          //               child: CircleAvatar(
-          //                 radius: size!.height * 0.120,
-          //                 backgroundColor: color,
-          //               ),
-          //             ),
-          //     ),
-          //     // Hero(
-          //     //   tag: widget.foodModel.image,
-          //     //   child: Image.asset(
-          //     //     widget.foodModel.image,
-          //     //     height: size!.height * .220,
-          //     //     width: size!.height * .220,
-          //     //   ),
-          //     // ),
-          //   ],
-          // ),
+          Stack(
+            alignment: Alignment.center,
+            children: [
+              Align(
+                alignment: Alignment.center,
+                child: color == null
+                    ? Container()
+                    : CircleAvatar(
+                        backgroundColor: color!.withOpacity(0.4),
+                        radius: size!.height * 0.140,
+                        child: CircleAvatar(
+                          radius: size!.height * 0.120,
+                          backgroundColor: color,
+                        ),
+                      ),
+              ),
+              Hero(
+                tag: widget.foodModel.image,
+                child: Image.asset(
+                  widget.foodModel.image,
+                  height: size!.height * .220,
+                  width: size!.height * .220,
+                ),
+              ),
+            ],
+          ),
           SizedBox(
             height: size!.height * .020,
           ),
@@ -199,10 +197,11 @@ class _DetailContentState extends State<DetailContent> {
           ),
           Text(
             widget.foodModel.description,
+            textAlign: TextAlign.justify,
             style: GoogleFonts.roboto(
-              color: const Color(0xff4f4f4f),
+              color: blackColor,
               fontWeight: FontWeight.w400,
-              fontSize: 28,
+              fontSize: 16,
               height: 2.0,
             ),
           ),
@@ -221,16 +220,16 @@ class _DetailContentState extends State<DetailContent> {
         Container(
           height: 80,
           decoration: BoxDecoration(
-            color: tertiary.withOpacity(0.8),
+            color: tertiary.withOpacity(0.9),
             boxShadow: [
               BoxShadow(
-                color: quaternary.withOpacity(0.5),
+                color: quaternary.withOpacity(0.2),
                 spreadRadius: 2,
                 blurRadius: 4,
                 offset: const Offset(0, 2), // changes position of shadow
               ),
             ],
-            borderRadius: BorderRadius.circular(30),
+            borderRadius: BorderRadius.circular(40),
           ),
           margin: const EdgeInsets.all(20),
           child: Container(
@@ -247,23 +246,35 @@ class _DetailContentState extends State<DetailContent> {
                     height: 50,
                     width: 140,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        checkExist ? deleteData() : addData();
+                        checkExist
+                            ? SvgPicture.asset(
+                                'assets/icons/cart-outline-icon.svg',
+                                color: blackColor,
+                              )
+                            : SvgPicture.asset(
+                                'assets/icons/cart-fill-icon.svg',
+                                color: blackColor,
+                              );
+                      },
                       style: ElevatedButton.styleFrom(
                         elevation: 0,
-                        backgroundColor: primary,
+                        backgroundColor: secondary,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20.0),
+                          borderRadius: BorderRadius.circular(25),
                         ),
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            widget.foodModel.price.toString(),
+                            '\$${widget.foodModel.price.toString()}',
                             style: Theme.of(context)
                                 .textTheme
                                 .bodyText1!
                                 .copyWith(
+                                    fontWeight: FontWeight.bold,
                                     fontSize: 16,
                                     color: whiteColor,
                                     overflow: TextOverflow.ellipsis),
@@ -295,7 +306,7 @@ class _DetailContentState extends State<DetailContent> {
                       elevation: 0,
                       backgroundColor: whiteColor,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(25),
                       ),
                     ),
                     child: checkExist

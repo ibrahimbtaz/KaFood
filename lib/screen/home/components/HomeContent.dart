@@ -85,11 +85,11 @@ class _FoodItemState extends State<FoodItem> {
                   width: 4,
                 ),
                 Text(
-                  widget.foodModel.price.toString(),
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyText2!
-                      .copyWith(fontSize: 14),
+                  '\$${widget.foodModel.price.toString()}',
+                  style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: secondary),
                 ),
               ],
             ),
