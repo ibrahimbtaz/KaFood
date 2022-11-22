@@ -1,7 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:mycatering/screen/inputlogin/auth/auth.dart';
 import 'package:mycatering/utils/Constant.dart';
 
@@ -54,7 +52,7 @@ class _LoginGoogleState extends State<LoginGoogle> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: const [
             Image(
-              image: AssetImage("assets/images/icons - google.png"),
+              image: AssetImage("assets/images/icons-google.png"),
               width: 28,
             ),
             SizedBox(

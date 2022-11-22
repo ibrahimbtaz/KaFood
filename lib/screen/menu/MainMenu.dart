@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mycatering/screen/menu/components/MenuBody.dart';
 
 class MainMenu extends StatefulWidget {
   const MainMenu({Key? key}) : super(key: key);
@@ -10,8 +11,10 @@ class MainMenu extends StatefulWidget {
 class _MainMenuState extends State<MainMenu> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: const Center(child: Text("Menu")),
+    return Scaffold(
+      body: Center(
+          child: MenuBody(),
+      ),
     );
   }
 }
