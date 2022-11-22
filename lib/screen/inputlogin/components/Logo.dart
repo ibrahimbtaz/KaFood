@@ -18,7 +18,7 @@ class _LogoState extends State<Logo> {
         child: Image(
           width: 260,
           height: 260,
-          image: AssetImage("assets/images/logo.png"),
+          image: AssetImage("assets/images/project - logo.png"),
           // repeat: ImageRepeat.repeat,
         ),
       ),

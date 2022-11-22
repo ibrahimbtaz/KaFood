@@ -23,7 +23,7 @@ class _HomeAppbarState extends State<HomeAppbar> {
           const Image(
             width: 58,
             height: 58,
-            image: AssetImage("assets/images/logo.png"),
+            image: AssetImage("assets/images/project - logo.png"),
             // repeat: ImageRepeat.repeat,
           ),
           Center(

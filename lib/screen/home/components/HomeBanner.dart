@@ -12,9 +12,9 @@ class HomeBanner extends StatefulWidget {
 
 class _HomeBannerState extends State<HomeBanner> {
   List<String> imgList = [
-    'assets/images/deliciousfood.jpg',
-    'assets/images/deliciousfood.jpg',
-    'assets/images/deliciousfood.jpg',
+    'assets/images/onboarding - deliciousfood.jpg',
+    'assets/images/onboarding - deliciousfood.jpg',
+    'assets/images/onboarding - deliciousfood.jpg',
   ];
 
   @override

@@ -23,7 +23,7 @@ class _CounterState extends State<Counter> {
           side: const BorderSide(
             color: kBorderColor,
           ),
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(25),
         ),
         child: Row(
           children: [

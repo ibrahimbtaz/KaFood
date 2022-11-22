@@ -51,7 +51,7 @@ class _LoginFacebookState extends State<LoginFacebook> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: const [
             Image(
-              image: AssetImage("assets/images/fb.png"),
+              image: AssetImage("assets/images/icons-fb.png"),
               width: 28,
             ),
             SizedBox(
