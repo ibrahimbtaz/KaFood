@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mycatering/screen/details/components/DetailNewArrival.dart';
 import 'package:mycatering/screen/home/components/HomeAppBar.dart';
 import 'package:mycatering/screen/home/components/HomeBanner.dart';
 import 'package:mycatering/screen/home/components/PopularMenu.dart';
@@ -24,6 +25,7 @@ class _HomePageState extends State<HomePage> {
         physics: const BouncingScrollPhysics(),
         children: const [
           HomeBanner(),
+          DetailNewArrival(),
           PopularMenu(),
         ],
       ),

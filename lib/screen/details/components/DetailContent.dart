@@ -102,14 +102,17 @@ class _DetailContentState extends State<DetailContent> {
       ),
       body: Stack(
         children: [
-          ListView(
-            physics: const BouncingScrollPhysics(),
-            children: [
-              DetailContent(context),
-              const Divider(),
-              const DetailNewArrival(),
-              // const PopularMenu()
-            ],
+          Container(
+            padding: const EdgeInsets.only(bottom: 70),
+            child: ListView(
+              physics: const BouncingScrollPhysics(),
+              children: [
+                DetailContent(context),
+                const Divider(),
+                const DetailNewArrival(),
+                // const PopularMenu()
+              ],
+            ),
           ),
           DetailBottom(context),
         ],
