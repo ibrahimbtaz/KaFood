@@ -43,7 +43,7 @@ class _FoodItemState extends State<FoodItem> {
         children: [
           //images
           Stack(
-            alignment: Alignment.bottomCenter,
+            alignment: Alignment.center,
             children: [
               Align(
                 alignment: Alignment.center,
@@ -58,14 +58,14 @@ class _FoodItemState extends State<FoodItem> {
                         ),
                       ),
               ),
-              // Hero(
-              //   tag: widget.tag,
-              //   child: Image.asset(
-              //     widget.foodModel.image,
-              //     height: 90,
-              //     width: 90,
-              //   ),
-              // ),
+              Hero(
+                tag: widget.tag,
+                child: Image.asset(
+                  widget.foodModel.image,
+                  height: 90,
+                  width: 90,
+                ),
+              ),
             ],
           ),
           Container(
