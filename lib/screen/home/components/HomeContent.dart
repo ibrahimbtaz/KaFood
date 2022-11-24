@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mycatering/screen/home/models/HomeModel.dart';
-import 'package:mycatering/screen/inputlogin/auth/storage_services.dart';
-import 'package:mycatering/screen/inputlogin/auth/storage_services.dart';
+import 'package:mycatering/screen/inputlogin/auth/auth.dart';
 import 'package:mycatering/utils/Constant.dart';
 
 class FoodItem extends StatefulWidget {
@@ -15,24 +14,25 @@ class FoodItem extends StatefulWidget {
 
 class _FoodItemState extends State<FoodItem> {
   Color? color;
-  Future getColor() async {
-    Color? color = await getImagePalette(
-      AssetImage(widget.foodModel.image),
-    );
-    setState(() {
-      this.color = color;
-    });
-  }
+
+  // Future getColor() async {
+  //   Color? color = await getImagePalette(
+  //     NetworkImage(widget.foodModel.image),
+  //   );
+  //   setState(() {
+  //     this.color = color;
+  //   });
+  // }
 
   @override
   void initState() {
     super.initState();
-    getColor();
+    // getColor();
   }
 
   @override
   Widget build(BuildContext context) {
-    final Storage storage = Storage();
+    final Auth auth = Auth();
     return Container(
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
@@ -64,7 +64,7 @@ class _FoodItemState extends State<FoodItem> {
               Hero(
                   tag: widget.tag,
                   child: FutureBuilder(
-                    future: storage.donwloadURL(
+                    future: auth.donwloadURL(
                       widget.foodModel.image,
                     ),
                     builder:

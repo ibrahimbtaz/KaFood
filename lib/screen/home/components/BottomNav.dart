@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mycatering/screen/cart/MainCart.dart';
 import 'package:mycatering/screen/home/components/HomePage.dart';
-import 'package:mycatering/screen/inputlogin/auth/image_uplolad.dart';
 import 'package:mycatering/screen/menu/MainMenu.dart';
 import 'package:mycatering/screen/profile/mainprofile.dart';
 import 'package:mycatering/utils/constant.dart';
@@ -20,7 +19,7 @@ class _MyBottomNavState extends State<MyBottomNav> {
   final screen = [
     const HomePage(),
     const MainMenu(),
-    const image_upload(),
+    const MainCart(),
     MainProfile(),
   ];
 
