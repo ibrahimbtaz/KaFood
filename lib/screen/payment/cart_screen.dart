@@ -69,7 +69,7 @@ class CartScreen extends StatelessWidget {
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(
-                              horizontal: 40, vertical: 10.0),
+                              horizontal: 10, vertical: 10.0),
                           child: Column(
                             children: [
                               Row(
@@ -94,25 +94,25 @@ class CartScreen extends StatelessWidget {
                               const SizedBox(
                                 height: 10,
                               ),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  const Text(
-                                    'DELIVERY FREE',
-                                    style: TextStyle(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w700,
-                                    ),
-                                  ),
-                                  Text(
-                                    '\$${state.cart.freeDeliveryString}',
-                                    style: const TextStyle(
-                                      fontWeight: FontWeight.w700,
-                                    ),
-                                  ),
-                                ],
-                              ),
+                              // Row(
+                              //   mainAxisAlignment:
+                              //       MainAxisAlignment.spaceBetween,
+                              //   children: [
+                              //     const Text(
+                              //       'DELIVERY FREE',
+                              //       style: TextStyle(
+                              //         fontSize: 15,
+                              //         fontWeight: FontWeight.w700,
+                              //       ),
+                              //     ),
+                              //     Text(
+                              //       '\$${state.cart.freeDeliveryString}',
+                              //       style: const TextStyle(
+                              //         fontWeight: FontWeight.w700,
+                              //       ),
+                              //     ),
+                              //   ],
+                              // ),
                             ],
                           ),
                         ),

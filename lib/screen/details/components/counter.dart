@@ -3,8 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mycatering/utils/Constant.dart';
 
 class Counter extends StatefulWidget {
-  final productprice;
-  const Counter({super.key, this.productprice});
+  const Counter({super.key});
 
   @override
   State<Counter> createState() => _CounterState();
