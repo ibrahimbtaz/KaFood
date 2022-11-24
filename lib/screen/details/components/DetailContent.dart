@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mycatering/screen/cart/components/CartDB.dart';
@@ -7,6 +8,8 @@ import 'package:mycatering/screen/details/components/Counter.dart';
 import 'package:mycatering/screen/details/components/DetailNewArrival.dart';
 import 'package:mycatering/screen/home/components/HomePage.dart';
 import 'package:mycatering/screen/home/models/HomeModel.dart';
+import 'package:mycatering/screen/payment/bloc/cart_bloc.dart';
+import 'package:mycatering/screen/payment/cart_screen.dart';
 import 'package:mycatering/utils/Constant.dart';
 
 class DetailContent extends StatefulWidget {
@@ -216,118 +219,137 @@ class _DetailContentState extends State<DetailContent> {
     );
   }
 
-  Column DetailBottom(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        Container(
-          height: 80,
-          decoration: BoxDecoration(
-            color: tertiary.withOpacity(0.9),
-            boxShadow: [
-              BoxShadow(
-                color: quaternary.withOpacity(0.2),
-                spreadRadius: 2,
-                blurRadius: 4,
-                offset: const Offset(0, 2), // changes position of shadow
-              ),
-            ],
-            borderRadius: BorderRadius.circular(40),
-          ),
-          margin: const EdgeInsets.all(20),
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: size!.width * .020),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Transform.translate(
-                    offset: const Offset(-5, 0), child: const Counter()),
-                const Spacer(),
-                Transform.translate(
-                  offset: const Offset(-5, 0),
-                  child: SizedBox(
+  SafeArea DetailBottom(BuildContext context) {
+    return SafeArea(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Container(
+            height: 80,
+            decoration: BoxDecoration(
+              color: tertiary.withOpacity(0.9),
+              boxShadow: [
+                BoxShadow(
+                  color: quaternary.withOpacity(0.2),
+                  spreadRadius: 2,
+                  blurRadius: 4,
+                  offset: const Offset(0, 2), // changes position of shadow
+                ),
+              ],
+              borderRadius: BorderRadius.circular(40),
+            ),
+            margin: const EdgeInsets.all(20),
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: size!.width * .020),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Transform.translate(
+                      offset: const Offset(-5, 0), child: const Counter()),
+                  const Spacer(),
+                  Transform.translate(
+                    offset: const Offset(-5, 0),
+                    child: SizedBox(
+                      height: 50,
+                      width: 140,
+                      child: BlocBuilder<CartBloc, CartState>(
+                          builder: (context, state) {
+                        return ElevatedButton(
+                          onPressed: () {
+                            checkExist ? deleteData() : addData();
+                            checkExist
+                                ? SvgPicture.asset(
+                                    'assets/icons/cart-outline-icon.svg',
+                                    color: blackColor,
+                                  )
+                                : SvgPicture.asset(
+                                    'assets/icons/cart-fill-icon.svg',
+                                    color: blackColor,
+                                  );
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text('Added to your Cart!'),
+                              ),
+                            );
+                            context
+                                .read<CartBloc>()
+                                .add(AddProduct(widget.foodModel));
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => CartScreen(),
+                              ),
+                            );
+                          },
+                          style: ElevatedButton.styleFrom(
+                            elevation: 0,
+                            backgroundColor: secondary,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                '\$${widget.foodModel.price.toString()}',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyText1!
+                                    .copyWith(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 16,
+                                        color: whiteColor,
+                                        overflow: TextOverflow.ellipsis),
+                              ),
+                              const Spacer(),
+                              Flexible(
+                                child: Text(
+                                  "Buy",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyText1!
+                                      .copyWith(fontSize: 14, color: whiteColor),
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
+                      }),
+                    ),
+                  ),
+                  const Spacer(),
+                  SizedBox(
                     height: 50,
-                    width: 140,
+                    width: 50,
                     child: ElevatedButton(
                       onPressed: () {
                         checkExist ? deleteData() : addData();
-                        checkExist
-                            ? SvgPicture.asset(
-                                'assets/icons/cart-outline-icon.svg',
-                                color: blackColor,
-                              )
-                            : SvgPicture.asset(
-                                'assets/icons/cart-fill-icon.svg',
-                                color: blackColor,
-                              );
                       },
                       style: ElevatedButton.styleFrom(
                         elevation: 0,
-                        backgroundColor: secondary,
+                        backgroundColor: whiteColor,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25),
                         ),
                       ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            '\$${widget.foodModel.price.toString()}',
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyText1!
-                                .copyWith(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 16,
-                                    color: whiteColor,
-                                    overflow: TextOverflow.ellipsis),
-                          ),
-                          const Spacer(),
-                          Flexible(
-                            child: Text(
-                              "Buy",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyText1!
-                                  .copyWith(fontSize: 14, color: whiteColor),
+                      child: checkExist
+                          ? SvgPicture.asset(
+                              'assets/icons/cart-outline-icon.svg',
+                              color: blackColor,
+                            )
+                          : SvgPicture.asset(
+                              'assets/icons/cart-fill-icon.svg',
+                              color: blackColor,
                             ),
-                          ),
-                        ],
-                      ),
                     ),
                   ),
-                ),
-                const Spacer(),
-                SizedBox(
-                  height: 50,
-                  width: 50,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      checkExist ? deleteData() : addData();
-                    },
-                    style: ElevatedButton.styleFrom(
-                      elevation: 0,
-                      backgroundColor: whiteColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                    ),
-                    child: checkExist
-                        ? SvgPicture.asset(
-                            'assets/icons/cart-outline-icon.svg',
-                            color: blackColor,
-                          )
-                        : SvgPicture.asset(
-                            'assets/icons/cart-fill-icon.svg',
-                            color: blackColor,
-                          ),
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
