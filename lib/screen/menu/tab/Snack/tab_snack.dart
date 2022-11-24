@@ -3,10 +3,10 @@ import 'package:mycatering/screen/menu/tab/Snack/title_snack.dart';
 
 class SnackTab extends StatelessWidget {
   List SnackOnSale = [
-    ["Snack Box 1", "36", Colors.blueGrey, "assets/images/snack.png"],
-    ["Snack Box 2", "45", Colors.blueGrey, "assets/images/snack.png"],
-    ["Snack Box 3", "84", Colors.blueGrey, "assets/images/snack.png"],
-    ["Snack Box 4", "95", Colors.blueGrey, "assets/images/snack.png"],
+    // ["Snack Box 1", "36", Colors.blueGrey, "assets/images/snack.png"],
+    // ["Snack Box 2", "45", Colors.blueGrey, "assets/images/snack.png"],
+    // ["Snack Box 3", "84", Colors.blueGrey, "assets/images/snack.png"],
+    // ["Snack Box 4", "95", Colors.blueGrey, "assets/images/snack.png"],
   ];
 
   @override

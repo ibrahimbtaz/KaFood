@@ -8,6 +8,7 @@ import 'package:mycatering/screen/details/components/Counter.dart';
 import 'package:mycatering/screen/details/components/DetailNewArrival.dart';
 import 'package:mycatering/screen/home/components/HomePage.dart';
 import 'package:mycatering/screen/home/models/HomeModel.dart';
+import 'package:mycatering/screen/inputlogin/auth/storage_services.dart';
 import 'package:mycatering/screen/payment/bloc/cart_bloc.dart';
 import 'package:mycatering/screen/payment/cart_screen.dart';
 import 'package:mycatering/utils/Constant.dart';
@@ -70,6 +71,7 @@ class _DetailContentState extends State<DetailContent> {
 
   @override
   Widget build(BuildContext context) {
+    final Storage storage = Storage();
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -124,6 +126,7 @@ class _DetailContentState extends State<DetailContent> {
   }
 
   Padding DetailContent(BuildContext context) {
+    final Storage storage = Storage();
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: size!.height * .040),
       child: Column(
@@ -146,13 +149,31 @@ class _DetailContentState extends State<DetailContent> {
                       ),
               ),
               Hero(
-                tag: widget.foodModel.image,
-                child: Image.asset(
-                  widget.foodModel.image,
-                  height: size!.height * .220,
-                  width: size!.height * .220,
-                ),
-              ),
+                  tag: widget.foodModel.image,
+                  child: FutureBuilder(
+                    future: storage.donwloadURL(
+                      widget.foodModel.image,
+                    ),
+                    builder:
+                        (BuildContext context, AsyncSnapshot<String> snapshot) {
+                      if (snapshot.connectionState == ConnectionState.done &&
+                          snapshot.hasData) {
+                        return SizedBox(
+                          height: 90,
+                          width: 90,
+                          child: Image.network(
+                            snapshot.data!,
+                            fit: BoxFit.cover,
+                          ),
+                        );
+                      }
+                      if (snapshot.connectionState == ConnectionState.waiting ||
+                          !snapshot.hasData) {
+                        return const CircularProgressIndicator();
+                      }
+                      return Container();
+                    },
+                  )),
             ],
           ),
           SizedBox(
@@ -266,11 +287,6 @@ class _DetailContentState extends State<DetailContent> {
                                     'assets/icons/cart-fill-icon.svg',
                                     color: blackColor,
                                   );
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                content: Text('Added to your Cart!'),
-                              ),
-                            );
                             context
                                 .read<CartBloc>()
                                 .add(AddProduct(widget.foodModel));
@@ -309,7 +325,8 @@ class _DetailContentState extends State<DetailContent> {
                                   style: Theme.of(context)
                                       .textTheme
                                       .bodyText1!
-                                      .copyWith(fontSize: 14, color: whiteColor),
+                                      .copyWith(
+                                          fontSize: 14, color: whiteColor),
                                 ),
                               ),
                             ],
