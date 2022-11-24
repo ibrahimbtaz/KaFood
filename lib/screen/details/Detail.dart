@@ -9,9 +9,11 @@ class MyDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(
-            child: DetailContent(
-      foodModel: foodModel,
-    )));
+        body: SafeArea(
+          child: Center(
+              child: DetailContent(
+              foodModel: foodModel,
+            )),
+        ));
   }
 }

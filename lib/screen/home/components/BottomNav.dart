@@ -4,7 +4,7 @@ import 'package:mycatering/screen/cart/MainCart.dart';
 import 'package:mycatering/screen/home/components/HomePage.dart';
 import 'package:mycatering/screen/menu/MainMenu.dart';
 import 'package:mycatering/screen/profile/mainprofile.dart';
-import 'package:mycatering/utils/Constant.dart';
+import 'package:mycatering/utils/constant.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 class MyBottomNav extends StatefulWidget {
@@ -41,16 +41,16 @@ class _MyBottomNavState extends State<MyBottomNav> {
               SalomonBottomBarItem(
                 icon: SvgPicture.asset(
                   'assets/icons/home-outline-icon.svg',
-                  color: blackColor,
+                  color: primary,
                 ),
                 activeIcon: SvgPicture.asset(
                   'assets/icons/home-fill-icon.svg',
-                  color: blackColor,
+                  color: primary,
                 ),
                 title: const Text(
                   'Home',
                   style: TextStyle(
-                    color: blackColor,
+                    color: secondary,
                   ),
                 ),
                 selectedColor: Colors.grey,
@@ -60,14 +60,16 @@ class _MyBottomNavState extends State<MyBottomNav> {
               SalomonBottomBarItem(
                 icon: SvgPicture.asset(
                   'assets/icons/menu-outline-icon.svg',
+                  color: primary,
                 ),
                 activeIcon: SvgPicture.asset(
                   'assets/icons/menu-fill-icon.svg',
+                  color: primary,
                 ),
                 title: const Text(
                   'Menu',
                   style: TextStyle(
-                    color: blackColor,
+                    color: secondary,
                   ),
                 ),
                 selectedColor: Colors.grey,
@@ -77,16 +79,16 @@ class _MyBottomNavState extends State<MyBottomNav> {
               SalomonBottomBarItem(
                 icon: SvgPicture.asset(
                   'assets/icons/cart-outline-icon.svg',
-                  color: blackColor,
+                  color: primary,
                 ),
                 activeIcon: SvgPicture.asset(
                   'assets/icons/cart-fill-icon.svg',
-                  color: blackColor,
+                  color: primary,
                 ),
                 title: const Text(
                   'Cart',
                   style: TextStyle(
-                    color: blackColor,
+                    color: secondary,
                   ),
                 ),
                 selectedColor: Colors.grey,
@@ -96,16 +98,16 @@ class _MyBottomNavState extends State<MyBottomNav> {
               SalomonBottomBarItem(
                 icon: SvgPicture.asset(
                   'assets/icons/person-outline-icon.svg',
-                  color: blackColor,
+                  color: primary,
                 ),
                 activeIcon: SvgPicture.asset(
                   'assets/icons/person-fill-icon.svg',
-                  color: blackColor,
+                  color: primary,
                 ),
                 title: const Text(
                   'Profile',
                   style: TextStyle(
-                    color: blackColor,
+                    color: secondary,
                   ),
                 ),
                 selectedColor: Colors.grey,

@@ -14,10 +14,7 @@ class PopularMenu extends StatefulWidget {
 class _PopularMenuState extends State<PopularMenu> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(
-        vertical: 25,
-      ),
+    return Container( 
       padding: EdgeInsets.symmetric(horizontal: size!.width * .070),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,

@@ -15,7 +15,7 @@ class _DetailNewArrivalState extends State<DetailNewArrival> {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(
-        vertical: 10,
+        vertical: 25,
       ),
       child: Column(
         children: [
@@ -25,7 +25,7 @@ class _DetailNewArrivalState extends State<DetailNewArrival> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Other Product",
+                Text("Favorite Menu",
                     style: Theme.of(context)
                         .textTheme
                         .bodyText1!
