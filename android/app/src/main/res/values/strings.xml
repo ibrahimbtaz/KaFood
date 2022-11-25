@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My Catering</string>
+    <string name="facebook_app_id">433571248856822</string>
+    <string name="fb_login_protocol_scheme">fb433571248856822</string>
+    <string name="facebook_client_token">20f758635e4d66d25f8d1feccd63c97b</string>
+</resources>
