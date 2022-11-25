@@ -1,0 +1,12 @@
+{
+    "dart.flutterShowEmulators": "local",
+    "cSpell.words": [
+        "firbase"
+    ],
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true,
+        "source.fixAll": true,
+    },  
+    "java.configuration.updateBuildConfiguration": "interactive",
+}

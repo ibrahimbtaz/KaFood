@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "221683994603",
+    "project_id": "fir-auth-83e4a",
+    "storage_bucket": "fir-auth-83e4a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:221683994603:android:617f8d41ab6b8637e913ae",
+        "android_client_info": {
+          "package_name": "com.example.firebase_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "221683994603-j11ajqjkr02aj0nhumkabro0uubh8cfr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANYJmyoD9V65Ikro3Btcarj-yP7rGqILs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "221683994603-j11ajqjkr02aj0nhumkabro0uubh8cfr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:221683994603:android:ebfb640514e6d4cae913ae",
+        "android_client_info": {
+          "package_name": "com.example.mycatering"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "221683994603-j11ajqjkr02aj0nhumkabro0uubh8cfr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANYJmyoD9V65Ikro3Btcarj-yP7rGqILs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "221683994603-j11ajqjkr02aj0nhumkabro0uubh8cfr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
