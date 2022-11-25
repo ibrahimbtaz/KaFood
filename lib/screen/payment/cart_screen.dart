@@ -6,8 +6,34 @@ import 'package:mycatering/utils/constant.dart';
 import 'cart_product_card.dart';
 
 class CartScreen extends StatelessWidget {
+
+
+
   @override
   Widget build(BuildContext context) {
+
+    void _showDialog() {
+      showDialog(context: context, builder: (context) {
+        return AlertDialog(
+          backgroundColor: Colors.purple,
+          title: Text('Title'),
+          content: Text('Content, more info'),
+          actions: [
+            MaterialButton(
+              onPressed: () {},
+              child: Text('Ok'),
+            ),
+            MaterialButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text('Button'),
+            )
+          ],
+        );
+      });
+    }
+
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
@@ -160,6 +186,24 @@ class CartScreen extends StatelessWidget {
                         ),
                       ],
                     ),
+                    Column(
+                        children: [
+                          Center(
+                            child: MaterialButton(
+                              color: Colors.white,
+                              onPressed: _showDialog,
+                              child: Padding(
+                                padding: const EdgeInsets.all(15.0),
+                                child: Text(
+                                  'Bismillah Bisa',
+                                  style: TextStyle(fontSize: 30),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+
+                    )
                   ],
                 ),
               );
