@@ -19,6 +19,31 @@ class DetailContent extends StatefulWidget {
 }
 
 class _DetailContentState extends State<DetailContent> {
+
+  void _showDialog() {
+    showDialog(context: context, builder: (context) {
+      return AlertDialog(
+        backgroundColor: Colors.white,
+        title: Text('Apakah Anda Ingin Membelinya ?'),
+        content: Text('Beli dengan sekali klik'),
+        actions: [
+          MaterialButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: Text('Cancel'),
+          ),
+          MaterialButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: Text('Ok'),
+          )
+        ],
+      );
+    });
+  }
+
   Color? color;
   bool checkExist = false;
   Color colorChecked = Colors.white;
@@ -247,7 +272,7 @@ class _DetailContentState extends State<DetailContent> {
                     height: 50,
                     width: 140,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: _showDialog,
                       style: ElevatedButton.styleFrom(
                         elevation: 0,
                         backgroundColor: primary,
