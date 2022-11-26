@@ -40,6 +40,7 @@ class _MenuBodyState extends State<MenuBody> {
       length: myTabs.length,
       child: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           centerTitle: true,
           title: Padding(
             padding: const EdgeInsets.all(5),

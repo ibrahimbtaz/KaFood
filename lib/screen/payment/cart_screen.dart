@@ -53,6 +53,7 @@ class _CartScreenState extends State<CartScreen> {
 
     return Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           centerTitle: true,
           title: Text(
             'Checkout'.toUpperCase(),

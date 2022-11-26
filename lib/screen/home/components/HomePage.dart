@@ -19,6 +19,7 @@ class _HomePageState extends State<HomePage> {
     size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const HomeAppbar(),
       ),
       body: ListView(

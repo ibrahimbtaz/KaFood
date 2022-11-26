@@ -78,6 +78,7 @@ class _MainCartState extends State<MainCart> {
     final Auth auth = Auth();
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         centerTitle: true,
         title: Padding(
           padding: const EdgeInsets.all(5),

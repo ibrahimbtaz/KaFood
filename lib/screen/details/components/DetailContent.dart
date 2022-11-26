@@ -74,6 +74,7 @@ class _DetailContentState extends State<DetailContent> {
     final Auth auth = Auth();
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         centerTitle: true,
         title: Text(
           widget.foodModel.name,
