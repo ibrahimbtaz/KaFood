@@ -1,7 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mycatering/screen/inputlogin/auth/auth.dart';
-import 'package:mycatering/utils/Constant.dart';
+import 'package:mycatering/utils/constant.dart';
+
 
 class LoginFacebook extends StatefulWidget {
   const LoginFacebook({super.key});
@@ -40,7 +41,7 @@ class _LoginFacebookState extends State<LoginFacebook> {
       ),
       child: OutlinedButton(
         style: OutlinedButton.styleFrom(
-          side: const BorderSide(color: primary, width: 2),
+          side: const BorderSide(color: secondary, width: 2),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
           ),
