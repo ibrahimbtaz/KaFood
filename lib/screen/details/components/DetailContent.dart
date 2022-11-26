@@ -8,7 +8,7 @@ import 'package:mycatering/screen/details/components/Counter.dart';
 import 'package:mycatering/screen/details/components/DetailNewArrival.dart';
 import 'package:mycatering/screen/home/components/HomePage.dart';
 import 'package:mycatering/screen/home/models/HomeModel.dart';
-import 'package:mycatering/screen/inputlogin/auth/storage_services.dart';
+import 'package:mycatering/screen/inputlogin/auth/auth.dart';
 import 'package:mycatering/screen/payment/bloc/cart_bloc.dart';
 import 'package:mycatering/screen/payment/cart_screen.dart';
 import 'package:mycatering/utils/Constant.dart';
@@ -26,14 +26,14 @@ class _DetailContentState extends State<DetailContent> {
   bool checkExist = false;
   Color colorChecked = Colors.white;
 
-  Future getColor() async {
-    Color? color = await getImagePalette(
-      AssetImage(widget.foodModel.image),
-    );
-    setState(() {
-      this.color = color;
-    });
-  }
+  // Future getColor() async {
+  //   Color? color = await getImagePalette(
+  //     AssetImage(widget.foodModel.image),
+  //   );
+  //   setState(() {
+  //     this.color = color;
+  //   });
+  // }
 
   Future read() async {
     checkExist = await CartDB.instance.read(widget.foodModel.name);
@@ -66,12 +66,12 @@ class _DetailContentState extends State<DetailContent> {
     // TODO: implement initState
     super.initState();
     read();
-    getColor();
+    // getColor();
   }
 
   @override
   Widget build(BuildContext context) {
-    final Storage storage = Storage();
+    final Auth auth = Auth();
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -126,7 +126,7 @@ class _DetailContentState extends State<DetailContent> {
   }
 
   Padding DetailContent(BuildContext context) {
-    final Storage storage = Storage();
+    final Auth auth = Auth();
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: size!.height * .040),
       child: Column(
@@ -151,7 +151,7 @@ class _DetailContentState extends State<DetailContent> {
               Hero(
                   tag: widget.foodModel.image,
                   child: FutureBuilder(
-                    future: storage.donwloadURL(
+                    future: auth.downloadURL(
                       widget.foodModel.image,
                     ),
                     builder:
