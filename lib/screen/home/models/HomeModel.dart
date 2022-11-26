@@ -29,7 +29,7 @@ List<FoodModel> foodList = [
     image: "juice.jpg",
     description:
         "Juice is a drink made from the extraction or pressing of the natural liquid contained in fruit and vegetables. It can also refer to liquids that are flavored with concentrate or other biological food sources, such as meat or seafood, such as clam juice.",
-    rate: 3.0,
+    rate: 4.0,
   ),
   FoodModel(
     id: 3,
@@ -38,7 +38,7 @@ List<FoodModel> foodList = [
     image: "cake-1.png",
     description:
         "Soft Red Velvet cake layered with thick sweet cream and grated cheese. The sprinkling part uses the remaining grated or coarsely chopped cake so that no material is wasted. Come on, try the recipe for this weekend.",
-    rate: 2.0,
+    rate: 4.7,
   ),
   FoodModel(
     id: 4,
@@ -47,7 +47,7 @@ List<FoodModel> foodList = [
     image: "snack.png",
     description:
         "Snack Box is a complement to consumption that is usually present at an event, for meetings, gatherings, social gatherings, house celebrations, building inauguration up to recitation.",
-    rate: 2.0,
+    rate: 4.5,
   ),
   FoodModel(
     id: 5,
@@ -65,6 +65,6 @@ List<FoodModel> foodList = [
     image: "fruit-salad.png",
     description:
         "Fruit salad is a dish consisting of various kinds of fruit, sometimes served in a liquid, either their juices or a syrup. In different forms, fruit salad can be served as an appetizer, a side salad. When served as an appetizer, a fruit salad is sometimes known as a fruit cocktail, or fruit cup.",
-    rate: 2.0,
+    rate: 4.8,
   ),
 ];

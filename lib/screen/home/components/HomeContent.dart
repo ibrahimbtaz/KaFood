@@ -82,7 +82,9 @@ class _FoodItemState extends State<FoodItem> {
                       }
                       if (snapshot.connectionState == ConnectionState.waiting ||
                           !snapshot.hasData) {
-                        return const CircularProgressIndicator();
+                        return const CircularProgressIndicator(
+                          color: secondary,
+                        );
                       }
                       return Container();
                     },

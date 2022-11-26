@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mycatering/screen/inputlogin/InputLogin.dart';
+import 'package:mycatering/screen/inputlogin/auth/auth.dart';
 import 'package:mycatering/screen/onboarding/models/OnboardingModel.dart';
-import 'package:mycatering/utils/Constant.dart';
+import 'package:mycatering/utils/constant.dart';
 
 class OnboardingContent extends StatefulWidget {
   const OnboardingContent({super.key});
@@ -37,6 +38,7 @@ class _OnboardingContentState extends State<OnboardingContent> {
   }
 
   Expanded OnboardingContent() {
+    final Auth auth = Auth();
     return Expanded(
       child: PageView.builder(
           controller: _controller,
@@ -47,42 +49,43 @@ class _OnboardingContentState extends State<OnboardingContent> {
             });
           },
           itemBuilder: (_, i) {
-            return Container(
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(contents[i].image),
-                    opacity: 0.7,
-                    fit: BoxFit.cover,
-                  ),
-                  color: blackColor),
-              child: Padding(
-                padding: const EdgeInsets.all(40),
-                child: Container(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        contents[i].title,
-                        textAlign: TextAlign.center,
-                        style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                            fontSize: 28,
-                            color: tertiary,
-                            overflow: TextOverflow.fade),
+            return Padding(
+              padding: const EdgeInsets.all(40),
+              child: Container(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      child: Center(
+                        child: Image(
+                          width: 240,
+                          height: 240,
+                          image: AssetImage(contents[i].image),
+                          // repeat: ImageRepeat.repeat,
+                        ),
                       ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      Text(
-                        contents[i].discription,
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                            fontSize: 18,
-                            color: quaternary,
-                            fontWeight: FontWeight.w500),
-                      ),
-                    ],
-                  ),
+                    ),
+                    Text(
+                      contents[i].title,
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                          fontSize: 24,
+                          color: blackColor,
+                          overflow: TextOverflow.fade),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      contents[i].discription,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                          fontSize: 18,
+                          color: secondary,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ],
                 ),
               ),
             );

@@ -9,16 +9,16 @@ class UnbordingContent {
 
 List<UnbordingContent> contents = [
   UnbordingContent(
-      image: 'assets/images/onboarding - deliciousfood.jpg',
+      image: 'assets/images/project - icon.png',
       title: 'More Delicious Food',
       discription: "There Are a Variety of Delicious Food That You Can Taste"),
   UnbordingContent(
-      image: 'assets/images/onboarding - healtyfood.jpg',
+      image: 'assets/images/food.png',
       title: 'Delicacy of Healthy Food',
       discription:
           "A Variety of Healthy and Nutritious Food That You Can Taste is Also Halal Certified!"),
   UnbordingContent(
-      image: 'assets/images/onboarding - deliveryfood.jpg',
+      image: 'assets/images/delivery.png',
       title: 'Super Fast Food Delivery',
       discription:
           "Super-fast Food Delivery That Exceeds the Speed of Light and Can Blow Your Mind"),

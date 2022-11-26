@@ -1,7 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:mycatering/screen/home/components/HomePage.dart';
-import 'package:mycatering/utils/Constant.dart';
+import 'package:mycatering/screen/inputlogin/auth/auth.dart';
+import 'package:mycatering/utils/constant.dart';
 
 class HomeBanner extends StatefulWidget {
   const HomeBanner({super.key});
@@ -12,17 +13,18 @@ class HomeBanner extends StatefulWidget {
 
 class _HomeBannerState extends State<HomeBanner> {
   List<String> imgList = [
-    'assets/images/onboarding - deliciousfood.jpg',
-    'assets/images/onboarding - deliciousfood.jpg',
-    'assets/images/onboarding - deliciousfood.jpg',
+    'newpromo1.png',
+    'newpromo2.png',
+    'newpromo3.png',
   ];
 
   @override
   Widget build(BuildContext context) {
+    final Auth auth = Auth();
     return Container(
       margin: const EdgeInsets.only(top: 14),
       child: SizedBox(
-        height: size!.height * .220,
+        height: size!.height * .200,
         child: CarouselSlider(
           options: CarouselOptions(
             height: double.infinity,
@@ -37,7 +39,7 @@ class _HomeBannerState extends State<HomeBanner> {
               .map((item) => Container(
                     clipBehavior: Clip.antiAliasWithSaveLayer,
                     decoration: BoxDecoration(
-                      color: primary,
+                      color: quaternary,
                       borderRadius: BorderRadius.circular(15),
                       border: Border.all(
                         color: quaternary,
@@ -46,11 +48,30 @@ class _HomeBannerState extends State<HomeBanner> {
                       ),
                     ),
                     child: Center(
-                        child: Image.asset(
-                      height: double.infinity,
-                      width: double.infinity,
-                      item,
-                      fit: BoxFit.cover,
+                        child: FutureBuilder(
+                      future: auth.downloadURL(item),
+                      builder: (BuildContext context,
+                          AsyncSnapshot<String> snapshot) {
+                        if (snapshot.connectionState == ConnectionState.done &&
+                            snapshot.hasData) {
+                          return SizedBox(
+                            height: double.infinity,
+                            width: double.infinity,
+                            child: Image.network(
+                              snapshot.data!,
+                              fit: BoxFit.fill,
+                            ),
+                          );
+                        }
+                        if (snapshot.connectionState ==
+                                ConnectionState.waiting ||
+                            !snapshot.hasData) {
+                          return const CircularProgressIndicator(
+                            color: secondary,
+                          );
+                        }
+                        return Container();
+                      },
                     )),
                   ))
               .toList(),

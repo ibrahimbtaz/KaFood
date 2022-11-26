@@ -3,28 +3,33 @@ import 'package:mycatering/screen/menu/tab/Fruit/title_fruit.dart';
 
 class FruitTab extends StatelessWidget {
   List FruitOnSale = [
-    // ["Fruit", "36", Colors.blueGrey, "assets/images/fruit-salad.png"],
-    // ["Fruit", "45", Colors.blueGrey, "assets/images/fruit-salad.png"],
-    // ["Fruit", "84", Colors.blueGrey, "assets/images/fruit-salad.png"],
-    // ["Fruit", "95", Colors.blueGrey, "assets/images/fruit-salad.png"],
+    ["Fruit", "36", "fruit-salad.png"],
+    ["Fruit", "45", "fruit-salad.png"],
+    ["Fruit", "84", "fruit-salad.png"],
+    ["Fruit", "95", "fruit-salad.png"],
   ];
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: const EdgeInsets.symmetric(
+        vertical: 25,
+        horizontal: 5,
+      ),
       child: GridView.builder(
         itemCount: FruitOnSale.length,
         padding: const EdgeInsets.all(12),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: 1 / 1.5,
+          childAspectRatio: 0.8,
+          crossAxisSpacing: 25,
+          mainAxisSpacing: 20,
         ),
         itemBuilder: (context, index) {
           return FruitTitle(
             FruitVariant: FruitOnSale[index][0],
             FruitPrice: FruitOnSale[index][1],
-            FruitColor: FruitOnSale[index][2],
-            imageFruitName: FruitOnSale[index][3],
+            imageFruitName: FruitOnSale[index][2],
           );
         },
       ),

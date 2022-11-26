@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:mycatering/utils/constant.dart';
 
 class MenuSearch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 25, left: 25, right: 25),
+      margin: const EdgeInsets.symmetric(vertical: 14, horizontal: 25),
       child: Column(
         children: [
           Row(
@@ -12,21 +13,21 @@ class MenuSearch extends StatelessWidget {
               Flexible(
                 flex: 1,
                 child: TextField(
-                  cursorColor: Colors.white12,
+                  cursorColor: blackColor,
                   decoration: InputDecoration(
-                    fillColor: const Color.fromRGBO(238, 238, 238, 1.0),
+                    fillColor: quaternary,
                     filled: true,
                     border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(20),
                         borderSide: BorderSide.none),
                     hintText: 'Search Menu',
                     hintStyle: const TextStyle(
-                      color: Colors.grey,
-                      fontSize: 18,
+                      color: secondary,
+                      fontSize: 14,
                     ),
                     prefixIcon: Container(
                       padding: const EdgeInsets.all(15),
-                      width: 20,
+                      width: 18,
                       child: Image.asset('assets/icons/icons-search.png'),
                     ),
                   ),

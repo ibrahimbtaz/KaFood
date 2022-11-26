@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mycatering/screen/cart/components/CartDB.dart';
 import 'package:mycatering/screen/cart/components/CartModel.dart';
 import 'package:mycatering/screen/home/Home.dart';
 import 'package:mycatering/screen/inputlogin/auth/auth.dart';
-import 'package:mycatering/utils/Constant.dart';
+import 'package:mycatering/utils/constant.dart';
 
 class MainCart extends StatefulWidget {
   const MainCart({super.key});
@@ -77,33 +78,71 @@ class _MainCartState extends State<MainCart> {
     final Auth auth = Auth();
     return Scaffold(
       appBar: AppBar(
-          centerTitle: true,
-          title: Text(
-            "Your Cart",
-            style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                fontSize: 26, fontWeight: FontWeight.bold, color: secondary),
-          )),
+        automaticallyImplyLeading: false,
+        centerTitle: true,
+        title: Padding(
+          padding: const EdgeInsets.all(5),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Image(
+                width: 58,
+                height: 58,
+                image: AssetImage("assets/images/project - logo.png"),
+                // repeat: ImageRepeat.repeat,
+              ),
+              Text(
+                'Your Cart'.toUpperCase(),
+                textAlign: TextAlign.center,
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyText1!
+                    .copyWith(color: secondary, fontSize: 16),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: SvgPicture.asset(
+                  'assets/icons/bell-outline-icon.svg',
+                  width: 24,
+                  height: 24,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
       body: Center(
         child: Container(
+          margin: const EdgeInsets.only(top: 14),
           child: isLoading
               ? const Center(
-                  child: CircularProgressIndicator(),
+                  child: CircularProgressIndicator(
+                    color: secondary,
+                  ),
                 )
               : dataListFavorite.isEmpty
                   ? const Center(
-                      child: Text("Kamu tidak memiliki tim Favorit"),
+                      child: Text("Kamu Tidak Memiliki Menu"),
                     )
                   : ListView.builder(
                       itemCount: dataListFavorite.length,
                       itemBuilder: (c, index) {
                         final item = dataListFavorite[index];
                         return Padding(
-                          padding: const EdgeInsets.only(
-                              top: 6, left: 10, right: 10),
-                          child: Card(
-                            child: Container(
-                              margin: const EdgeInsets.all(15),
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 6, horizontal: 20),
+                          child: Container(
+                            height: 80,
+                            width: double.infinity,
+                            decoration: const BoxDecoration(
+                              color: quaternary,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20)),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(10),
                               child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
                                   Container(
                                       margin: const EdgeInsets.only(right: 20),
@@ -128,7 +167,9 @@ class _MainCartState extends State<MainCart> {
                                           if (snapshot.connectionState ==
                                                   ConnectionState.waiting ||
                                               !snapshot.hasData) {
-                                            return const CircularProgressIndicator();
+                                            return const CircularProgressIndicator(
+                                              color: secondary,
+                                            );
                                           }
                                           return Container();
                                         },
@@ -136,12 +177,19 @@ class _MainCartState extends State<MainCart> {
                                   Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
                                       children: <Widget>[
                                         Text(
                                           item.name,
+                                          style: const TextStyle(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.bold),
                                         ),
                                         Text(
                                           item.price,
+                                          style: const TextStyle(
+                                              fontSize: 14, color: secondary),
                                         ),
                                       ]),
                                   const Spacer(),

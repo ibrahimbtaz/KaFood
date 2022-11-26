@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mycatering/screen/home/models/HomeModel.dart';
 import 'package:mycatering/screen/inputlogin/auth/auth.dart';
 import 'package:mycatering/screen/payment/bloc/cart_bloc.dart';
+import 'package:mycatering/utils/constant.dart';
 
 class CartProductCard extends StatefulWidget {
   final FoodModel foodModel;
@@ -21,8 +22,9 @@ class _CartProductCardState extends State<CartProductCard> {
   Widget build(BuildContext context) {
     final Auth auth = Auth();
     return Padding(
-      padding: const EdgeInsets.only(bottom: 8.0),
+      padding: const EdgeInsets.all(10.0),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           FutureBuilder(
             future: auth.downloadURL(
@@ -32,8 +34,8 @@ class _CartProductCardState extends State<CartProductCard> {
               if (snapshot.connectionState == ConnectionState.done &&
                   snapshot.hasData) {
                 return SizedBox(
-                  height: 60,
-                  width: 60,
+                  height: 40,
+                  width: 40,
                   child: Image.network(
                     snapshot.data!,
                     fit: BoxFit.cover,
@@ -42,7 +44,9 @@ class _CartProductCardState extends State<CartProductCard> {
               }
               if (snapshot.connectionState == ConnectionState.waiting ||
                   !snapshot.hasData) {
-                return const CircularProgressIndicator();
+                return const CircularProgressIndicator(
+                  color: secondary,
+                );
               }
               return Container();
             },
@@ -53,20 +57,16 @@ class _CartProductCardState extends State<CartProductCard> {
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text(
                   widget.foodModel.name,
                   style: const TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w700,
-                  ),
+                      fontSize: 14, fontWeight: FontWeight.bold),
                 ),
                 Text(
                   '\$${widget.foodModel.price}',
-                  style: const TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w700,
-                  ),
+                  style: const TextStyle(fontSize: 14, color: secondary),
                 ),
               ],
             ),

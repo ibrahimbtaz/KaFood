@@ -74,6 +74,7 @@ class _DetailContentState extends State<DetailContent> {
     final Auth auth = Auth();
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         centerTitle: true,
         title: Text(
           widget.foodModel.name,
@@ -169,7 +170,9 @@ class _DetailContentState extends State<DetailContent> {
                       }
                       if (snapshot.connectionState == ConnectionState.waiting ||
                           !snapshot.hasData) {
-                        return const CircularProgressIndicator();
+                        return const CircularProgressIndicator(
+                          color: secondary,
+                        );
                       }
                       return Container();
                     },

@@ -5,9 +5,14 @@ import 'package:mycatering/screen/payment/bloc/cart_bloc.dart';
 import 'package:mycatering/utils/constant.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
-import 'cart_product_card.dart';
+import 'components/cart_product_card.dart';
 
-class CartScreen extends StatelessWidget {
+class CartScreen extends StatefulWidget {
+  @override
+  State<CartScreen> createState() => _CartScreenState();
+}
+
+class _CartScreenState extends State<CartScreen> {
   @override
   Widget build(BuildContext context) {
     void _showDialog(BuildContext context) {
@@ -44,9 +49,20 @@ class CartScreen extends StatelessWidget {
       return;
     }
 
+    bool isLoading = false;
+
     return Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           centerTitle: true,
+          title: Text(
+            'Checkout'.toUpperCase(),
+            textAlign: TextAlign.center,
+            style: Theme.of(context)
+                .textTheme
+                .bodyText1!
+                .copyWith(color: secondary, fontSize: 16),
+          ),
           leading: IconButton(
             icon: const Icon(Icons.arrow_back_ios_new_outlined),
             color: blackColor,
@@ -59,148 +75,188 @@ class CartScreen extends StatelessWidget {
           builder: (context, state) {
             if (state is CartLoading) {
               return const Center(
-                child: CircularProgressIndicator(),
+                child: CircularProgressIndicator(
+                  color: secondary,
+                ),
               );
             }
             if (state is CartLoaded) {
               return Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                padding: const EdgeInsets.only(top: 14.0),
+                child: Stack(
                   children: [
-                    Expanded(
-                      child: SizedBox(
-                        child: ListView.builder(
-                            scrollDirection: Axis.vertical,
-                            shrinkWrap: true,
-                            itemCount: state.cart
-                                .productQuantity(state.cart.generateFoodModel)
-                                .keys
-                                .length,
-                            itemBuilder: (context, index) {
-                              return CartProductCard(
-                                foodModel: state.cart
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(
+                          child: SizedBox(
+                            child: ListView.builder(
+                                physics: const BouncingScrollPhysics(),
+                                scrollDirection: Axis.vertical,
+                                shrinkWrap: true,
+                                itemCount: state.cart
                                     .productQuantity(
                                         state.cart.generateFoodModel)
                                     .keys
-                                    .elementAt(index),
-                                quantity: state.cart
-                                    .productQuantity(
-                                        state.cart.generateFoodModel)
-                                    .values
-                                    .elementAt(index),
-                              );
-                            }),
-                      ),
+                                    .length,
+                                itemBuilder: (context, index) {
+                                  return Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                      vertical: 6,
+                                      horizontal: 20,
+                                    ),
+                                    child: Container(
+                                      height: 70,
+                                      width: double.infinity,
+                                      decoration: const BoxDecoration(
+                                        color: quaternary,
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(20)),
+                                      ),
+                                      child: CartProductCard(
+                                        foodModel: state.cart
+                                            .productQuantity(
+                                                state.cart.generateFoodModel)
+                                            .keys
+                                            .elementAt(index),
+                                        quantity: state.cart
+                                            .productQuantity(
+                                                state.cart.generateFoodModel)
+                                            .values
+                                            .elementAt(index),
+                                      ),
+                                    ),
+                                  );
+                                }),
+                          ),
+                        ),
+                      ],
                     ),
                     Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        const Divider(
-                          thickness: 2,
-                        ),
-                        Padding(
+                        Container(
                           padding: const EdgeInsets.symmetric(
-                              horizontal: 10, vertical: 10.0),
+                              horizontal: 20, vertical: 14),
+                          decoration: BoxDecoration(
+                              color: quaternary,
+                              borderRadius: const BorderRadius.only(
+                                  topLeft: Radius.circular(30),
+                                  topRight: Radius.circular(30)),
+                              boxShadow: [
+                                BoxShadow(
+                                  offset: const Offset(0, -15),
+                                  blurRadius: 20,
+                                  color:
+                                      const Color(0xFFDADADA).withOpacity(0.15),
+                                )
+                              ]),
                           child: Column(
                             children: [
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  const Text(
-                                    'SUBTOTAL',
-                                    style: TextStyle(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w700,
+                              Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 10, vertical: 10.0),
+                                child: Column(
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        const Text(
+                                          'SUBTOTAL',
+                                          style: TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.w700,
+                                          ),
+                                        ),
+                                        Text(
+                                          '\$${state.cart.subtotalString}',
+                                          style: const TextStyle(
+                                            fontWeight: FontWeight.w700,
+                                          ),
+                                        ),
+                                      ],
                                     ),
-                                  ),
-                                  Text(
-                                    '\$${state.cart.subtotalString}',
-                                    style: const TextStyle(
-                                      fontWeight: FontWeight.w700,
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    // Row(
+                                    //   mainAxisAlignment:
+                                    //       MainAxisAlignment.spaceBetween,
+                                    //   children: [
+                                    //     const Text(
+                                    //       'DELIVERY FREE',
+                                    //       style: TextStyle(
+                                    //         fontSize: 15,
+                                    //         fontWeight: FontWeight.w700,
+                                    //       ),
+                                    //     ),
+                                    //     Text(
+                                    //       '\$${state.cart.freeDeliveryString}',
+                                    //       style: const TextStyle(
+                                    //         fontWeight: FontWeight.w700,
+                                    //       ),
+                                    //     ),
+                                    //   ],
+                                    // ),
+                                  ],
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 5,
+                              ),
+                              Stack(
+                                children: [
+                                  Container(
+                                    height: 45,
+                                    decoration: const BoxDecoration(
+                                        // borderRadius: BorderRadius.circular(20),
+                                        // border:
+                                        //     Border.all(width: 1.0, color: quaternary),
+                                        ),
+                                    child: ElevatedButton(
+                                      onPressed: () => _showDialog(context),
+                                      style: ElevatedButton.styleFrom(
+                                        elevation: 0,
+                                        backgroundColor: secondary,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(15),
+                                        ),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 25),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text(
+                                              'Checkout'.toUpperCase(),
+                                              style: const TextStyle(
+                                                fontSize: 15,
+                                                fontWeight: FontWeight.bold,
+                                                color: whiteColor,
+                                              ),
+                                            ),
+                                            Text(
+                                              '\$${state.cart.totalString}',
+                                              style: const TextStyle(
+                                                color: whiteColor,
+                                                fontSize: 15,
+                                                fontWeight: FontWeight.bold,
+                                                letterSpacing: 1,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
                                     ),
                                   ),
                                 ],
                               ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              // Row(
-                              //   mainAxisAlignment:
-                              //       MainAxisAlignment.spaceBetween,
-                              //   children: [
-                              //     const Text(
-                              //       'DELIVERY FREE',
-                              //       style: TextStyle(
-                              //         fontSize: 15,
-                              //         fontWeight: FontWeight.w700,
-                              //       ),
-                              //     ),
-                              //     Text(
-                              //       '\$${state.cart.freeDeliveryString}',
-                              //       style: const TextStyle(
-                              //         fontWeight: FontWeight.w700,
-                              //       ),
-                              //     ),
-                              //   ],
-                              // ),
                             ],
                           ),
-                        ),
-                        const SizedBox(
-                          height: 5,
-                        ),
-                        Stack(
-                          children: [
-                            Container(
-                              height: 45,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                border:
-                                    Border.all(width: 1.0, color: Colors.grey),
-                              ),
-                              child: ElevatedButton(
-                                onPressed: () => _showDialog(context),
-                                style: ElevatedButton.styleFrom(
-                                  elevation: 0,
-                                  backgroundColor: whiteColor,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 25),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      const Text(
-                                        'TOTAL',
-                                        style: TextStyle(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.w800,
-                                          color:
-                                              Color.fromARGB(255, 37, 0, 100),
-                                        ),
-                                      ),
-                                      Text(
-                                        '\$${state.cart.totalString}',
-                                        style: const TextStyle(
-                                          color:
-                                              Color.fromARGB(255, 37, 0, 100),
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.w600,
-                                          letterSpacing: 1,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
                         ),
                       ],
                     ),

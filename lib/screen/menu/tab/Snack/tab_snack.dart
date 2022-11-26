@@ -3,28 +3,33 @@ import 'package:mycatering/screen/menu/tab/Snack/title_snack.dart';
 
 class SnackTab extends StatelessWidget {
   List SnackOnSale = [
-    // ["Snack Box 1", "36", Colors.blueGrey, "assets/images/snack.png"],
-    // ["Snack Box 2", "45", Colors.blueGrey, "assets/images/snack.png"],
-    // ["Snack Box 3", "84", Colors.blueGrey, "assets/images/snack.png"],
-    // ["Snack Box 4", "95", Colors.blueGrey, "assets/images/snack.png"],
+    ["Snack", "36", "snack.png"],
+    ["Snack", "45", "snack.png"],
+    ["Snack", "84", "snack.png"],
+    ["Snack", "95", "snack.png"],
   ];
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: const EdgeInsets.symmetric(
+        vertical: 25,
+        horizontal: 5,
+      ),
       child: GridView.builder(
         itemCount: SnackOnSale.length,
         padding: const EdgeInsets.all(12),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: 1 / 1.5,
+          childAspectRatio: 0.8,
+          crossAxisSpacing: 25,
+          mainAxisSpacing: 20,
         ),
         itemBuilder: (context, index) {
           return SnackTitle(
             SnackVariant: SnackOnSale[index][0],
             SnackPrice: SnackOnSale[index][1],
-            SnackColor: SnackOnSale[index][2],
-            SnackImage: SnackOnSale[index][3],
+            imageSnackName: SnackOnSale[index][2],
           );
         },
       ),

@@ -80,11 +80,11 @@ class _MethodLoginState extends State<MethodLogin> {
         ],
       ),
       child: TextField(
-        cursorColor: primary,
+        cursorColor: secondary,
         decoration: const InputDecoration(
           icon: Icon(
             Icons.person,
-            color: primary,
+            color: secondary,
           ),
           hintText: "Enter Username",
           enabledBorder: InputBorder.none,
@@ -113,11 +113,11 @@ class _MethodLoginState extends State<MethodLogin> {
         ],
       ),
       child: TextField(
-        cursorColor: primary,
+        cursorColor: secondary,
         decoration: const InputDecoration(
           icon: Icon(
             Icons.email,
-            color: primary,
+            color: secondary,
           ),
           hintText: "Enter Email",
           enabledBorder: InputBorder.none,
@@ -148,7 +148,7 @@ class _MethodLoginState extends State<MethodLogin> {
           ]),
       child: TextField(
         obscureText: obscureText,
-        cursorColor: primary,
+        cursorColor: secondary,
         decoration: InputDecoration(
           suffixIcon: GestureDetector(
             onTap: () {
@@ -158,12 +158,12 @@ class _MethodLoginState extends State<MethodLogin> {
             },
             child: Icon(
               obscureText ? Icons.visibility_off : Icons.visibility,
-              color: primary,
+              color: secondary,
             ),
           ),
           icon: const Icon(
             Icons.lock,
-            color: primary,
+            color: secondary,
           ),
           hintText: "Enter Password",
           enabledBorder: InputBorder.none,
@@ -181,7 +181,7 @@ class _MethodLoginState extends State<MethodLogin> {
       width: double.infinity,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: primary,
+          backgroundColor: secondary,
           textStyle: const TextStyle(
               color: whiteColor, fontSize: 16, fontWeight: FontWeight.bold),
           shape: RoundedRectangleBorder(
@@ -214,7 +214,7 @@ class _MethodLoginState extends State<MethodLogin> {
               },
               child: Text(
                 isLogin ? 'Sign Up' : 'Login',
-                style: const TextStyle(color: primary),
+                style: const TextStyle(color: secondary),
               ),
             ),
           ]),

@@ -40,9 +40,22 @@ class _MenuBodyState extends State<MenuBody> {
       length: myTabs.length,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          leading: Image.asset("assets/images/project - logo.png"),
+          automaticallyImplyLeading: false,
+          centerTitle: true,
+          title: Padding(
+            padding: const EdgeInsets.all(5),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const [
+                Image(
+                  width: 58,
+                  height: 58,
+                  image: AssetImage("assets/images/project - logo.png"),
+                  // repeat: ImageRepeat.repeat,
+                ),
+              ],
+            ),
+          ),
         ),
         body: Column(
           children: [

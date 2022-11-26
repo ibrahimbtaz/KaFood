@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mycatering/utils/Constant.dart';
+import 'package:mycatering/utils/constant.dart';
+
 
 class HomeAppbar extends StatefulWidget {
   const HomeAppbar({super.key});
@@ -28,7 +29,7 @@ class _HomeAppbarState extends State<HomeAppbar> {
           ),
           Center(
             child: Transform.translate(
-              offset: const Offset(0, 14),
+              offset: const Offset(0, 16),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -37,12 +38,15 @@ class _HomeAppbarState extends State<HomeAppbar> {
                     style: Theme.of(context)
                         .textTheme
                         .bodyText1!
-                        .copyWith(color: primary, fontSize: 14),
+                        .copyWith(color: secondary, fontSize: 14),
                   ),
                   Transform.translate(
-                    offset: const Offset(0, -12),
+                    offset: const Offset(-6.8, -13),
                     child: DropdownButton(
-                        icon: const SizedBox.shrink(),
+                        icon: const Icon(
+                          Icons.location_on,
+                          size: 16,
+                        ),
                         dropdownColor: whiteColor,
                         underline: Container(),
                         value: selectedValue,

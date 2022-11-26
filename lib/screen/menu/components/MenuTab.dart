@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mycatering/utils/constant.dart';
 
 class MenuTab extends StatelessWidget {
   final String iconPath;
@@ -8,14 +9,14 @@ class MenuTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Tab(
-      height: 80,
+      height: 60,
       child: Container(
-        padding: EdgeInsets.all(12),
+        padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
-            color: Colors.grey[200], borderRadius: BorderRadius.circular(12)),
+            color: quaternary, borderRadius: BorderRadius.circular(12)),
         child: Image.asset(
           iconPath,
-          color: Colors.grey[600],
+          color: secondary,
         ),
       ),
     );
