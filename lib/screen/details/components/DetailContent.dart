@@ -151,7 +151,7 @@ class _DetailContentState extends State<DetailContent> {
               Hero(
                   tag: widget.foodModel.image,
                   child: FutureBuilder(
-                    future: auth.donwloadURL(
+                    future: auth.downloadURL(
                       widget.foodModel.image,
                     ),
                     builder:

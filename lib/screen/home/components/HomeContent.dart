@@ -64,7 +64,7 @@ class _FoodItemState extends State<FoodItem> {
               Hero(
                   tag: widget.tag,
                   child: FutureBuilder(
-                    future: auth.donwloadURL(
+                    future: auth.downloadURL(
                       widget.foodModel.image,
                     ),
                     builder:

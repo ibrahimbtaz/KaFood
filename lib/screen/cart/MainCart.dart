@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mycatering/screen/cart/components/CartDB.dart';
 import 'package:mycatering/screen/cart/components/CartModel.dart';
 import 'package:mycatering/screen/home/Home.dart';
+import 'package:mycatering/screen/inputlogin/auth/auth.dart';
 import 'package:mycatering/utils/Constant.dart';
 
 class MainCart extends StatefulWidget {
@@ -73,6 +74,7 @@ class _MainCartState extends State<MainCart> {
 
   @override
   Widget build(BuildContext context) {
+    final Auth auth = Auth();
     return Scaffold(
       appBar: AppBar(
           centerTitle: true,
@@ -104,13 +106,33 @@ class _MainCartState extends State<MainCart> {
                               child: Row(
                                 children: <Widget>[
                                   Container(
-                                    margin: const EdgeInsets.only(right: 20),
-                                    width: 40,
-                                    height: 40,
-                                    child: Image.asset(
-                                      item.image,
-                                    ),
-                                  ),
+                                      margin: const EdgeInsets.only(right: 20),
+                                      child: FutureBuilder(
+                                        future: auth.downloadURL(
+                                          item.image,
+                                        ),
+                                        builder: (BuildContext context,
+                                            AsyncSnapshot<String> snapshot) {
+                                          if (snapshot.connectionState ==
+                                                  ConnectionState.done &&
+                                              snapshot.hasData) {
+                                            return SizedBox(
+                                              height: 40,
+                                              width: 40,
+                                              child: Image.network(
+                                                snapshot.data!,
+                                                fit: BoxFit.cover,
+                                              ),
+                                            );
+                                          }
+                                          if (snapshot.connectionState ==
+                                                  ConnectionState.waiting ||
+                                              !snapshot.hasData) {
+                                            return const CircularProgressIndicator();
+                                          }
+                                          return Container();
+                                        },
+                                      )),
                                   Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,

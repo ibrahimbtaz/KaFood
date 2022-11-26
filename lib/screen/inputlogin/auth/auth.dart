@@ -189,10 +189,10 @@ class Auth {
     return results;
   }
 
-  Future<String> donwloadURL(String imageName) async {
-    String donwloadURL =
+  Future<String> downloadURL(String imageName) async {
+    String downloadURL =
         await storage.ref('image/$imageName').getDownloadURL();
 
-    return donwloadURL;
+    return downloadURL;
   }
 }

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mycatering/screen/home/models/HomeModel.dart';
+import 'package:mycatering/screen/inputlogin/auth/auth.dart';
 import 'package:mycatering/screen/payment/bloc/cart_bloc.dart';
 
-class CartProductCard extends StatelessWidget {
+class CartProductCard extends StatefulWidget {
   final FoodModel foodModel;
   final int quantity;
 
@@ -12,16 +13,39 @@ class CartProductCard extends StatelessWidget {
       : super(key: key);
 
   @override
+  State<CartProductCard> createState() => _CartProductCardState();
+}
+
+class _CartProductCardState extends State<CartProductCard> {
+  @override
   Widget build(BuildContext context) {
+    final Auth auth = Auth();
     return Padding(
       padding: const EdgeInsets.only(bottom: 8.0),
       child: Row(
         children: [
-          Image.asset(
-            foodModel.image,
-            width: 100,
-            height: 80,
-            fit: BoxFit.cover,
+          FutureBuilder(
+            future: auth.downloadURL(
+              widget.foodModel.image,
+            ),
+            builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
+              if (snapshot.connectionState == ConnectionState.done &&
+                  snapshot.hasData) {
+                return SizedBox(
+                  height: 60,
+                  width: 60,
+                  child: Image.network(
+                    snapshot.data!,
+                    fit: BoxFit.cover,
+                  ),
+                );
+              }
+              if (snapshot.connectionState == ConnectionState.waiting ||
+                  !snapshot.hasData) {
+                return const CircularProgressIndicator();
+              }
+              return Container();
+            },
           ),
           const SizedBox(
             width: 10,
@@ -31,14 +55,14 @@ class CartProductCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  foodModel.name,
+                  widget.foodModel.name,
                   style: const TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
                 Text(
-                  '\$${foodModel.price}',
+                  '\$${widget.foodModel.price}',
                   style: const TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.w700,
@@ -57,16 +81,20 @@ class CartProductCard extends StatelessWidget {
                   IconButton(
                     icon: const Icon(Icons.remove_circle),
                     onPressed: () {
-                      context.read<CartBloc>().add(RemoveProduct(foodModel));
+                      context
+                          .read<CartBloc>()
+                          .add(RemoveProduct(widget.foodModel));
                     },
                   ),
                   Text(
-                    '$quantity',
+                    '${widget.quantity}',
                   ),
                   IconButton(
                     icon: const Icon(Icons.add_circle),
                     onPressed: () {
-                      context.read<CartBloc>().add(AddProduct(foodModel));
+                      context
+                          .read<CartBloc>()
+                          .add(AddProduct(widget.foodModel));
                     },
                   ),
                 ],
