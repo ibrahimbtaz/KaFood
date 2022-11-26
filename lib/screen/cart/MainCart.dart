@@ -129,7 +129,7 @@ class _MainCartState extends State<MainCart> {
                         final item = dataListFavorite[index];
                         return Padding(
                           padding: const EdgeInsets.symmetric(
-                              vertical: 6, horizontal: 12),
+                              vertical: 6, horizontal: 20),
                           child: Container(
                             height: 80,
                             width: double.infinity,
