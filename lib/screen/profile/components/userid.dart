@@ -25,7 +25,9 @@ class Userid extends StatelessWidget {
             ),
             placeholder: ((context, url) => const SizedBox(
                   child: Center(
-                    child: CircularProgressIndicator(),
+                    child: CircularProgressIndicator(
+                      color: secondary,
+                    ),
                   ),
                 )),
           ),

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mycatering/screen/home/models/HomeModel.dart';
 import 'package:mycatering/screen/inputlogin/auth/auth.dart';
 import 'package:mycatering/screen/payment/bloc/cart_bloc.dart';
+import 'package:mycatering/utils/constant.dart';
 
 class CartProductCard extends StatefulWidget {
   final FoodModel foodModel;
@@ -42,7 +43,9 @@ class _CartProductCardState extends State<CartProductCard> {
               }
               if (snapshot.connectionState == ConnectionState.waiting ||
                   !snapshot.hasData) {
-                return const CircularProgressIndicator();
+                return const CircularProgressIndicator(
+                  color: secondary,
+                );
               }
               return Container();
             },

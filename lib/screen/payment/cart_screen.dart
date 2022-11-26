@@ -59,7 +59,9 @@ class CartScreen extends StatelessWidget {
           builder: (context, state) {
             if (state is CartLoading) {
               return const Center(
-                child: CircularProgressIndicator(),
+                child: CircularProgressIndicator(
+                  color: secondary,
+                ),
               );
             }
             if (state is CartLoaded) {

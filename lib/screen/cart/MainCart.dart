@@ -115,7 +115,9 @@ class _MainCartState extends State<MainCart> {
           margin: const EdgeInsets.only(top: 14),
           child: isLoading
               ? const Center(
-                  child: CircularProgressIndicator(),
+                  child: CircularProgressIndicator(
+                    color: secondary,
+                  ),
                 )
               : dataListFavorite.isEmpty
                   ? const Center(
@@ -164,7 +166,9 @@ class _MainCartState extends State<MainCart> {
                                           if (snapshot.connectionState ==
                                                   ConnectionState.waiting ||
                                               !snapshot.hasData) {
-                                            return const CircularProgressIndicator();
+                                            return const CircularProgressIndicator(
+                                              color: secondary,
+                                            );
                                           }
                                           return Container();
                                         },
