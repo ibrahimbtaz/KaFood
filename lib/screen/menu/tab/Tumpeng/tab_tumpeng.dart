@@ -4,9 +4,9 @@ import 'package:mycatering/screen/menu/tab/Tumpeng/title_tumpeng.dart';
 class TumpengTab extends StatelessWidget {
   List TumpengOnSale = [
     ["Tumpeng", "36", "tumpeng.png"],
-    ["Tumpeng", "45", "tumpeng.png"],
-    ["Tumpeng", "84", "tumpeng.png"],
-    ["Tumpeng", "95", "tumpeng.png"],
+    ["Tumpeng", "45", "tumpengmini-2-removebg-preview.png"],
+    ["Tumpeng", "84", "tumpengmini-4-removebg-preview.png"],
+    ["Tumpeng", "95", "tumpengmini-6-removebg-preview.png"],
   ];
 
   @override

@@ -4,9 +4,9 @@ import 'package:mycatering/screen/menu/tab/Snack/title_snack.dart';
 class SnackTab extends StatelessWidget {
   List SnackOnSale = [
     ["Snack", "36", "snack.png"],
-    ["Snack", "45", "snack.png"],
-    ["Snack", "84", "snack.png"],
-    ["Snack", "95", "snack.png"],
+    ["Snack", "45", "ricebox-beefslice-2.png"],
+    ["Snack", "84", "ricebox-chickensambalgeprek-8.png"],
+    ["Snack", "95", "ricebox-tenderloineggstra-7.png"],
   ];
 
   @override
