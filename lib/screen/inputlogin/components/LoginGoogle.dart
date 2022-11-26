@@ -16,6 +16,9 @@ class _LoginGoogleState extends State<LoginGoogle> {
     try {
       await Future.delayed(const Duration(seconds: 1));
       await Auth().signInWithGoogle();
+      const CircularProgressIndicator(
+        color: secondary,
+      );
     } on FirebaseAuthException {
       setState(() {
         const snackBar = SnackBar(
