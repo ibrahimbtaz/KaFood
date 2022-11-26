@@ -13,9 +13,9 @@ class HomeBanner extends StatefulWidget {
 
 class _HomeBannerState extends State<HomeBanner> {
   List<String> imgList = [
-    'promo-1.png',
-    'promo-2.png',
-    'promo-3.png',
+    'newpromo1.png',
+    'newpromo2.png',
+    'newpromo3.png',
   ];
 
   @override
