@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mycatering/screen/home/models/HomeModel.dart';
+import 'package:mycatering/screen/inputlogin/auth/auth.dart';
 import 'package:mycatering/utils/Constant.dart';
 
 class FoodItem extends StatefulWidget {
@@ -13,23 +14,25 @@ class FoodItem extends StatefulWidget {
 
 class _FoodItemState extends State<FoodItem> {
   Color? color;
-  Future getColor() async {
-    Color? color = await getImagePalette(
-      AssetImage(widget.foodModel.image),
-    );
-    setState(() {
-      this.color = color;
-    });
-  }
+
+  // Future getColor() async {
+  //   Color? color = await getImagePalette(
+  //     NetworkImage(widget.foodModel.image),
+  //   );
+  //   setState(() {
+  //     this.color = color;
+  //   });
+  // }
 
   @override
   void initState() {
     super.initState();
-    getColor();
+    // getColor();
   }
 
   @override
   Widget build(BuildContext context) {
+    final Auth auth = Auth();
     return Container(
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
@@ -38,8 +41,8 @@ class _FoodItemState extends State<FoodItem> {
         borderRadius: BorderRadius.circular(20),
       ),
       child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           //images
           Stack(
@@ -59,13 +62,31 @@ class _FoodItemState extends State<FoodItem> {
                       ),
               ),
               Hero(
-                tag: widget.tag,
-                child: Image.asset(
-                  widget.foodModel.image,
-                  height: 90,
-                  width: 90,
-                ),
-              ),
+                  tag: widget.tag,
+                  child: FutureBuilder(
+                    future: auth.downloadURL(
+                      widget.foodModel.image,
+                    ),
+                    builder:
+                        (BuildContext context, AsyncSnapshot<String> snapshot) {
+                      if (snapshot.connectionState == ConnectionState.done &&
+                          snapshot.hasData) {
+                        return SizedBox(
+                          height: 90,
+                          width: 90,
+                          child: Image.network(
+                            snapshot.data!,
+                            fit: BoxFit.cover,
+                          ),
+                        );
+                      }
+                      if (snapshot.connectionState == ConnectionState.waiting ||
+                          !snapshot.hasData) {
+                        return const CircularProgressIndicator();
+                      }
+                      return Container();
+                    },
+                  )),
             ],
           ),
           Container(

@@ -3,10 +3,10 @@ import 'package:mycatering/screen/menu/tab/Juice/title_juice.dart';
 
 class JuiceTab extends StatelessWidget {
   List juiceOnSale = [
-    ["Mango Juice", "36", Colors.blueGrey, "assets/images/mango.png"],
-    ["Orange Juice", "45", Colors.blueGrey, "assets/images/mango.png"],
-    ["Guava Juice", "84", Colors.blueGrey, "assets/images/mango.png"],
-    ["Apple Juice", "95", Colors.blueGrey, "assets/images/mango.png"],
+    // ["Mango Juice", "36", Colors.blueGrey, "assets/images/mango.png"],
+    // ["Orange Juice", "45", Colors.blueGrey, "assets/images/mango.png"],
+    // ["Guava Juice", "84", Colors.blueGrey, "assets/images/mango.png"],
+    // ["Apple Juice", "95", Colors.blueGrey, "assets/images/mango.png"],
   ];
 
   @override

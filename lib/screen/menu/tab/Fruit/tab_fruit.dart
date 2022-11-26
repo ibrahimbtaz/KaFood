@@ -3,10 +3,10 @@ import 'package:mycatering/screen/menu/tab/Fruit/title_fruit.dart';
 
 class FruitTab extends StatelessWidget {
   List FruitOnSale = [
-    ["Fruit", "36", Colors.blueGrey, "assets/images/fruit-salad.png"],
-    ["Fruit", "45", Colors.blueGrey, "assets/images/fruit-salad.png"],
-    ["Fruit", "84", Colors.blueGrey, "assets/images/fruit-salad.png"],
-    ["Fruit", "95", Colors.blueGrey, "assets/images/fruit-salad.png"],
+    // ["Fruit", "36", Colors.blueGrey, "assets/images/fruit-salad.png"],
+    // ["Fruit", "45", Colors.blueGrey, "assets/images/fruit-salad.png"],
+    // ["Fruit", "84", Colors.blueGrey, "assets/images/fruit-salad.png"],
+    // ["Fruit", "95", Colors.blueGrey, "assets/images/fruit-salad.png"],
   ];
 
   @override

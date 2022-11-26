@@ -3,10 +3,10 @@ import 'package:mycatering/screen/menu/tab/Dessert/title_dessert.dart';
 
 class DessertTab extends StatelessWidget {
   List DessertOnSale = [
-    ["Cake Chocolate", "36", Colors.blueGrey, "assets/images/cake-1.png"],
-    ["Cake Chocolate", "45", Colors.blueGrey, "assets/images/cake-1.png"],
-    ["Cake Chocolate", "84", Colors.blueGrey, "assets/images/cake-1.png"],
-    ["Cake Chocolate", "95", Colors.blueGrey, "assets/images/cake-1.png"],
+    // ["Cake Chocolate", "36", Colors.blueGrey, "assets/images/cake-1.png"],
+    // ["Cake Chocolate", "45", Colors.blueGrey, "assets/images/cake-1.png"],
+    // ["Cake Chocolate", "84", Colors.blueGrey, "assets/images/cake-1.png"],
+    // ["Cake Chocolate", "95", Colors.blueGrey, "assets/images/cake-1.png"],
   ];
 
   @override
