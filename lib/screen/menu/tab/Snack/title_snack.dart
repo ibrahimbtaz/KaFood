@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:mycatering/screen/inputlogin/auth/auth.dart';
+import 'package:mycatering/utils/constant.dart';
 
 class SnackTitle extends StatelessWidget {
   final String SnackVariant;
   final String SnackPrice;
-  final SnackColor;
-  final String SnackImage;
+  final String imageSnackName;
 
   final double borderRadius = 12;
 
@@ -12,89 +13,73 @@ class SnackTitle extends StatelessWidget {
     super.key,
     required this.SnackVariant,
     required this.SnackPrice,
-    required this.SnackColor,
-    required this.SnackImage,
+    required this.imageSnackName,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(12.0),
-      child: Container(
-        decoration: BoxDecoration(
-          color: SnackColor[50],
-          borderRadius: BorderRadius.circular(borderRadius),
-        ),
-        child: Column(
-          children: [
-            // price
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
+    final Auth auth = Auth();
+    return Container(
+      padding: const EdgeInsets.all(14),
+      decoration: BoxDecoration(
+        color: quaternary,
+        border: Border.all(color: quaternary),
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          FutureBuilder(
+            future: auth.downloadURL(imageSnackName),
+            builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
+              if (snapshot.connectionState == ConnectionState.done &&
+                  snapshot.hasData) {
+                return SizedBox(
+                  height: 90,
+                  width: 90,
+                  child: Image.network(
+                    snapshot.data!,
+                    fit: BoxFit.cover,
+                  ),
+                );
+              }
+              if (snapshot.connectionState == ConnectionState.waiting ||
+                  !snapshot.hasData) {
+                return const CircularProgressIndicator(
+                  color: secondary,
+                );
+              }
+              return Container();
+            },
+          ),
+          Container(
+            margin: const EdgeInsets.only(top: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: SnackColor[100],
-                    borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(borderRadius),
-                      topRight: Radius.circular(borderRadius),
-                    ),
-                  ),
-                  padding: const EdgeInsets.all(12),
+                Flexible(
                   child: Text(
-                    '\$$SnackPrice',
-                    style: TextStyle(
-                      color: SnackColor[800],
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                    ),
+                    SnackVariant,
+                    maxLines: 1,
+                    style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                        fontSize: 16, overflow: TextOverflow.ellipsis),
                   ),
+                ),
+                const SizedBox(
+                  width: 4,
+                ),
+                Text(
+                  '\$${SnackPrice.toString()}',
+                  style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: secondary),
                 ),
               ],
             ),
-
-            // donut picture
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 36.0, vertical: 41),
-              child: Image.asset(SnackImage),
-            ),
-
-            // donut flavor
-            Text(
-              SnackVariant,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
-              ),
-            ),
-            const SizedBox(height: 4),
-            Text(
-              'Food',
-              style: TextStyle(color: Colors.grey[600]),
-            ),
-
-            // love icon + add button
-            Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  // love icon
-                  Icon(
-                    Icons.favorite,
-                    color: Colors.red[400],
-                  ),
-
-                  // plus button
-                  Icon(
-                    Icons.add_shopping_cart_outlined,
-                    color: Colors.grey[800],
-                  ),
-                ],
-              ),
-            )
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

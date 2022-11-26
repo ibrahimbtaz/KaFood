@@ -78,6 +78,7 @@ class _MainCartState extends State<MainCart> {
     final Auth auth = Auth();
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         centerTitle: true,
         title: Padding(
           padding: const EdgeInsets.all(5),
@@ -96,7 +97,7 @@ class _MainCartState extends State<MainCart> {
                 style: Theme.of(context)
                     .textTheme
                     .bodyText1!
-                    .copyWith(color: primary, fontSize: 16),
+                    .copyWith(color: secondary, fontSize: 16),
               ),
               IconButton(
                 onPressed: () {},
@@ -115,7 +116,9 @@ class _MainCartState extends State<MainCart> {
           margin: const EdgeInsets.only(top: 14),
           child: isLoading
               ? const Center(
-                  child: CircularProgressIndicator(),
+                  child: CircularProgressIndicator(
+                    color: secondary,
+                  ),
                 )
               : dataListFavorite.isEmpty
                   ? const Center(
@@ -127,7 +130,7 @@ class _MainCartState extends State<MainCart> {
                         final item = dataListFavorite[index];
                         return Padding(
                           padding: const EdgeInsets.symmetric(
-                              vertical: 6, horizontal: 12),
+                              vertical: 6, horizontal: 20),
                           child: Container(
                             height: 80,
                             width: double.infinity,
@@ -164,7 +167,9 @@ class _MainCartState extends State<MainCart> {
                                           if (snapshot.connectionState ==
                                                   ConnectionState.waiting ||
                                               !snapshot.hasData) {
-                                            return const CircularProgressIndicator();
+                                            return const CircularProgressIndicator(
+                                              color: secondary,
+                                            );
                                           }
                                           return Container();
                                         },
@@ -173,13 +178,18 @@ class _MainCartState extends State<MainCart> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                          MainAxisAlignment.spaceEvenly,
                                       children: <Widget>[
                                         Text(
                                           item.name,
+                                          style: const TextStyle(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.bold),
                                         ),
                                         Text(
                                           item.price,
+                                          style: const TextStyle(
+                                              fontSize: 14, color: secondary),
                                         ),
                                       ]),
                                   const Spacer(),

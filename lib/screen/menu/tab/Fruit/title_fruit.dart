@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:mycatering/screen/inputlogin/auth/auth.dart';
+import 'package:mycatering/utils/constant.dart';
 
 class FruitTitle extends StatelessWidget {
   final String FruitVariant;
   final String FruitPrice;
-  final FruitColor;
   final String imageFruitName;
 
   final double borderRadius = 12;
@@ -12,89 +13,73 @@ class FruitTitle extends StatelessWidget {
     super.key,
     required this.FruitVariant,
     required this.FruitPrice,
-    required this.FruitColor,
     required this.imageFruitName,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(12.0),
-      child: Container(
-        decoration: BoxDecoration(
-          color: FruitColor[50],
-          borderRadius: BorderRadius.circular(borderRadius),
-        ),
-        child: Column(
-          children: [
-            // price
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
+    final Auth auth = Auth();
+    return Container(
+      padding: const EdgeInsets.all(14),
+      decoration: BoxDecoration(
+        color: quaternary,
+        border: Border.all(color: quaternary),
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          FutureBuilder(
+            future: auth.downloadURL(imageFruitName),
+            builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
+              if (snapshot.connectionState == ConnectionState.done &&
+                  snapshot.hasData) {
+                return SizedBox(
+                  height: 90,
+                  width: 90,
+                  child: Image.network(
+                    snapshot.data!,
+                    fit: BoxFit.cover,
+                  ),
+                );
+              }
+              if (snapshot.connectionState == ConnectionState.waiting ||
+                  !snapshot.hasData) {
+                return const CircularProgressIndicator(
+                  color: secondary,
+                );
+              }
+              return Container();
+            },
+          ),
+          Container(
+            margin: const EdgeInsets.only(top: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: FruitColor[100],
-                    borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(borderRadius),
-                      topRight: Radius.circular(borderRadius),
-                    ),
-                  ),
-                  padding: EdgeInsets.all(12),
+                Flexible(
                   child: Text(
-                    '\$$FruitPrice',
-                    style: TextStyle(
-                      color: FruitColor[800],
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                    ),
+                    FruitVariant,
+                    maxLines: 1,
+                    style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                        fontSize: 16, overflow: TextOverflow.ellipsis),
                   ),
+                ),
+                const SizedBox(
+                  width: 4,
+                ),
+                Text(
+                  '\$${FruitPrice.toString()}',
+                  style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: secondary),
                 ),
               ],
             ),
-
-            // donut picture
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 36.0, vertical: 33),
-              child: Image.asset(imageFruitName),
-            ),
-
-            // donut flavor
-            Text(
-              FruitVariant,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
-              ),
-            ),
-            const SizedBox(height: 4),
-            Text(
-              'Food',
-              style: TextStyle(color: Colors.grey[600]),
-            ),
-
-            // love icon + add button
-            Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  // love icon
-                  Icon(
-                    Icons.favorite,
-                    color: Colors.red[400],
-                  ),
-
-                  // plus button
-                  Icon(
-                    Icons.add_shopping_cart_outlined,
-                    color: Colors.grey[800],
-                  ),
-                ],
-              ),
-            )
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
