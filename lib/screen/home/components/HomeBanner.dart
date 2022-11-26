@@ -24,7 +24,7 @@ class _HomeBannerState extends State<HomeBanner> {
     return Container(
       margin: const EdgeInsets.only(top: 14),
       child: SizedBox(
-        height: size!.height * .220,
+        height: size!.height * .200,
         child: CarouselSlider(
           options: CarouselOptions(
             height: double.infinity,
@@ -39,7 +39,7 @@ class _HomeBannerState extends State<HomeBanner> {
               .map((item) => Container(
                     clipBehavior: Clip.antiAliasWithSaveLayer,
                     decoration: BoxDecoration(
-                      color: secondary,
+                      color: quaternary,
                       borderRadius: BorderRadius.circular(15),
                       border: Border.all(
                         color: quaternary,
@@ -59,7 +59,7 @@ class _HomeBannerState extends State<HomeBanner> {
                             width: double.infinity,
                             child: Image.network(
                               snapshot.data!,
-                              fit: BoxFit.cover,
+                              fit: BoxFit.fill,
                             ),
                           );
                         }

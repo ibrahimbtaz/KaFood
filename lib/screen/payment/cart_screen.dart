@@ -5,7 +5,7 @@ import 'package:mycatering/screen/payment/bloc/cart_bloc.dart';
 import 'package:mycatering/utils/constant.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
-import 'cart_product_card.dart';
+import 'components/cart_product_card.dart';
 
 class CartScreen extends StatefulWidget {
   @override
@@ -61,7 +61,7 @@ class _CartScreenState extends State<CartScreen> {
             style: Theme.of(context)
                 .textTheme
                 .bodyText1!
-                .copyWith(color: primary, fontSize: 16),
+                .copyWith(color: secondary, fontSize: 16),
           ),
           leading: IconButton(
             icon: const Icon(Icons.arrow_back_ios_new_outlined),

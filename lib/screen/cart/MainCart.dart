@@ -97,7 +97,7 @@ class _MainCartState extends State<MainCart> {
                 style: Theme.of(context)
                     .textTheme
                     .bodyText1!
-                    .copyWith(color: primary, fontSize: 16),
+                    .copyWith(color: secondary, fontSize: 16),
               ),
               IconButton(
                 onPressed: () {},
@@ -178,13 +178,18 @@ class _MainCartState extends State<MainCart> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                          MainAxisAlignment.spaceEvenly,
                                       children: <Widget>[
                                         Text(
                                           item.name,
+                                          style: const TextStyle(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.bold),
                                         ),
                                         Text(
                                           item.price,
+                                          style: const TextStyle(
+                                              fontSize: 14, color: secondary),
                                         ),
                                       ]),
                                   const Spacer(),
