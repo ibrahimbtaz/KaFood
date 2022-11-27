@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:mycatering/screen/inputlogin/auth/auth.dart';
 import 'package:mycatering/utils/constant.dart';
 
-class SnackTitle extends StatelessWidget {
-  final String SnackVariant;
-  final String SnackPrice;
-  final String imageSnackName;
+class RiceboxTitle extends StatelessWidget {
+  final String RiceboxVariant;
+  final String RiceboxPrice;
+  final String imageRiceboxName;
 
   final double borderRadius = 12;
 
-  const SnackTitle({
+  const RiceboxTitle({
     super.key,
-    required this.SnackVariant,
-    required this.SnackPrice,
-    required this.imageSnackName,
+    required this.RiceboxVariant,
+    required this.RiceboxPrice,
+    required this.imageRiceboxName,
   });
 
   @override
@@ -31,7 +31,7 @@ class SnackTitle extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           FutureBuilder(
-            future: auth.downloadURL(imageSnackName),
+            future: auth.downloadURL(imageRiceboxName),
             builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
               if (snapshot.connectionState == ConnectionState.done &&
                   snapshot.hasData) {
@@ -60,7 +60,7 @@ class SnackTitle extends StatelessWidget {
               children: [
                 Flexible(
                   child: Text(
-                    SnackVariant,
+                    RiceboxVariant,
                     maxLines: 1,
                     style: Theme.of(context).textTheme.bodyText1!.copyWith(
                         fontSize: 16, overflow: TextOverflow.ellipsis),
@@ -70,7 +70,7 @@ class SnackTitle extends StatelessWidget {
                   width: 4,
                 ),
                 Text(
-                  '\$${SnackPrice.toString()}',
+                  '\$${RiceboxPrice.toString()}',
                   style: Theme.of(context).textTheme.bodyText1!.copyWith(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,

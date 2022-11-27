@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:mycatering/screen/inputlogin/auth/auth.dart';
 import 'package:mycatering/utils/constant.dart';
 
-
 class LoginGoogle extends StatefulWidget {
   const LoginGoogle({super.key});
 
@@ -33,6 +32,8 @@ class _LoginGoogleState extends State<LoginGoogle> {
     }
   }
 
+  bool loading = false;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -50,25 +51,40 @@ class _LoginGoogleState extends State<LoginGoogle> {
             borderRadius: BorderRadius.circular(20),
           ),
         ),
-        onPressed: google,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: const [
-            Image(
-              image: AssetImage("assets/images/icons-google.png"),
-              width: 28,
-            ),
-            SizedBox(
-              width: 15,
-            ),
-            Text("Sign in with Google",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500)),
-          ],
-        ),
+        onPressed: () {
+          setState(() {
+            loading = true;
+          });
+          google();
+          Future.delayed(const Duration(seconds: 4));
+        },
+        child: loading
+            ? const Center(
+                child: SizedBox(
+                height: 28.0,
+                width: 28.0,
+                child: CircularProgressIndicator(
+                  color: secondary,
+                ),
+              ))
+            : Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: const [
+                  Image(
+                    image: AssetImage("assets/images/icons-google.png"),
+                    width: 28,
+                  ),
+                  SizedBox(
+                    width: 15,
+                  ),
+                  Text("Sign in with Google",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500)),
+                ],
+              ),
       ),
     );
   }
