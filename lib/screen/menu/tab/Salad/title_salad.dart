@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:mycatering/screen/inputlogin/auth/auth.dart';
 import 'package:mycatering/utils/constant.dart';
 
-class FruitTitle extends StatelessWidget {
-  final String FruitVariant;
-  final String FruitPrice;
-  final String imageFruitName;
+class SaladTitle extends StatelessWidget {
+  final String SaladVariant;
+  final String SaladPrice;
+  final String imageSaladName;
 
   final double borderRadius = 12;
 
-  const FruitTitle({
+  const SaladTitle({
     super.key,
-    required this.FruitVariant,
-    required this.FruitPrice,
-    required this.imageFruitName,
+    required this.SaladVariant,
+    required this.SaladPrice,
+    required this.imageSaladName,
   });
 
   @override
@@ -31,7 +31,7 @@ class FruitTitle extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           FutureBuilder(
-            future: auth.downloadURL(imageFruitName),
+            future: auth.downloadURL(imageSaladName),
             builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
               if (snapshot.connectionState == ConnectionState.done &&
                   snapshot.hasData) {
@@ -60,7 +60,7 @@ class FruitTitle extends StatelessWidget {
               children: [
                 Flexible(
                   child: Text(
-                    FruitVariant,
+                    SaladVariant,
                     maxLines: 1,
                     style: Theme.of(context).textTheme.bodyText1!.copyWith(
                         fontSize: 16, overflow: TextOverflow.ellipsis),
@@ -70,7 +70,7 @@ class FruitTitle extends StatelessWidget {
                   width: 4,
                 ),
                 Text(
-                  '\$${FruitPrice.toString()}',
+                  '\$${SaladPrice.toString()}',
                   style: Theme.of(context).textTheme.bodyText1!.copyWith(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,

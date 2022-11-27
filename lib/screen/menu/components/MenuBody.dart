@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:mycatering/screen/menu/components/MenuSearch.dart';
 import 'package:mycatering/screen/menu/components/MenuTab.dart';
 import 'package:mycatering/screen/menu/tab/Dessert/tab_dessert.dart';
-import 'package:mycatering/screen/menu/tab/Fruit/tab_fruit.dart';
 import 'package:mycatering/screen/menu/tab/Juice/tab_juice.dart';
-import 'package:mycatering/screen/menu/tab/Snack/tab_snack.dart';
+import 'package:mycatering/screen/menu/tab/RiceBox/tab_snack.dart';
+import 'package:mycatering/screen/menu/tab/Salad/tab_salad.dart';
 import 'package:mycatering/screen/menu/tab/Tumpeng/tab_tumpeng.dart';
 
 class MenuBody extends StatefulWidget {
@@ -65,9 +65,9 @@ class _MenuBodyState extends State<MenuBody> {
               child: TabBarView(
                 children: [
                   DessertTab(),
-                  FruitTab(),
+                  SaladTab(),
                   JuiceTab(),
-                  SnackTab(),
+                  RiceboxTab(),
                   TumpengTab(),
                 ],
               ),
