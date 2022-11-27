@@ -11,7 +11,7 @@ class MenuTab extends StatelessWidget {
     return Tab(
       height: 60,
       child: Container(
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(7),
         decoration: BoxDecoration(
             color: quaternary, borderRadius: BorderRadius.circular(12)),
         child: Image.asset(
