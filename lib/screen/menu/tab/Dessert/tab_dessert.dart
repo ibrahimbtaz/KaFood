@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mycatering/screen/details/Detail.dart';
+import 'package:mycatering/screen/home/models/HomeModel.dart';
 import 'package:mycatering/screen/menu/tab/Dessert/title_dessert.dart';
 
 class DessertTab extends StatelessWidget {
@@ -30,10 +32,27 @@ class DessertTab extends StatelessWidget {
           mainAxisSpacing: 20,
         ),
         itemBuilder: (context, index) {
-          return DessertTitle(
-            DessertVariant: DessertOnSale[index][0],
-            DessertPrice: DessertOnSale[index][1],
-            imageDessertName: DessertOnSale[index][2],
+          FoodModel foodModel = dessertList[index];
+          return GestureDetector(
+            onTap: () {
+                    Navigator.of(context).push(
+                      PageRouteBuilder(
+                        pageBuilder: (context, animation, secondaryAnimation) {
+                          return FadeTransition(
+                            opacity: animation,
+                            child: MyDetailPage(
+                              foodModel: foodModel,
+                            ),
+                          );
+                        },
+                      ),
+                    );
+                  },
+            child: DessertTitle(
+              DessertVariant: DessertOnSale[index][0],
+              DessertPrice: DessertOnSale[index][1],
+              imageDessertName: DessertOnSale[index][2],
+            ),
           );
         },
       ),
