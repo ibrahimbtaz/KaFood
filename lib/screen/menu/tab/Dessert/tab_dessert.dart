@@ -35,19 +35,19 @@ class DessertTab extends StatelessWidget {
           FoodModel foodModel = dessertList[index];
           return GestureDetector(
             onTap: () {
-                    Navigator.of(context).push(
-                      PageRouteBuilder(
-                        pageBuilder: (context, animation, secondaryAnimation) {
-                          return FadeTransition(
-                            opacity: animation,
-                            child: MyDetailPage(
-                              foodModel: foodModel,
-                            ),
-                          );
-                        },
+              Navigator.of(context).push(
+                PageRouteBuilder(
+                  pageBuilder: (context, animation, secondaryAnimation) {
+                    return FadeTransition(
+                      opacity: animation,
+                      child: MyDetailPage(
+                        foodModel: foodModel,
                       ),
                     );
                   },
+                ),
+              );
+            },
             child: DessertTitle(
               DessertVariant: DessertOnSale[index][0],
               DessertPrice: DessertOnSale[index][1],
