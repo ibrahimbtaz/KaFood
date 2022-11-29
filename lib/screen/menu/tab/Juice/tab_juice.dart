@@ -32,7 +32,7 @@ class JuiceTab extends StatelessWidget {
           mainAxisSpacing: 20,
         ),
         itemBuilder: (context, index) {
-          FoodModel foodModel = dessertList[index];
+          FoodModel foodModel = juiceList[index];
           return GestureDetector(
             onTap: () {
               Navigator.of(context).push(
