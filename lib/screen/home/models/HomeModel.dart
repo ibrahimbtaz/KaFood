@@ -26,7 +26,7 @@ List<FoodModel> foodList = [
     id: 2,
     price: 1.5,
     name: "Mango Juice",
-    image: "juice-mango-8.png",
+    image: "juice.jpg",
     description:
         "Juice is a drink made from the extraction or pressing of the natural liquid contained in fruit and vegetables. It can also refer to liquids that are flavored with concentrate or other biological food sources, such as meat or seafood, such as clam juice.",
     rate: 4.0,
@@ -69,7 +69,6 @@ List<FoodModel> foodList = [
   ),
 ];
 
-
 List<FoodModel> dessertList = [
   FoodModel(
     id: 1,
@@ -84,7 +83,7 @@ List<FoodModel> dessertList = [
     id: 2,
     price: 4.5,
     name: "Martabak Manis",
-    image: "juice.jpg",
+    image: "dessertmartabakmanis-6.png",
     description:
         "Dessert is a dish served at the end of a meal. This dish consists of drinks and sweets. In some parts of the world, such as in Central and West Africa, and most of China, there is no tradition of dessert to end their meal.",
     rate: 4.0,
@@ -145,7 +144,6 @@ List<FoodModel> dessertList = [
   ),
 ];
 
-
 List<FoodModel> juiceList = [
   FoodModel(
     id: 1,
@@ -153,7 +151,7 @@ List<FoodModel> juiceList = [
     name: "Mango Juice",
     image: "juice-mango-8.png",
     description:
-    "Juice is one of the drinks of choice to quench thirst and refresh the body. Moreover, the nutritional content of the fruit used makes it have many health benefits. As is known, fruit is a source of fiber. This fiber is very important to maximize nutrient absorption.",
+        "Juice is one of the drinks of choice to quench thirst and refresh the body. Moreover, the nutritional content of the fruit used makes it have many health benefits. As is known, fruit is a source of fiber. This fiber is very important to maximize nutrient absorption.",
     rate: 4.2,
   ),
   FoodModel(
@@ -162,7 +160,7 @@ List<FoodModel> juiceList = [
     name: "Banana Juice",
     image: "juice-pisang-4.png",
     description:
-    "Juice is one of the drinks of choice to quench thirst and refresh the body. Moreover, the nutritional content of the fruit used makes it have many health benefits. As is known, fruit is a source of fiber. This fiber is very important to maximize nutrient absorption.",
+        "Juice is one of the drinks of choice to quench thirst and refresh the body. Moreover, the nutritional content of the fruit used makes it have many health benefits. As is known, fruit is a source of fiber. This fiber is very important to maximize nutrient absorption.",
     rate: 4.0,
   ),
   FoodModel(
@@ -171,7 +169,7 @@ List<FoodModel> juiceList = [
     name: "Guava Juice",
     image: "juice-guava-6.png",
     description:
-    "Juice is one of the drinks of choice to quench thirst and refresh the body. Moreover, the nutritional content of the fruit used makes it have many health benefits. As is known, fruit is a source of fiber. This fiber is very important to maximize nutrient absorption.",
+        "Juice is one of the drinks of choice to quench thirst and refresh the body. Moreover, the nutritional content of the fruit used makes it have many health benefits. As is known, fruit is a source of fiber. This fiber is very important to maximize nutrient absorption.",
     rate: 4.7,
   ),
   FoodModel(
@@ -180,7 +178,7 @@ List<FoodModel> juiceList = [
     name: "Orange Juice",
     image: "juice-jeruk-5.png",
     description:
-    "Juice is one of the drinks of choice to quench thirst and refresh the body. Moreover, the nutritional content of the fruit used makes it have many health benefits. As is known, fruit is a source of fiber. This fiber is very important to maximize nutrient absorption.",
+        "Juice is one of the drinks of choice to quench thirst and refresh the body. Moreover, the nutritional content of the fruit used makes it have many health benefits. As is known, fruit is a source of fiber. This fiber is very important to maximize nutrient absorption.",
     rate: 4.5,
   ),
   FoodModel(
@@ -189,7 +187,7 @@ List<FoodModel> juiceList = [
     name: "Dragon Fruit Juice",
     image: "juice-buahnaga-1.png",
     description:
-    "Juice is one of the drinks of choice to quench thirst and refresh the body. Moreover, the nutritional content of the fruit used makes it have many health benefits. As is known, fruit is a source of fiber. This fiber is very important to maximize nutrient absorption.",
+        "Juice is one of the drinks of choice to quench thirst and refresh the body. Moreover, the nutritional content of the fruit used makes it have many health benefits. As is known, fruit is a source of fiber. This fiber is very important to maximize nutrient absorption.",
     rate: 5.0,
   ),
   FoodModel(
@@ -198,7 +196,7 @@ List<FoodModel> juiceList = [
     name: "Kiwi Juice",
     image: "juice-kiwi-2.png",
     description:
-    "Juice is one of the drinks of choice to quench thirst and refresh the body. Moreover, the nutritional content of the fruit used makes it have many health benefits. As is known, fruit is a source of fiber. This fiber is very important to maximize nutrient absorption.",
+        "Juice is one of the drinks of choice to quench thirst and refresh the body. Moreover, the nutritional content of the fruit used makes it have many health benefits. As is known, fruit is a source of fiber. This fiber is very important to maximize nutrient absorption.",
     rate: 4.8,
   ),
   FoodModel(
@@ -207,7 +205,7 @@ List<FoodModel> juiceList = [
     name: "Avocado Juice",
     image: "juice-alpukat-3.png",
     description:
-    "Juice is one of the drinks of choice to quench thirst and refresh the body. Moreover, the nutritional content of the fruit used makes it have many health benefits. As is known, fruit is a source of fiber. This fiber is very important to maximize nutrient absorption.",
+        "Juice is one of the drinks of choice to quench thirst and refresh the body. Moreover, the nutritional content of the fruit used makes it have many health benefits. As is known, fruit is a source of fiber. This fiber is very important to maximize nutrient absorption.",
     rate: 4.5,
   ),
   FoodModel(
@@ -216,11 +214,10 @@ List<FoodModel> juiceList = [
     name: "Apple Juice",
     image: "juice-apple-7.png",
     description:
-    "Juice is one of the drinks of choice to quench thirst and refresh the body. Moreover, the nutritional content of the fruit used makes it have many health benefits. As is known, fruit is a source of fiber. This fiber is very important to maximize nutrient absorption.",
+        "Juice is one of the drinks of choice to quench thirst and refresh the body. Moreover, the nutritional content of the fruit used makes it have many health benefits. As is known, fruit is a source of fiber. This fiber is very important to maximize nutrient absorption.",
     rate: 4.5,
   ),
 ];
-
 
 List<FoodModel> riceboxList = [
   FoodModel(
@@ -229,7 +226,7 @@ List<FoodModel> riceboxList = [
     name: "Beef Sambal Matah",
     image: "ricebox-BeefSambalgeprek-1.png",
     description:
-    "a food dish consisting of rice and its side dishes and packed in a box/box. In 2020, rice boxes have become a very popular culinary business. This phenomenon has also made many culinary entrepreneurs sell rice in boxes.",
+        "a food dish consisting of rice and its side dishes and packed in a box/box. In 2020, rice boxes have become a very popular culinary business. This phenomenon has also made many culinary entrepreneurs sell rice in boxes.",
     rate: 4.2,
   ),
   FoodModel(
@@ -238,7 +235,7 @@ List<FoodModel> riceboxList = [
     name: "Beef Slice",
     image: "ricebox-beefslice-2.png",
     description:
-    "a food dish consisting of rice and its side dishes and packed in a box/box. In 2020, rice boxes have become a very popular culinary business. This phenomenon has also made many culinary entrepreneurs sell rice in boxes.",
+        "a food dish consisting of rice and its side dishes and packed in a box/box. In 2020, rice boxes have become a very popular culinary business. This phenomenon has also made many culinary entrepreneurs sell rice in boxes.",
     rate: 4.0,
   ),
   FoodModel(
@@ -247,7 +244,7 @@ List<FoodModel> riceboxList = [
     name: "Chicken Sambal Matah",
     image: "ricebox-chickensambalgeprek-8.png",
     description:
-    "a food dish consisting of rice and its side dishes and packed in a box/box. In 2020, rice boxes have become a very popular culinary business. This phenomenon has also made many culinary entrepreneurs sell rice in boxes.",
+        "a food dish consisting of rice and its side dishes and packed in a box/box. In 2020, rice boxes have become a very popular culinary business. This phenomenon has also made many culinary entrepreneurs sell rice in boxes.",
     rate: 4.7,
   ),
   FoodModel(
@@ -256,7 +253,7 @@ List<FoodModel> riceboxList = [
     name: "Tenderloin Eggstra",
     image: "ricebox-tenderloineggstra-7.png",
     description:
-    "a food dish consisting of rice and its side dishes and packed in a box/box. In 2020, rice boxes have become a very popular culinary business. This phenomenon has also made many culinary entrepreneurs sell rice in boxes.",
+        "a food dish consisting of rice and its side dishes and packed in a box/box. In 2020, rice boxes have become a very popular culinary business. This phenomenon has also made many culinary entrepreneurs sell rice in boxes.",
     rate: 4.5,
   ),
   FoodModel(
@@ -265,7 +262,7 @@ List<FoodModel> riceboxList = [
     name: "Beef Sosis",
     image: "ricebox-beefsosis-3.png",
     description:
-    "a food dish consisting of rice and its side dishes and packed in a box/box. In 2020, rice boxes have become a very popular culinary business. This phenomenon has also made many culinary entrepreneurs sell rice in boxes.",
+        "a food dish consisting of rice and its side dishes and packed in a box/box. In 2020, rice boxes have become a very popular culinary business. This phenomenon has also made many culinary entrepreneurs sell rice in boxes.",
     rate: 5.0,
   ),
   FoodModel(
@@ -274,7 +271,7 @@ List<FoodModel> riceboxList = [
     name: "Chicken Eggstra",
     image: "ricebox-chickeneggstra-4.png",
     description:
-    "a food dish consisting of rice and its side dishes and packed in a box/box. In 2020, rice boxes have become a very popular culinary business. This phenomenon has also made many culinary entrepreneurs sell rice in boxes.",
+        "a food dish consisting of rice and its side dishes and packed in a box/box. In 2020, rice boxes have become a very popular culinary business. This phenomenon has also made many culinary entrepreneurs sell rice in boxes.",
     rate: 4.8,
   ),
   FoodModel(
@@ -283,7 +280,7 @@ List<FoodModel> riceboxList = [
     name: "Dory Sambal Matah",
     image: "ricebox-dorysambalgeprek-5.png",
     description:
-    "a food dish consisting of rice and its side dishes and packed in a box/box. In 2020, rice boxes have become a very popular culinary business. This phenomenon has also made many culinary entrepreneurs sell rice in boxes.",
+        "a food dish consisting of rice and its side dishes and packed in a box/box. In 2020, rice boxes have become a very popular culinary business. This phenomenon has also made many culinary entrepreneurs sell rice in boxes.",
     rate: 4.8,
   ),
   FoodModel(
@@ -292,7 +289,7 @@ List<FoodModel> riceboxList = [
     name: "Saikoro Rice",
     image: "ricebox-saikororice-6.png",
     description:
-    "a food dish consisting of rice and its side dishes and packed in a box/box. In 2020, rice boxes have become a very popular culinary business. This phenomenon has also made many culinary entrepreneurs sell rice in boxes.",
+        "a food dish consisting of rice and its side dishes and packed in a box/box. In 2020, rice boxes have become a very popular culinary business. This phenomenon has also made many culinary entrepreneurs sell rice in boxes.",
     rate: 4.8,
   ),
 ];
@@ -304,7 +301,7 @@ List<FoodModel> saladList = [
     name: "Bound Salad",
     image: "Bound Salad-1.png",
     description:
-    "Salad is usually served in star hotels as the main meal and is much loved by those who are on a diet or have a healthy lifestyle because it is proven to contain lots of vitamins and protein which are sourced directly from vegetables and fruits.",
+        "Salad is usually served in star hotels as the main meal and is much loved by those who are on a diet or have a healthy lifestyle because it is proven to contain lots of vitamins and protein which are sourced directly from vegetables and fruits.",
     rate: 4.2,
   ),
   FoodModel(
@@ -313,7 +310,7 @@ List<FoodModel> saladList = [
     name: "Caesar Salad",
     image: "Caesar Salad-2.png",
     description:
-    "Salad is usually served in star hotels as the main meal and is much loved by those who are on a diet or have a healthy lifestyle because it is proven to contain lots of vitamins and protein which are sourced directly from vegetables and fruits.",
+        "Salad is usually served in star hotels as the main meal and is much loved by those who are on a diet or have a healthy lifestyle because it is proven to contain lots of vitamins and protein which are sourced directly from vegetables and fruits.",
     rate: 4.0,
   ),
   FoodModel(
@@ -322,7 +319,7 @@ List<FoodModel> saladList = [
     name: "Olivier Salad",
     image: "Olivier Salad-7.png",
     description:
-    "Salad is usually served in star hotels as the main meal and is much loved by those who are on a diet or have a healthy lifestyle because it is proven to contain lots of vitamins and protein which are sourced directly from vegetables and fruits.",
+        "Salad is usually served in star hotels as the main meal and is much loved by those who are on a diet or have a healthy lifestyle because it is proven to contain lots of vitamins and protein which are sourced directly from vegetables and fruits.",
     rate: 4.7,
   ),
   FoodModel(
@@ -331,7 +328,7 @@ List<FoodModel> saladList = [
     name: "Rujak Salad",
     image: "Rujak Salad-8.png",
     description:
-    "Salad is usually served in star hotels as the main meal and is much loved by those who are on a diet or have a healthy lifestyle because it is proven to contain lots of vitamins and protein which are sourced directly from vegetables and fruits.",
+        "Salad is usually served in star hotels as the main meal and is much loved by those who are on a diet or have a healthy lifestyle because it is proven to contain lots of vitamins and protein which are sourced directly from vegetables and fruits.",
     rate: 4.5,
   ),
   FoodModel(
@@ -340,7 +337,7 @@ List<FoodModel> saladList = [
     name: "Fruit Salad",
     image: "Fruit Salad-3.png",
     description:
-    "Salad is usually served in star hotels as the main meal and is much loved by those who are on a diet or have a healthy lifestyle because it is proven to contain lots of vitamins and protein which are sourced directly from vegetables and fruits.",
+        "Salad is usually served in star hotels as the main meal and is much loved by those who are on a diet or have a healthy lifestyle because it is proven to contain lots of vitamins and protein which are sourced directly from vegetables and fruits.",
     rate: 5.0,
   ),
   FoodModel(
@@ -349,7 +346,7 @@ List<FoodModel> saladList = [
     name: "Gado Gado",
     image: "Gado Gado-6.png",
     description:
-    "Salad is usually served in star hotels as the main meal and is much loved by those who are on a diet or have a healthy lifestyle because it is proven to contain lots of vitamins and protein which are sourced directly from vegetables and fruits.",
+        "Salad is usually served in star hotels as the main meal and is much loved by those who are on a diet or have a healthy lifestyle because it is proven to contain lots of vitamins and protein which are sourced directly from vegetables and fruits.",
     rate: 4.8,
   ),
   FoodModel(
@@ -358,7 +355,7 @@ List<FoodModel> saladList = [
     name: "Greek Salad",
     image: "Greek Salad-5.png",
     description:
-    "Salad is usually served in star hotels as the main meal and is much loved by those who are on a diet or have a healthy lifestyle because it is proven to contain lots of vitamins and protein which are sourced directly from vegetables and fruits.",
+        "Salad is usually served in star hotels as the main meal and is much loved by those who are on a diet or have a healthy lifestyle because it is proven to contain lots of vitamins and protein which are sourced directly from vegetables and fruits.",
     rate: 4.8,
   ),
   FoodModel(
@@ -367,7 +364,7 @@ List<FoodModel> saladList = [
     name: "Kue Ape",
     image: "dessertkueape-7.png",
     description:
-    "Salad is usually served in star hotels as the main meal and is much loved by those who are on a diet or have a healthy lifestyle because it is proven to contain lots of vitamins and protein which are sourced directly from vegetables and fruits.",
+        "Salad is usually served in star hotels as the main meal and is much loved by those who are on a diet or have a healthy lifestyle because it is proven to contain lots of vitamins and protein which are sourced directly from vegetables and fruits.",
     rate: 4.8,
   ),
 ];
@@ -379,7 +376,7 @@ List<FoodModel> tumpengList = [
     name: "Tumpeng Mini 1",
     image: "tumpengmini-1-removebg-preview.png",
     description:
-    "Tumpeng is an Indonesian cone-shaped rice dish with side dishes of vegetables and meat originating from Javanese cuisine of Indonesia. Traditionally featured in the slamatan ceremony, the rice is made by using a cone-shaped woven bamboo container. The rice itself may be plain steamed rice, uduk rice, or yellow rice.",
+        "Tumpeng is an Indonesian cone-shaped rice dish with side dishes of vegetables and meat originating from Javanese cuisine of Indonesia. Traditionally featured in the slamatan ceremony, the rice is made by using a cone-shaped woven bamboo container. The rice itself may be plain steamed rice, uduk rice, or yellow rice.",
     rate: 4.2,
   ),
   FoodModel(
@@ -388,7 +385,7 @@ List<FoodModel> tumpengList = [
     name: "Tumpeng Mini 2",
     image: "tumpengmini-2-removebg-preview.png",
     description:
-    "Tumpeng is an Indonesian cone-shaped rice dish with side dishes of vegetables and meat originating from Javanese cuisine of Indonesia. Traditionally featured in the slamatan ceremony, the rice is made by using a cone-shaped woven bamboo container. The rice itself may be plain steamed rice, uduk rice, or yellow rice.",
+        "Tumpeng is an Indonesian cone-shaped rice dish with side dishes of vegetables and meat originating from Javanese cuisine of Indonesia. Traditionally featured in the slamatan ceremony, the rice is made by using a cone-shaped woven bamboo container. The rice itself may be plain steamed rice, uduk rice, or yellow rice.",
     rate: 4.0,
   ),
   FoodModel(
@@ -397,7 +394,7 @@ List<FoodModel> tumpengList = [
     name: "Tumpeng Mini 3",
     image: "tumpengmini-3-removebg-preview.png",
     description:
-    "Tumpeng is an Indonesian cone-shaped rice dish with side dishes of vegetables and meat originating from Javanese cuisine of Indonesia. Traditionally featured in the slamatan ceremony, the rice is made by using a cone-shaped woven bamboo container. The rice itself may be plain steamed rice, uduk rice, or yellow rice.",
+        "Tumpeng is an Indonesian cone-shaped rice dish with side dishes of vegetables and meat originating from Javanese cuisine of Indonesia. Traditionally featured in the slamatan ceremony, the rice is made by using a cone-shaped woven bamboo container. The rice itself may be plain steamed rice, uduk rice, or yellow rice.",
     rate: 4.7,
   ),
   FoodModel(
@@ -406,7 +403,7 @@ List<FoodModel> tumpengList = [
     name: "Tumpeng Mini 4",
     image: "tumpengmini-4-removebg-preview.png",
     description:
-    "Tumpeng is an Indonesian cone-shaped rice dish with side dishes of vegetables and meat originating from Javanese cuisine of Indonesia. Traditionally featured in the slamatan ceremony, the rice is made by using a cone-shaped woven bamboo container. The rice itself may be plain steamed rice, uduk rice, or yellow rice.",
+        "Tumpeng is an Indonesian cone-shaped rice dish with side dishes of vegetables and meat originating from Javanese cuisine of Indonesia. Traditionally featured in the slamatan ceremony, the rice is made by using a cone-shaped woven bamboo container. The rice itself may be plain steamed rice, uduk rice, or yellow rice.",
     rate: 4.5,
   ),
   FoodModel(
@@ -415,7 +412,7 @@ List<FoodModel> tumpengList = [
     name: "Tumpeng Mini 5",
     image: "tumpengmini-5-removebg-preview.png",
     description:
-    "Tumpeng is an Indonesian cone-shaped rice dish with side dishes of vegetables and meat originating from Javanese cuisine of Indonesia. Traditionally featured in the slamatan ceremony, the rice is made by using a cone-shaped woven bamboo container. The rice itself may be plain steamed rice, uduk rice, or yellow rice.",
+        "Tumpeng is an Indonesian cone-shaped rice dish with side dishes of vegetables and meat originating from Javanese cuisine of Indonesia. Traditionally featured in the slamatan ceremony, the rice is made by using a cone-shaped woven bamboo container. The rice itself may be plain steamed rice, uduk rice, or yellow rice.",
     rate: 5.0,
   ),
   FoodModel(
@@ -424,7 +421,7 @@ List<FoodModel> tumpengList = [
     name: "Tumpeng Mini 6",
     image: "tumpengmini-6-removebg-preview.png",
     description:
-    "Tumpeng is an Indonesian cone-shaped rice dish with side dishes of vegetables and meat originating from Javanese cuisine of Indonesia. Traditionally featured in the slamatan ceremony, the rice is made by using a cone-shaped woven bamboo container. The rice itself may be plain steamed rice, uduk rice, or yellow rice.",
+        "Tumpeng is an Indonesian cone-shaped rice dish with side dishes of vegetables and meat originating from Javanese cuisine of Indonesia. Traditionally featured in the slamatan ceremony, the rice is made by using a cone-shaped woven bamboo container. The rice itself may be plain steamed rice, uduk rice, or yellow rice.",
     rate: 4.8,
   ),
   FoodModel(
@@ -433,7 +430,7 @@ List<FoodModel> tumpengList = [
     name: "Tumpeng Mini 7",
     image: "tumpengmini-7-removebg-preview.png",
     description:
-    "Tumpeng is an Indonesian cone-shaped rice dish with side dishes of vegetables and meat originating from Javanese cuisine of Indonesia. Traditionally featured in the slamatan ceremony, the rice is made by using a cone-shaped woven bamboo container. The rice itself may be plain steamed rice, uduk rice, or yellow rice.",
+        "Tumpeng is an Indonesian cone-shaped rice dish with side dishes of vegetables and meat originating from Javanese cuisine of Indonesia. Traditionally featured in the slamatan ceremony, the rice is made by using a cone-shaped woven bamboo container. The rice itself may be plain steamed rice, uduk rice, or yellow rice.",
     rate: 4.8,
   ),
   FoodModel(
@@ -442,7 +439,7 @@ List<FoodModel> tumpengList = [
     name: "Tumpeng Mini 8",
     image: "tumpengmini-8-removebg-preview.png",
     description:
-    "Tumpeng is an Indonesian cone-shaped rice dish with side dishes of vegetables and meat originating from Javanese cuisine of Indonesia. Traditionally featured in the slamatan ceremony, the rice is made by using a cone-shaped woven bamboo container. The rice itself may be plain steamed rice, uduk rice, or yellow rice.",
+        "Tumpeng is an Indonesian cone-shaped rice dish with side dishes of vegetables and meat originating from Javanese cuisine of Indonesia. Traditionally featured in the slamatan ceremony, the rice is made by using a cone-shaped woven bamboo container. The rice itself may be plain steamed rice, uduk rice, or yellow rice.",
     rate: 4.8,
   ),
 ];
