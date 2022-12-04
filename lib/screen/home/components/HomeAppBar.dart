@@ -31,7 +31,7 @@ class _HomeAppbarState extends State<HomeAppbar> {
           ),
           Center(
             child: Transform.translate(
-              offset: const Offset(0, 16),
+              offset: const Offset(6, 16),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -43,7 +43,7 @@ class _HomeAppbarState extends State<HomeAppbar> {
                         .copyWith(color: secondary, fontSize: 14),
                   ),
                   Transform.translate(
-                    offset: const Offset(-6.8, -13),
+                    offset: const Offset(6.8, -13),
                     child: DropdownButton(
                         icon: const Icon(
                           Icons.location_on,
@@ -79,26 +79,27 @@ class _HomeAppbarState extends State<HomeAppbar> {
           ),
 
           IconButton(
+              padding: EdgeInsets.only(left: 50.0),
               onPressed: () => showSearch(context: context, delegate: CustomSearchDelegate()),
               icon: Icon(Icons.search, color: Colors.black,)
           ),
 
-          IconButton(
-            padding: EdgeInsets.only(right: 20.0),
-            onPressed: () {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context){
-                    return NotifikasiPage();
-                  },
-                  )
-              );
-            },
-            icon: SvgPicture.asset(
-              'assets/icons/bell-outline-icon.svg',
-              width: 24,
-              height: 24,
-            ),
-          ),
+          // IconButton(
+          //   padding: EdgeInsets.only(right: -0.0),
+          //   onPressed: () {
+          //     Navigator.of(context).push(
+          //         MaterialPageRoute(builder: (context){
+          //           return NotifikasiPage();
+          //         },
+          //         )
+          //     );
+          //   },
+          //   icon: SvgPicture.asset(
+          //     'assets/icons/bell-outline-icon.svg',
+          //     width: 24,
+          //     height: 24,
+          //   ),
+          // ),
         ],
       ),
     );
