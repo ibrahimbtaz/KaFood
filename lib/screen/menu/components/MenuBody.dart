@@ -66,7 +66,7 @@ class _MenuBodyState extends State<MenuBody> {
                       .copyWith(color: secondary, fontSize: 16),
                 ),
                 IconButton(
-                  padding: EdgeInsets.only(left: 50.0),
+                  padding: EdgeInsets.only(right: 10.0),
                   onPressed: () {
                     Navigator.of(context).push(
                         MaterialPageRoute(builder: (context){
