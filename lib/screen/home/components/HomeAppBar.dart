@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mycatering/screen/home/components/HomeSearch.dart';
+import 'package:mycatering/screen/home/components/SearchDelegate.dart';
 import 'package:mycatering/utils/constant.dart';
 
 
