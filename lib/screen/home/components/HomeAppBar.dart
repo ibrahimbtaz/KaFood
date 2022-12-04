@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mycatering/screen/home/components/SearchDelegate.dart';
+import 'package:mycatering/screen/home/components/notifikasi.dart';
 import 'package:mycatering/utils/constant.dart';
 
 
@@ -76,9 +77,26 @@ class _HomeAppbarState extends State<HomeAppbar> {
               ),
             ),
           ),
+          // IconButton(
+          //   padding: EdgeInsets.only(right: 20.0),
+          //     onPressed: () => showSearch(context: context, delegate: CustomSearchDelegate()),
+          //     icon: Icon(Icons.search, color: Colors.black,)
+          // ),
           IconButton(
-              onPressed: () => showSearch(context: context, delegate: CustomSearchDelegate()),
-              icon: Icon(Icons.search, color: Colors.black,)
+            padding: EdgeInsets.only(right: 20.0),
+            onPressed: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context){
+                    return NotifikasiPage();
+                  },
+                  )
+              );
+            },
+            icon: SvgPicture.asset(
+              'assets/icons/bell-outline-icon.svg',
+              width: 24,
+              height: 24,
+            ),
           ),
         ],
       ),

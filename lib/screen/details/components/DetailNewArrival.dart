@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mycatering/screen/home/components/HomeContent.dart';
 import 'package:mycatering/screen/home/components/HomePage.dart';
 import 'package:mycatering/screen/home/models/HomeModel.dart';
+import 'package:mycatering/screen/menu/MainMenu.dart';
+import 'package:mycatering/screen/menu/components/MenuBody.dart';
 
 class DetailNewArrival extends StatefulWidget {
   const DetailNewArrival({super.key});
@@ -30,11 +32,12 @@ class _DetailNewArrivalState extends State<DetailNewArrival> {
                         .textTheme
                         .bodyText1!
                         .copyWith(fontSize: 20)),
-                Text("See More",
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyText1!
-                        .copyWith(fontSize: 16)),
+                InkWell(
+                  child: Text("See More"),
+                  onTap: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>MainMenu()));
+                  },
+                )
               ],
             ),
           ),
