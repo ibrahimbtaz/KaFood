@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mycatering/screen/home/components/SearchDelegate.dart';
 import 'package:mycatering/utils/constant.dart';
 
 
@@ -76,12 +77,8 @@ class _HomeAppbarState extends State<HomeAppbar> {
             ),
           ),
           IconButton(
-            onPressed: () {},
-            icon: SvgPicture.asset(
-              'assets/icons/bell-outline-icon.svg',
-              width: 24,
-              height: 24,
-            ),
+              onPressed: () => showSearch(context: context, delegate: CustomSearchDelegate()),
+              icon: Icon(Icons.search, color: Colors.black,)
           ),
         ],
       ),
