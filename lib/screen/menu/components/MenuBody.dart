@@ -66,12 +66,13 @@ class _MenuBodyState extends State<MenuBody> {
                       .copyWith(color: secondary, fontSize: 16),
                 ),
                 IconButton(
+                  padding: EdgeInsets.only(left: 50.0),
                   onPressed: () {
                     Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context){
-                        return NotifikasiPage();
-                      },
-                      )
+                        MaterialPageRoute(builder: (context){
+                          return NotifikasiPage();
+                        },
+                        )
                     );
                   },
                   icon: SvgPicture.asset(

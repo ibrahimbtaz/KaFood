@@ -3,6 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mycatering/screen/cart/components/CartDB.dart';
 import 'package:mycatering/screen/cart/components/CartModel.dart';
 import 'package:mycatering/screen/home/Home.dart';
+import 'package:mycatering/screen/home/components/SearchDelegate.dart';
+import 'package:mycatering/screen/home/components/notifikasi.dart';
 import 'package:mycatering/screen/inputlogin/auth/auth.dart';
 import 'package:mycatering/utils/constant.dart';
 
@@ -99,8 +101,21 @@ class _MainCartState extends State<MainCart> {
                     .bodyText1!
                     .copyWith(color: secondary, fontSize: 16),
               ),
+              // IconButton(
+              //     padding: EdgeInsets.only(left: 100.0),
+              //     onPressed: () => showSearch(context: context, delegate: CustomSearchDelegate()),
+              //     icon: Icon(Icons.search, color: Colors.black,)
+              // ),
               IconButton(
-                onPressed: () {},
+                padding: EdgeInsets.only(right: 1.0),
+                onPressed: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context){
+                        return NotifikasiPage();
+                      },
+                      )
+                  );
+                },
                 icon: SvgPicture.asset(
                   'assets/icons/bell-outline-icon.svg',
                   width: 24,
