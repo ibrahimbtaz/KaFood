@@ -77,11 +77,12 @@ class _HomeAppbarState extends State<HomeAppbar> {
               ),
             ),
           ),
-          // IconButton(
-          //   padding: EdgeInsets.only(right: 20.0),
-          //     onPressed: () => showSearch(context: context, delegate: CustomSearchDelegate()),
-          //     icon: Icon(Icons.search, color: Colors.black,)
-          // ),
+
+          IconButton(
+              onPressed: () => showSearch(context: context, delegate: CustomSearchDelegate()),
+              icon: Icon(Icons.search, color: Colors.black,)
+          ),
+
           IconButton(
             padding: EdgeInsets.only(right: 20.0),
             onPressed: () {

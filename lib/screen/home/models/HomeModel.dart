@@ -24,12 +24,12 @@ List<FoodModel> foodList = [
   ),
   FoodModel(
     id: 2,
-    price: 1.5,
-    name: "Mango Juice",
-    image: "juice.jpg",
+    price: 4.4,
+    name: "Kue Lapis",
+    image: "dessertkuelapis-9.png",
     description:
-        "Juice is a drink made from the extraction or pressing of the natural liquid contained in fruit and vegetables. It can also refer to liquids that are flavored with concentrate or other biological food sources, such as meat or seafood, such as clam juice.",
-    rate: 4.0,
+    "Dessert is a dish served at the end of a meal. This dish consists of drinks and sweets. In some parts of the world, such as in Central and West Africa, and most of China, there is no tradition of dessert to end their meal.",
+    rate: 4.7,
   ),
   FoodModel(
     id: 3,
@@ -42,30 +42,106 @@ List<FoodModel> foodList = [
   ),
   FoodModel(
     id: 4,
-    price: 2.5,
-    name: "Snack Box",
-    image: "snack.png",
+    price: 4.2,
+    name: "Tenderloin Eggstra",
+    image: "ricebox-tenderloineggstra-7.png",
     description:
-        "Snack Box is a complement to consumption that is usually present at an event, for meetings, gatherings, social gatherings, house celebrations, building inauguration up to recitation.",
+    "a food dish consisting of rice and its side dishes and packed in a box/box. In 2020, rice boxes have become a very popular culinary business. This phenomenon has also made many culinary entrepreneurs sell rice in boxes.",
     rate: 4.5,
   ),
   FoodModel(
     id: 5,
-    price: 5.5,
-    name: "Chocolate Cake",
-    image: "cake-2.png",
+    price: 6.5,
+    name: "Tumpeng Mini 2",
+    image: "tumpengmini-2-removebg-preview.png",
     description:
-        "Chocolate cake is a cake flavored with melted chocolate, cocoa powder, or both. This cake is perfect for Birthday Events",
-    rate: 5.0,
+    "Tumpeng is an Indonesian cone-shaped rice dish with side dishes of vegetables and meat originating from Javanese cuisine of Indonesia. Traditionally featured in the slamatan ceremony, the rice is made by using a cone-shaped woven bamboo container. The rice itself may be plain steamed rice, uduk rice, or yellow rice.",
+    rate: 4.0,
   ),
   FoodModel(
     id: 6,
-    price: 3.5,
-    name: "Fruit Salad",
-    image: "fruit-salad.png",
+    price: 3.4,
+    name: "Olivier Salad",
+    image: "Olivier Salad-7.png",
     description:
-        "Fruit salad is a dish consisting of various kinds of fruit, sometimes served in a liquid, either their juices or a syrup. In different forms, fruit salad can be served as an appetizer, a side salad. When served as an appetizer, a fruit salad is sometimes known as a fruit cocktail, or fruit cup.",
-    rate: 4.8,
+    "Salad is usually served in star hotels as the main meal and is much loved by those who are on a diet or have a healthy lifestyle because it is proven to contain lots of vitamins and protein which are sourced directly from vegetables and fruits.",
+    rate: 4.7,
+  ),
+  FoodModel(
+    id: 7,
+    price: 1.5,
+    name: "Banana Juice",
+    image: "juice-pisang-4.png",
+    description:
+    "Juice is one of the drinks of choice to quench thirst and refresh the body. Moreover, the nutritional content of the fruit used makes it have many health benefits. As is known, fruit is a source of fiber. This fiber is very important to maximize nutrient absorption.",
+    rate: 4.0,
+  ),
+  FoodModel(
+    id: 8,
+    price: 4.4,
+    name: "Kue Lapis",
+    image: "dessertkuelapis-9.png",
+    description:
+    "Dessert is a dish served at the end of a meal. This dish consists of drinks and sweets. In some parts of the world, such as in Central and West Africa, and most of China, there is no tradition of dessert to end their meal.",
+    rate: 4.7,
+  ),
+];
+
+
+List<FoodModel> foodFavorite = [
+  FoodModel(
+    id: 1,
+    price: 3.6,
+    name: "Klepon",
+    image: "dessertklepon-10.png",
+    description:
+    "Dessert is a dish served at the end of a meal. This dish consists of drinks and sweets. In some parts of the world, such as in Central and West Africa, and most of China, there is no tradition of dessert to end their meal.",
+    rate: 4.2,
+  ),
+  FoodModel(
+    id: 2,
+    price: 1.4,
+    name: "Mango Juice",
+    image: "juice-mango-8.png",
+    description:
+    "Juice is one of the drinks of choice to quench thirst and refresh the body. Moreover, the nutritional content of the fruit used makes it have many health benefits. As is known, fruit is a source of fiber. This fiber is very important to maximize nutrient absorption.",
+    rate: 4.2,
+  ),
+  FoodModel(
+    id: 3,
+    price: 4.5,
+    name: "Martabak Manis",
+    image: "dessertmartabakmanis-6.png",
+    description:
+    "Dessert is a dish served at the end of a meal. This dish consists of drinks and sweets. In some parts of the world, such as in Central and West Africa, and most of China, there is no tradition of dessert to end their meal.",
+    rate: 4.0,
+  ),
+  FoodModel(
+    id: 4,
+    price: 3.6,
+    name: "Beef Sambal Matah",
+    image: "ricebox-BeefSambalgeprek-1.png",
+    description:
+    "a food dish consisting of rice and its side dishes and packed in a box/box. In 2020, rice boxes have become a very popular culinary business. This phenomenon has also made many culinary entrepreneurs sell rice in boxes.",
+    rate: 4.2,
+  ),
+  FoodModel(
+    id: 5,
+    price: 4.5,
+    name: "Beef Slice",
+    image: "ricebox-beefslice-2.png",
+    description:
+    "a food dish consisting of rice and its side dishes and packed in a box/box. In 2020, rice boxes have become a very popular culinary business. This phenomenon has also made many culinary entrepreneurs sell rice in boxes.",
+    rate: 4.0,
+  ),
+  FoodModel(
+    id: 6,
+    price: 3.6,
+    name: "Bound Salad",
+    image: "Bound Salad-1.png",
+    description:
+    "Salad is usually served in star hotels as the main meal and is much loved by those who are on a diet or have a healthy lifestyle because it is proven to contain lots of vitamins and protein which are sourced directly from vegetables and fruits.",
+    rate: 4.2,
   ),
 ];
 

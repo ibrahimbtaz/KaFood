@@ -52,7 +52,7 @@ class _DetailNewArrivalState extends State<DetailNewArrival> {
                 itemCount: foodList.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  FoodModel foodModel = foodList[index];
+                  FoodModel foodModel = foodFavorite[index];
                   return SizedBox(
                     width: size!.width / 2,
                     child: Padding(
