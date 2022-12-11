@@ -12,59 +12,59 @@ class FoodModel {
   });
 }
 
-List<FoodModel> foodList = [
+List<FoodModel> foodFavorite = [
   FoodModel(
     id: 1,
-    price: 17.5,
-    name: "Tumpeng",
-    image: "tumpeng.png",
+    price: 4.5,
+    name: "Martabak Manis",
+    image: "dessertmartabakmanis-6.png",
     description:
-        "Tumpeng is an Indonesian cone-shaped rice dish with side dishes of vegetables and meat originating from Javanese cuisine of Indonesia. Traditionally featured in the slamatan ceremony, the rice is made by using a cone-shaped woven bamboo container. The rice itself may be plain steamed rice, uduk rice, or yellow rice.",
-    rate: 4.2,
+    "Dessert is a dish served at the end of a meal. This dish consists of drinks and sweets. In some parts of the world, such as in Central and West Africa, and most of China, there is no tradition of dessert to end their meal.",
+    rate: 4.0,
   ),
   FoodModel(
     id: 2,
-    price: 4.4,
-    name: "Kue Lapis",
-    image: "dessertkuelapis-9.png",
+    price: 1.4,
+    name: "Guava Juice",
+    image: "juice-guava-6.png",
     description:
         "Dessert is a dish served at the end of a meal. This dish consists of drinks and sweets. In some parts of the world, such as in Central and West Africa, and most of China, there is no tradition of dessert to end their meal.",
     rate: 4.7,
   ),
   FoodModel(
     id: 3,
-    price: 2.5,
-    name: "Dessert Red Velvet",
-    image: "cake-1.png",
+    price: 1.4,
+    name: "Kiwi Juice",
+    image: "juice-kiwi-2.png",
     description:
-        "Soft Red Velvet cake layered with thick sweet cream and grated cheese. The sprinkling part uses the remaining grated or coarsely chopped cake so that no material is wasted. Come on, try the recipe for this weekend.",
-    rate: 4.7,
+    "Juice is one of the drinks of choice to quench thirst and refresh the body. Moreover, the nutritional content of the fruit used makes it have many health benefits. As is known, fruit is a source of fiber. This fiber is very important to maximize nutrient absorption.",
+    rate: 4.8,
   ),
   FoodModel(
     id: 4,
-    price: 4.2,
-    name: "Tenderloin Eggstra",
-    image: "ricebox-tenderloineggstra-7.png",
+    price: 4.5,
+    name: "Martabak Manis",
+    image: "dessertmartabakmanis-6.png",
     description:
-        "a food dish consisting of rice and its side dishes and packed in a box/box. In 2020, rice boxes have become a very popular culinary business. This phenomenon has also made many culinary entrepreneurs sell rice in boxes.",
+    "a food dish consisting of rice and its side dishes and packed in a box/box. In 2020, rice boxes have become a very popular culinary business. This phenomenon has also made many culinary entrepreneurs sell rice in boxes.",
     rate: 4.5,
   ),
   FoodModel(
     id: 5,
-    price: 6.5,
-    name: "Tumpeng Mini 2",
-    image: "tumpengmini-2-removebg-preview.png",
+    price: 4.3,
+    name: "Beef Sosis",
+    image: "ricebox-beefsosis-3.png",
     description:
-        "Tumpeng is an Indonesian cone-shaped rice dish with side dishes of vegetables and meat originating from Javanese cuisine of Indonesia. Traditionally featured in the slamatan ceremony, the rice is made by using a cone-shaped woven bamboo container. The rice itself may be plain steamed rice, uduk rice, or yellow rice.",
+    "Tumpeng is an Indonesian cone-shaped rice dish with side dishes of vegetables and meat originating from Javanese cuisine of Indonesia. Traditionally featured in the slamatan ceremony, the rice is made by using a cone-shaped woven bamboo container. The rice itself may be plain steamed rice, uduk rice, or yellow rice.",
     rate: 4.0,
   ),
   FoodModel(
     id: 6,
-    price: 3.4,
-    name: "Olivier Salad",
-    image: "Olivier Salad-7.png",
+    price: 5.1,
+    name: "Gado Gado",
+    image: "Gado Gado-6.png",
     description:
-        "Salad is usually served in star hotels as the main meal and is much loved by those who are on a diet or have a healthy lifestyle because it is proven to contain lots of vitamins and protein which are sourced directly from vegetables and fruits.",
+    "Salad is usually served in star hotels as the main meal and is much loved by those who are on a diet or have a healthy lifestyle because it is proven to contain lots of vitamins and protein which are sourced directly from vegetables and fruits.",
     rate: 4.7,
   ),
   FoodModel(
@@ -73,73 +73,73 @@ List<FoodModel> foodList = [
     name: "Banana Juice",
     image: "juice-pisang-4.png",
     description:
-        "Juice is one of the drinks of choice to quench thirst and refresh the body. Moreover, the nutritional content of the fruit used makes it have many health benefits. As is known, fruit is a source of fiber. This fiber is very important to maximize nutrient absorption.",
+    "Juice is one of the drinks of choice to quench thirst and refresh the body. Moreover, the nutritional content of the fruit used makes it have many health benefits. As is known, fruit is a source of fiber. This fiber is very important to maximize nutrient absorption.",
     rate: 4.0,
   ),
   FoodModel(
     id: 8,
-    price: 4.5,
-    name: "Martabak Manis",
-    image: "dessertmartabakmanis-6.png",
+    price: 4.4,
+    name: "Kue Lapis",
+    image: "dessertkuelapis-9.png",
     description:
-        "Dessert is a dish served at the end of a meal. This dish consists of drinks and sweets. In some parts of the world, such as in Central and West Africa, and most of China, there is no tradition of dessert to end their meal.",
-    rate: 4.0,
+    "Dessert is a dish served at the end of a meal. This dish consists of drinks and sweets. In some parts of the world, such as in Central and West Africa, and most of China, there is no tradition of dessert to end their meal.",
+    rate: 4.7,
   ),
 ];
 
-List<FoodModel> foodFavorite = [
+List<FoodModel> foodList = [
   FoodModel(
     id: 1,
-    price: 3.6,
-    name: "Klepon",
-    image: "dessertklepon-10.png",
+    price: 17.5,
+    name: "Tumpeng",
+    image: "tumpeng.png",
     description:
-        "Dessert is a dish served at the end of a meal. This dish consists of drinks and sweets. In some parts of the world, such as in Central and West Africa, and most of China, there is no tradition of dessert to end their meal.",
+    "Dessert is a dish served at the end of a meal. This dish consists of drinks and sweets. In some parts of the world, such as in Central and West Africa, and most of China, there is no tradition of dessert to end their meal.",
     rate: 4.2,
   ),
   FoodModel(
     id: 2,
-    price: 1.4,
+    price: 1.5,
     name: "Mango Juice",
-    image: "juice-mango-8.png",
+    image: "juice.jpg",
     description:
-        "Juice is one of the drinks of choice to quench thirst and refresh the body. Moreover, the nutritional content of the fruit used makes it have many health benefits. As is known, fruit is a source of fiber. This fiber is very important to maximize nutrient absorption.",
+    "Juice is one of the drinks of choice to quench thirst and refresh the body. Moreover, the nutritional content of the fruit used makes it have many health benefits. As is known, fruit is a source of fiber. This fiber is very important to maximize nutrient absorption.",
     rate: 4.2,
   ),
   FoodModel(
     id: 3,
-    price: 4.5,
-    name: "Martabak Manis",
-    image: "dessertmartabakmanis-6.png",
+    price: 2.5,
+    name: "Dessert Red Velvet",
+    image: "cake-1.png",
     description:
-        "Dessert is a dish served at the end of a meal. This dish consists of drinks and sweets. In some parts of the world, such as in Central and West Africa, and most of China, there is no tradition of dessert to end their meal.",
+    "Dessert is a dish served at the end of a meal. This dish consists of drinks and sweets. In some parts of the world, such as in Central and West Africa, and most of China, there is no tradition of dessert to end their meal.",
     rate: 4.0,
   ),
   FoodModel(
     id: 4,
-    price: 3.6,
-    name: "Beef Sambal Matah",
-    image: "ricebox-BeefSambalgeprek-1.png",
+    price: 2.5,
+    name: "Snack Box",
+    image: "snack.png",
     description:
-        "a food dish consisting of rice and its side dishes and packed in a box/box. In 2020, rice boxes have become a very popular culinary business. This phenomenon has also made many culinary entrepreneurs sell rice in boxes.",
+    "a food dish consisting of rice and its side dishes and packed in a box/box. In 2020, rice boxes have become a very popular culinary business. This phenomenon has also made many culinary entrepreneurs sell rice in boxes.",
     rate: 4.2,
   ),
   FoodModel(
     id: 5,
-    price: 4.5,
-    name: "Beef Slice",
-    image: "ricebox-beefslice-2.png",
+    price: 5.5,
+    name: "Chocolate Cake",
+    image: "cake-2.png",
     description:
-        "a food dish consisting of rice and its side dishes and packed in a box/box. In 2020, rice boxes have become a very popular culinary business. This phenomenon has also made many culinary entrepreneurs sell rice in boxes.",
+    "a food dish consisting of rice and its side dishes and packed in a box/box. In 2020, rice boxes have become a very popular culinary business. This phenomenon has also made many culinary entrepreneurs sell rice in boxes.",
     rate: 4.0,
   ),
   FoodModel(
     id: 6,
-    price: 3.6,
-    name: "Bound Salad",
-    image: "Bound Salad-1.png",
+    price: 3.5,
+    name: "Fruit Salad",
+    image: "fruit-salad.png",
     description:
-        "Salad is usually served in star hotels as the main meal and is much loved by those who are on a diet or have a healthy lifestyle because it is proven to contain lots of vitamins and protein which are sourced directly from vegetables and fruits.",
+    "Salad is usually served in star hotels as the main meal and is much loved by those who are on a diet or have a healthy lifestyle because it is proven to contain lots of vitamins and protein which are sourced directly from vegetables and fruits.",
     rate: 4.2,
   ),
   FoodModel(
