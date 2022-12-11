@@ -19,8 +19,7 @@ class TumpengTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(
-        vertical: 25,
-        horizontal: 5,
+        horizontal: 8,
       ),
       child: GridView.builder(
         itemCount: TumpengOnSale.length,

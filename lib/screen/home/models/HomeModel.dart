@@ -28,7 +28,7 @@ List<FoodModel> foodFavorite = [
     name: "Guava Juice",
     image: "juice-guava-6.png",
     description:
-    "Juice is one of the drinks of choice to quench thirst and refresh the body. Moreover, the nutritional content of the fruit used makes it have many health benefits. As is known, fruit is a source of fiber. This fiber is very important to maximize nutrient absorption.",
+        "Dessert is a dish served at the end of a meal. This dish consists of drinks and sweets. In some parts of the world, such as in Central and West Africa, and most of China, there is no tradition of dessert to end their meal.",
     rate: 4.7,
   ),
   FoodModel(
@@ -46,8 +46,8 @@ List<FoodModel> foodFavorite = [
     name: "Martabak Manis",
     image: "dessertmartabakmanis-6.png",
     description:
-    "Dessert is a dish served at the end of a meal. This dish consists of drinks and sweets. In some parts of the world, such as in Central and West Africa, and most of China, there is no tradition of dessert to end their meal.",
-    rate: 4.0,
+    "a food dish consisting of rice and its side dishes and packed in a box/box. In 2020, rice boxes have become a very popular culinary business. This phenomenon has also made many culinary entrepreneurs sell rice in boxes.",
+    rate: 4.5,
   ),
   FoodModel(
     id: 5,
@@ -55,8 +55,8 @@ List<FoodModel> foodFavorite = [
     name: "Beef Sosis",
     image: "ricebox-beefsosis-3.png",
     description:
-    "a food dish consisting of rice and its side dishes and packed in a box/box. In 2020, rice boxes have become a very popular culinary business. This phenomenon has also made many culinary entrepreneurs sell rice in boxes.",
-    rate: 5.0,
+    "Tumpeng is an Indonesian cone-shaped rice dish with side dishes of vegetables and meat originating from Javanese cuisine of Indonesia. Traditionally featured in the slamatan ceremony, the rice is made by using a cone-shaped woven bamboo container. The rice itself may be plain steamed rice, uduk rice, or yellow rice.",
+    rate: 4.0,
   ),
   FoodModel(
     id: 6,
@@ -65,7 +65,25 @@ List<FoodModel> foodFavorite = [
     image: "Gado Gado-6.png",
     description:
     "Salad is usually served in star hotels as the main meal and is much loved by those who are on a diet or have a healthy lifestyle because it is proven to contain lots of vitamins and protein which are sourced directly from vegetables and fruits.",
-    rate: 4.8,
+    rate: 4.7,
+  ),
+  FoodModel(
+    id: 7,
+    price: 1.5,
+    name: "Banana Juice",
+    image: "juice-pisang-4.png",
+    description:
+    "Juice is one of the drinks of choice to quench thirst and refresh the body. Moreover, the nutritional content of the fruit used makes it have many health benefits. As is known, fruit is a source of fiber. This fiber is very important to maximize nutrient absorption.",
+    rate: 4.0,
+  ),
+  FoodModel(
+    id: 8,
+    price: 4.4,
+    name: "Kue Lapis",
+    image: "dessertkuelapis-9.png",
+    description:
+    "Dessert is a dish served at the end of a meal. This dish consists of drinks and sweets. In some parts of the world, such as in Central and West Africa, and most of China, there is no tradition of dessert to end their meal.",
+    rate: 4.7,
   ),
 ];
 
@@ -76,7 +94,7 @@ List<FoodModel> foodList = [
     name: "Tumpeng",
     image: "tumpeng.png",
     description:
-        "Tumpeng is an Indonesian cone-shaped rice dish with side dishes of vegetables and meat originating from Javanese cuisine of Indonesia. Traditionally featured in the slamatan ceremony, the rice is made by using a cone-shaped woven bamboo container. The rice itself may be plain steamed rice, uduk rice, or yellow rice.",
+    "Dessert is a dish served at the end of a meal. This dish consists of drinks and sweets. In some parts of the world, such as in Central and West Africa, and most of China, there is no tradition of dessert to end their meal.",
     rate: 4.2,
   ),
   FoodModel(
@@ -85,8 +103,8 @@ List<FoodModel> foodList = [
     name: "Mango Juice",
     image: "juice.jpg",
     description:
-        "Juice is a drink made from the extraction or pressing of the natural liquid contained in fruit and vegetables. It can also refer to liquids that are flavored with concentrate or other biological food sources, such as meat or seafood, such as clam juice.",
-    rate: 4.0,
+    "Juice is one of the drinks of choice to quench thirst and refresh the body. Moreover, the nutritional content of the fruit used makes it have many health benefits. As is known, fruit is a source of fiber. This fiber is very important to maximize nutrient absorption.",
+    rate: 4.2,
   ),
   FoodModel(
     id: 3,
@@ -94,8 +112,8 @@ List<FoodModel> foodList = [
     name: "Dessert Red Velvet",
     image: "cake-1.png",
     description:
-        "Soft Red Velvet cake layered with thick sweet cream and grated cheese. The sprinkling part uses the remaining grated or coarsely chopped cake so that no material is wasted. Come on, try the recipe for this weekend.",
-    rate: 4.7,
+    "Dessert is a dish served at the end of a meal. This dish consists of drinks and sweets. In some parts of the world, such as in Central and West Africa, and most of China, there is no tradition of dessert to end their meal.",
+    rate: 4.0,
   ),
   FoodModel(
     id: 4,
@@ -103,8 +121,8 @@ List<FoodModel> foodList = [
     name: "Snack Box",
     image: "snack.png",
     description:
-        "Snack Box is a complement to consumption that is usually present at an event, for meetings, gatherings, social gatherings, house celebrations, building inauguration up to recitation.",
-    rate: 4.5,
+    "a food dish consisting of rice and its side dishes and packed in a box/box. In 2020, rice boxes have become a very popular culinary business. This phenomenon has also made many culinary entrepreneurs sell rice in boxes.",
+    rate: 4.2,
   ),
   FoodModel(
     id: 5,
@@ -112,8 +130,8 @@ List<FoodModel> foodList = [
     name: "Chocolate Cake",
     image: "cake-2.png",
     description:
-        "Chocolate cake is a cake flavored with melted chocolate, cocoa powder, or both. This cake is perfect for Birthday Events",
-    rate: 5.0,
+    "a food dish consisting of rice and its side dishes and packed in a box/box. In 2020, rice boxes have become a very popular culinary business. This phenomenon has also made many culinary entrepreneurs sell rice in boxes.",
+    rate: 4.0,
   ),
   FoodModel(
     id: 6,
@@ -121,7 +139,25 @@ List<FoodModel> foodList = [
     name: "Fruit Salad",
     image: "fruit-salad.png",
     description:
-        "Fruit salad is a dish consisting of various kinds of fruit, sometimes served in a liquid, either their juices or a syrup. In different forms, fruit salad can be served as an appetizer, a side salad. When served as an appetizer, a fruit salad is sometimes known as a fruit cocktail, or fruit cup.",
+    "Salad is usually served in star hotels as the main meal and is much loved by those who are on a diet or have a healthy lifestyle because it is proven to contain lots of vitamins and protein which are sourced directly from vegetables and fruits.",
+    rate: 4.2,
+  ),
+  FoodModel(
+    id: 7,
+    price: 4.3,
+    name: "Japanese Cheese",
+    image: "dessertjapanesecheesecake-3.png",
+    description:
+        "Dessert is a dish served at the end of a meal. This dish consists of drinks and sweets. In some parts of the world, such as in Central and West Africa, and most of China, there is no tradition of dessert to end their meal.",
+    rate: 4.5,
+  ),
+  FoodModel(
+    id: 8,
+    price: 5.5,
+    name: "Nutella Brownis",
+    image: "dessertnutellafudgybrownis-1.png",
+    description:
+        "Dessert is a dish served at the end of a meal. This dish consists of drinks and sweets. In some parts of the world, such as in Central and West Africa, and most of China, there is no tradition of dessert to end their meal.",
     rate: 4.8,
   ),
 ];

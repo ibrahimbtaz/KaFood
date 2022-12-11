@@ -3,7 +3,7 @@ import 'package:mycatering/screen/home/components/HomeContent.dart';
 import 'package:mycatering/screen/home/components/HomePage.dart';
 import 'package:mycatering/screen/home/models/HomeModel.dart';
 import 'package:mycatering/screen/menu/MainMenu.dart';
-import 'package:mycatering/screen/menu/components/MenuBody.dart';
+import 'package:mycatering/utils/constant.dart';
 
 class DetailNewArrival extends StatefulWidget {
   const DetailNewArrival({super.key});
@@ -33,9 +33,22 @@ class _DetailNewArrivalState extends State<DetailNewArrival> {
                         .bodyText1!
                         .copyWith(fontSize: 20)),
                 InkWell(
-                  child: Text("See More"),
-                  onTap: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>MainMenu()));
+                  child: const Text("See More",
+                      style: TextStyle(
+                          color: primary,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500)),
+                  onTap: () {
+                    Navigator.of(context).push(
+                      PageRouteBuilder(
+                        pageBuilder: (context, animation, secondaryAnimation) {
+                          return FadeTransition(
+                            opacity: animation,
+                            child: const MainMenu(),
+                          );
+                        },
+                      ),
+                    );
                   },
                 )
               ],
@@ -43,7 +56,7 @@ class _DetailNewArrivalState extends State<DetailNewArrival> {
           ),
           Container(
             margin: const EdgeInsets.symmetric(
-              vertical: 25,
+              vertical: 10,
             ),
             padding: EdgeInsets.only(left: size!.width * .060),
             child: SizedBox(

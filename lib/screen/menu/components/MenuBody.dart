@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mycatering/screen/home/components/HomeNotify.dart';
 import 'package:mycatering/screen/home/components/SearchDelegate.dart';
-import 'package:mycatering/screen/home/components/notifikasi.dart';
 import 'package:mycatering/screen/menu/components/MenuSearch.dart';
 import 'package:mycatering/screen/menu/components/MenuTab.dart';
 import 'package:mycatering/screen/menu/tab/Dessert/tab_dessert.dart';
@@ -43,48 +42,7 @@ class _MenuBodyState extends State<MenuBody> {
     return DefaultTabController(
       length: myTabs.length,
       child: Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: false,
-          centerTitle: true,
-          title: Padding(
-            padding: const EdgeInsets.all(5),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children:  [
-                Image(
-                  width: 58,
-                  height: 58,
-                  image: AssetImage("assets/images/project - logo.png"),
-                  // repeat: ImageRepeat.repeat,
-                ),
-                Text(
-                  'Menu Page'.toUpperCase(),
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyText1!
-                      .copyWith(color: secondary, fontSize: 16),
-                ),
-                IconButton(
-                  padding: EdgeInsets.only(right: 10.0),
-                  onPressed: () {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context){
-                          return NotifikasiPage();
-                        },
-                        )
-                    );
-                  },
-                  icon: SvgPicture.asset(
-                    'assets/icons/bell-outline-icon.svg',
-                    width: 24,
-                    height: 24,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
+        appBar: HomeAppBar(context),
         body: Column(
           children: [
             MenuSearch(),
@@ -103,6 +61,51 @@ class _MenuBodyState extends State<MenuBody> {
           ],
         ),
       ),
+    );
+  }
+
+  AppBar HomeAppBar(BuildContext context) {
+    return AppBar(
+      leadingWidth: 80,
+      leading: const Image(
+        image: AssetImage("assets/images/project - logo.png"),
+        // repeat: ImageRepeat.repeat,
+      ),
+      centerTitle: true,
+      title: Center(
+        child: Text(
+          'Menu Page'.toUpperCase(),
+          textAlign: TextAlign.center,
+          style: Theme.of(context).textTheme.bodyText1!.copyWith(
+              color: secondary, fontSize: 16, fontWeight: FontWeight.bold),
+        ),
+      ),
+      actions: [
+        IconButton(
+            onPressed: () =>
+                showSearch(context: context, delegate: CustomSearchDelegate()),
+            icon: const Icon(
+              Icons.search,
+              color: Colors.black,
+              size: 24,
+            )),
+        IconButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                PageRouteBuilder(
+                  pageBuilder: (context, animation, secondaryAnimation) {
+                    return FadeTransition(
+                        opacity: animation, child: const NotifikasiPage());
+                  },
+                ),
+              );
+            },
+            icon: const Icon(
+              Icons.notifications_none_rounded,
+              color: Colors.black,
+              size: 24,
+            )),
+      ],
     );
   }
 }

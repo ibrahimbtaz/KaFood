@@ -6,6 +6,7 @@ import 'package:mycatering/screen/cart/components/CartDB.dart';
 import 'package:mycatering/screen/cart/components/CartModel.dart';
 import 'package:mycatering/screen/details/components/Counter.dart';
 import 'package:mycatering/screen/details/components/DetailNewArrival.dart';
+import 'package:mycatering/screen/home/components/HomeNotify.dart';
 import 'package:mycatering/screen/home/components/HomePage.dart';
 import 'package:mycatering/screen/home/models/HomeModel.dart';
 import 'package:mycatering/screen/inputlogin/auth/auth.dart';
@@ -92,18 +93,27 @@ class _DetailContentState extends State<DetailContent> {
           IconButton(
             onPressed: () {},
             icon: const Icon(
-              Icons.share,
-              size: 26,
+              Icons.share_rounded,
+              size: 24,
             ),
             color: blackColor,
           ),
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                  PageRouteBuilder(
+                    pageBuilder: (context, animation, secondaryAnimation) {
+                      return FadeTransition(
+                          opacity: animation, child: const NotifikasiPage());
+                    },
+                  ),
+                );
+              },
               icon: const Icon(
-                Icons.info,
-                size: 30,
-              ),
-              color: blackColor),
+                Icons.notifications_none_rounded,
+                color: Colors.black,
+                size: 24,
+              )),
         ],
       ),
       body: Stack(
