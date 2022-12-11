@@ -9,9 +9,11 @@ class NotifikasiPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios_new),
-          color: Colors.black,
-          onPressed: () => Navigator.of(context).pop(),
+          icon: const Icon(Icons.arrow_back_ios_new_outlined),
+          color: blackColor,
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
         title: Text(
           "Notification Page".toUpperCase(),
@@ -21,9 +23,8 @@ class NotifikasiPage extends StatelessWidget {
               .bodyText1!
               .copyWith(color: secondary, fontSize: 14),
         ),
-
       ),
-      body: Center(
+      body: const Center(
         child: Text("No Notifications here"),
       ),
     );

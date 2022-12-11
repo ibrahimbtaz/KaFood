@@ -8,15 +8,18 @@ class MenuTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Tab(
-      height: 60,
-      child: Container(
-        padding: const EdgeInsets.all(7),
-        decoration: BoxDecoration(
-            color: quaternary, borderRadius: BorderRadius.circular(12)),
-        child: Image.asset(
-          iconPath,
-          color: secondary,
+    return Container(
+      padding: const EdgeInsets.only(bottom: 4),
+      child: Tab(
+        height: 60,
+        child: Container(
+          padding: const EdgeInsets.all(8),
+          decoration: BoxDecoration(
+              color: quaternary, borderRadius: BorderRadius.circular(12)),
+          child: Image.asset(
+            iconPath,
+            color: secondary,
+          ),
         ),
       ),
     );

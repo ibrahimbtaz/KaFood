@@ -4,7 +4,7 @@ import 'package:mycatering/screen/home/components/HomeContent.dart';
 import 'package:mycatering/screen/home/components/HomePage.dart';
 import 'package:mycatering/screen/home/models/HomeModel.dart';
 import 'package:mycatering/screen/menu/MainMenu.dart';
-import 'package:mycatering/screen/menu/components/MenuBody.dart';
+import 'package:mycatering/utils/constant.dart';
 
 class PopularMenu extends StatefulWidget {
   const PopularMenu({super.key});
@@ -16,7 +16,7 @@ class PopularMenu extends StatefulWidget {
 class _PopularMenuState extends State<PopularMenu> {
   @override
   Widget build(BuildContext context) {
-    return Container( 
+    return Container(
       padding: EdgeInsets.symmetric(horizontal: size!.width * .070),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -32,9 +32,22 @@ class _PopularMenuState extends State<PopularMenu> {
                       .bodyText1!
                       .copyWith(fontSize: 20)),
               InkWell(
-                child: Text("See More"),
-                onTap: (){
-                  Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>MainMenu()));
+                child: const Text("See More",
+                    style: TextStyle(
+                        color: primary,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500)),
+                onTap: () {
+                  Navigator.of(context).push(
+                    PageRouteBuilder(
+                      pageBuilder: (context, animation, secondaryAnimation) {
+                        return FadeTransition(
+                          opacity: animation,
+                          child: const MainMenu(),
+                        );
+                      },
+                    ),
+                  );
                 },
               )
             ],

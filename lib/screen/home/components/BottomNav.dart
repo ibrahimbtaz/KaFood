@@ -32,7 +32,7 @@ class _MyBottomNavState extends State<MyBottomNav> {
           decoration: const BoxDecoration(
             color: whiteColor,
           ),
-          padding: const EdgeInsets.only(left: 15, right: 15),
+          padding: const EdgeInsets.symmetric(horizontal: 15),
           child: SalomonBottomBar(
             currentIndex: tab,
             onTap: (index) => setState(() => tab = index),

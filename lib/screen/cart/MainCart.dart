@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mycatering/screen/cart/components/CartDB.dart';
 import 'package:mycatering/screen/cart/components/CartModel.dart';
 import 'package:mycatering/screen/home/Home.dart';
 import 'package:mycatering/screen/home/components/SearchDelegate.dart';
-import 'package:mycatering/screen/home/components/notifikasi.dart';
+import 'package:mycatering/screen/home/components/HomeNotify.dart';
 import 'package:mycatering/screen/inputlogin/auth/auth.dart';
 import 'package:mycatering/utils/constant.dart';
 
@@ -79,53 +78,7 @@ class _MainCartState extends State<MainCart> {
   Widget build(BuildContext context) {
     final Auth auth = Auth();
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        centerTitle: true,
-        title: Padding(
-          padding: const EdgeInsets.all(5),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Image(
-                width: 58,
-                height: 58,
-                image: AssetImage("assets/images/project - logo.png"),
-                // repeat: ImageRepeat.repeat,
-              ),
-              Text(
-                'Your Cart'.toUpperCase(),
-                textAlign: TextAlign.center,
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyText1!
-                    .copyWith(color: secondary, fontSize: 16),
-              ),
-              // IconButton(
-              //     padding: EdgeInsets.only(left: 100.0),
-              //     onPressed: () => showSearch(context: context, delegate: CustomSearchDelegate()),
-              //     icon: Icon(Icons.search, color: Colors.black,)
-              // ),
-              IconButton(
-                padding: EdgeInsets.only(right: 1.0),
-                onPressed: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context){
-                        return NotifikasiPage();
-                      },
-                      )
-                  );
-                },
-                icon: SvgPicture.asset(
-                  'assets/icons/bell-outline-icon.svg',
-                  width: 24,
-                  height: 24,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
+      appBar: HomeAppBar(context),
       body: Center(
         child: Container(
           margin: const EdgeInsets.only(top: 14),
@@ -226,6 +179,52 @@ class _MainCartState extends State<MainCart> {
                     ),
         ),
       ),
+    );
+  }
+
+  AppBar HomeAppBar(BuildContext context) {
+    return AppBar(
+      automaticallyImplyLeading: false,
+      leadingWidth: 80,
+      leading: const Image(
+        image: AssetImage("assets/images/project - logo.png"),
+        // repeat: ImageRepeat.repeat,
+      ),
+      centerTitle: true,
+      title: Center(
+        child: Text(
+          'Your Cart'.toUpperCase(),
+          textAlign: TextAlign.center,
+          style: Theme.of(context).textTheme.bodyText1!.copyWith(
+              color: secondary, fontSize: 16, fontWeight: FontWeight.bold),
+        ),
+      ),
+      actions: [
+        IconButton(
+            onPressed: () =>
+                showSearch(context: context, delegate: CustomSearchDelegate()),
+            icon: const Icon(
+              Icons.search,
+              color: Colors.black,
+              size: 24,
+            )),
+        IconButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                PageRouteBuilder(
+                  pageBuilder: (context, animation, secondaryAnimation) {
+                    return FadeTransition(
+                        opacity: animation, child: const NotifikasiPage());
+                  },
+                ),
+              );
+            },
+            icon: const Icon(
+              Icons.notifications_none_rounded,
+              color: Colors.black,
+              size: 24,
+            )),
+      ],
     );
   }
 }

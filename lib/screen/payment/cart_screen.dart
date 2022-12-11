@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mycatering/screen/home/Home.dart';
+import 'package:mycatering/screen/home/components/HomeNotify.dart';
 import 'package:mycatering/screen/payment/bloc/cart_bloc.dart';
 import 'package:mycatering/utils/constant.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
@@ -70,6 +71,24 @@ class _CartScreenState extends State<CartScreen> {
               Navigator.pop(context);
             },
           ),
+          actions: [
+            IconButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    PageRouteBuilder(
+                      pageBuilder: (context, animation, secondaryAnimation) {
+                        return FadeTransition(
+                            opacity: animation, child: const NotifikasiPage());
+                      },
+                    ),
+                  );
+                },
+                icon: const Icon(
+                  Icons.notifications_none_rounded,
+                  color: Colors.black,
+                  size: 24,
+                )),
+          ],
         ),
         body: BlocBuilder<CartBloc, CartState>(
           builder: (context, state) {

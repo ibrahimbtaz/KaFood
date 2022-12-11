@@ -28,7 +28,7 @@ List<FoodModel> foodList = [
     name: "Kue Lapis",
     image: "dessertkuelapis-9.png",
     description:
-    "Dessert is a dish served at the end of a meal. This dish consists of drinks and sweets. In some parts of the world, such as in Central and West Africa, and most of China, there is no tradition of dessert to end their meal.",
+        "Dessert is a dish served at the end of a meal. This dish consists of drinks and sweets. In some parts of the world, such as in Central and West Africa, and most of China, there is no tradition of dessert to end their meal.",
     rate: 4.7,
   ),
   FoodModel(
@@ -46,7 +46,7 @@ List<FoodModel> foodList = [
     name: "Tenderloin Eggstra",
     image: "ricebox-tenderloineggstra-7.png",
     description:
-    "a food dish consisting of rice and its side dishes and packed in a box/box. In 2020, rice boxes have become a very popular culinary business. This phenomenon has also made many culinary entrepreneurs sell rice in boxes.",
+        "a food dish consisting of rice and its side dishes and packed in a box/box. In 2020, rice boxes have become a very popular culinary business. This phenomenon has also made many culinary entrepreneurs sell rice in boxes.",
     rate: 4.5,
   ),
   FoodModel(
@@ -55,7 +55,7 @@ List<FoodModel> foodList = [
     name: "Tumpeng Mini 2",
     image: "tumpengmini-2-removebg-preview.png",
     description:
-    "Tumpeng is an Indonesian cone-shaped rice dish with side dishes of vegetables and meat originating from Javanese cuisine of Indonesia. Traditionally featured in the slamatan ceremony, the rice is made by using a cone-shaped woven bamboo container. The rice itself may be plain steamed rice, uduk rice, or yellow rice.",
+        "Tumpeng is an Indonesian cone-shaped rice dish with side dishes of vegetables and meat originating from Javanese cuisine of Indonesia. Traditionally featured in the slamatan ceremony, the rice is made by using a cone-shaped woven bamboo container. The rice itself may be plain steamed rice, uduk rice, or yellow rice.",
     rate: 4.0,
   ),
   FoodModel(
@@ -64,7 +64,7 @@ List<FoodModel> foodList = [
     name: "Olivier Salad",
     image: "Olivier Salad-7.png",
     description:
-    "Salad is usually served in star hotels as the main meal and is much loved by those who are on a diet or have a healthy lifestyle because it is proven to contain lots of vitamins and protein which are sourced directly from vegetables and fruits.",
+        "Salad is usually served in star hotels as the main meal and is much loved by those who are on a diet or have a healthy lifestyle because it is proven to contain lots of vitamins and protein which are sourced directly from vegetables and fruits.",
     rate: 4.7,
   ),
   FoodModel(
@@ -73,20 +73,19 @@ List<FoodModel> foodList = [
     name: "Banana Juice",
     image: "juice-pisang-4.png",
     description:
-    "Juice is one of the drinks of choice to quench thirst and refresh the body. Moreover, the nutritional content of the fruit used makes it have many health benefits. As is known, fruit is a source of fiber. This fiber is very important to maximize nutrient absorption.",
+        "Juice is one of the drinks of choice to quench thirst and refresh the body. Moreover, the nutritional content of the fruit used makes it have many health benefits. As is known, fruit is a source of fiber. This fiber is very important to maximize nutrient absorption.",
     rate: 4.0,
   ),
   FoodModel(
     id: 8,
-    price: 4.4,
-    name: "Kue Lapis",
-    image: "dessertkuelapis-9.png",
+    price: 4.5,
+    name: "Martabak Manis",
+    image: "dessertmartabakmanis-6.png",
     description:
-    "Dessert is a dish served at the end of a meal. This dish consists of drinks and sweets. In some parts of the world, such as in Central and West Africa, and most of China, there is no tradition of dessert to end their meal.",
-    rate: 4.7,
+        "Dessert is a dish served at the end of a meal. This dish consists of drinks and sweets. In some parts of the world, such as in Central and West Africa, and most of China, there is no tradition of dessert to end their meal.",
+    rate: 4.0,
   ),
 ];
-
 
 List<FoodModel> foodFavorite = [
   FoodModel(
@@ -95,7 +94,7 @@ List<FoodModel> foodFavorite = [
     name: "Klepon",
     image: "dessertklepon-10.png",
     description:
-    "Dessert is a dish served at the end of a meal. This dish consists of drinks and sweets. In some parts of the world, such as in Central and West Africa, and most of China, there is no tradition of dessert to end their meal.",
+        "Dessert is a dish served at the end of a meal. This dish consists of drinks and sweets. In some parts of the world, such as in Central and West Africa, and most of China, there is no tradition of dessert to end their meal.",
     rate: 4.2,
   ),
   FoodModel(
@@ -104,7 +103,7 @@ List<FoodModel> foodFavorite = [
     name: "Mango Juice",
     image: "juice-mango-8.png",
     description:
-    "Juice is one of the drinks of choice to quench thirst and refresh the body. Moreover, the nutritional content of the fruit used makes it have many health benefits. As is known, fruit is a source of fiber. This fiber is very important to maximize nutrient absorption.",
+        "Juice is one of the drinks of choice to quench thirst and refresh the body. Moreover, the nutritional content of the fruit used makes it have many health benefits. As is known, fruit is a source of fiber. This fiber is very important to maximize nutrient absorption.",
     rate: 4.2,
   ),
   FoodModel(
@@ -113,7 +112,7 @@ List<FoodModel> foodFavorite = [
     name: "Martabak Manis",
     image: "dessertmartabakmanis-6.png",
     description:
-    "Dessert is a dish served at the end of a meal. This dish consists of drinks and sweets. In some parts of the world, such as in Central and West Africa, and most of China, there is no tradition of dessert to end their meal.",
+        "Dessert is a dish served at the end of a meal. This dish consists of drinks and sweets. In some parts of the world, such as in Central and West Africa, and most of China, there is no tradition of dessert to end their meal.",
     rate: 4.0,
   ),
   FoodModel(
@@ -122,7 +121,7 @@ List<FoodModel> foodFavorite = [
     name: "Beef Sambal Matah",
     image: "ricebox-BeefSambalgeprek-1.png",
     description:
-    "a food dish consisting of rice and its side dishes and packed in a box/box. In 2020, rice boxes have become a very popular culinary business. This phenomenon has also made many culinary entrepreneurs sell rice in boxes.",
+        "a food dish consisting of rice and its side dishes and packed in a box/box. In 2020, rice boxes have become a very popular culinary business. This phenomenon has also made many culinary entrepreneurs sell rice in boxes.",
     rate: 4.2,
   ),
   FoodModel(
@@ -131,7 +130,7 @@ List<FoodModel> foodFavorite = [
     name: "Beef Slice",
     image: "ricebox-beefslice-2.png",
     description:
-    "a food dish consisting of rice and its side dishes and packed in a box/box. In 2020, rice boxes have become a very popular culinary business. This phenomenon has also made many culinary entrepreneurs sell rice in boxes.",
+        "a food dish consisting of rice and its side dishes and packed in a box/box. In 2020, rice boxes have become a very popular culinary business. This phenomenon has also made many culinary entrepreneurs sell rice in boxes.",
     rate: 4.0,
   ),
   FoodModel(
@@ -140,8 +139,26 @@ List<FoodModel> foodFavorite = [
     name: "Bound Salad",
     image: "Bound Salad-1.png",
     description:
-    "Salad is usually served in star hotels as the main meal and is much loved by those who are on a diet or have a healthy lifestyle because it is proven to contain lots of vitamins and protein which are sourced directly from vegetables and fruits.",
+        "Salad is usually served in star hotels as the main meal and is much loved by those who are on a diet or have a healthy lifestyle because it is proven to contain lots of vitamins and protein which are sourced directly from vegetables and fruits.",
     rate: 4.2,
+  ),
+  FoodModel(
+    id: 7,
+    price: 4.3,
+    name: "Japanese Cheese",
+    image: "dessertjapanesecheesecake-3.png",
+    description:
+        "Dessert is a dish served at the end of a meal. This dish consists of drinks and sweets. In some parts of the world, such as in Central and West Africa, and most of China, there is no tradition of dessert to end their meal.",
+    rate: 4.5,
+  ),
+  FoodModel(
+    id: 8,
+    price: 5.5,
+    name: "Nutella Brownis",
+    image: "dessertnutellafudgybrownis-1.png",
+    description:
+        "Dessert is a dish served at the end of a meal. This dish consists of drinks and sweets. In some parts of the world, such as in Central and West Africa, and most of China, there is no tradition of dessert to end their meal.",
+    rate: 4.8,
   ),
 ];
 
