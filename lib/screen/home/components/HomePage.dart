@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:mycatering/screen/details/components/DetailNewArrival.dart';
-import 'package:mycatering/screen/home/components/HomeBanner.dart';
-import 'package:mycatering/screen/home/components/PopularMenu.dart';
-import 'package:mycatering/screen/home/components/SearchDelegate.dart';
-import 'package:mycatering/screen/home/components/HomeNotify.dart';
-import 'package:mycatering/utils/constant.dart';
+
+import '../../../utils/constant.dart';
+import '../../details/components/DetailNewArrival.dart';
+import 'HomeBanner.dart';
+import 'HomeNotify.dart';
+import 'HomeWelcome.dart';
+import 'PopularMenu.dart';
+import 'SearchDelegate.dart';
 
 Size? size;
 
@@ -27,6 +29,7 @@ class _HomePageState extends State<HomePage> {
       body: ListView(
         physics: const BouncingScrollPhysics(),
         children: const [
+          Welcome(),
           HomeBanner(),
           DetailNewArrival(),
           PopularMenu(),
