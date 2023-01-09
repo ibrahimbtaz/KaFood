@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mycatering/screen/home/models/HomeModel.dart';
-import 'package:mycatering/screen/inputlogin/auth/auth.dart';
-import 'package:mycatering/utils/Constant.dart';
+
+import '../../../utils/Constant.dart';
+import '../../inputlogin/auth/auth.dart';
+import '../models/HomeModel.dart';
 
 class FoodItem extends StatefulWidget {
   final FoodModel foodModel;

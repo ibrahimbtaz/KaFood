@@ -1,8 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:mycatering/screen/home/components/HomePage.dart';
-import 'package:mycatering/screen/inputlogin/auth/auth.dart';
-import 'package:mycatering/utils/constant.dart';
+
+import '../../../utils/constant.dart';
+import '../../inputlogin/auth/auth.dart';
+import 'HomePage.dart';
 
 class HomeBanner extends StatefulWidget {
   const HomeBanner({super.key});

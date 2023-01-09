@@ -1,6 +1,6 @@
-import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:mycatering/screen/home/components/BottomNav.dart';
+
+import 'BottomNav.dart';
 
 class HomeBody extends StatefulWidget {
   const HomeBody({super.key});

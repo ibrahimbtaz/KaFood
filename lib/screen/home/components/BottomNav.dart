@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mycatering/screen/cart/MainCart.dart';
-import 'package:mycatering/screen/home/components/HomePage.dart';
-import 'package:mycatering/screen/menu/MainMenu.dart';
-import 'package:mycatering/screen/profile/mainprofile.dart';
-import 'package:mycatering/utils/constant.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+
+import '../../../utils/constant.dart';
+import '../../cart/MainCart.dart';
+import '../../menu/MainMenu.dart';
+import '../../profile/mainprofile.dart';
+import 'HomePage.dart';
 
 class MyBottomNav extends StatefulWidget {
   const MyBottomNav({Key? key}) : super(key: key);
